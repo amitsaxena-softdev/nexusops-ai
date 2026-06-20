@@ -25,14 +25,20 @@ _GROUPS = [
 ]
 
 
-def apply_theme():
-    """Inject theme CSS, floating toggle, and sidebar. Call after st.set_page_config()."""
+def apply_theme(sidebar: bool = True):
+    """Inject theme CSS, floating toggle, and (optionally) the sidebar.
+
+    Call after st.set_page_config(). Pass sidebar=False on pages that should
+    have no drawer (e.g. the homepage) — this hides it via CSS injected up
+    front AND skips rendering its contents, so it never flashes on reload.
+    """
     if "theme" not in st.session_state:
         st.session_state.theme = "dark"
     D = st.session_state.theme == "dark"
-    _inject_css(D)
+    _inject_css(D, sidebar)
     _render_toggle(D)
-    _render_sidebar(D)
+    if sidebar:
+        _render_sidebar(D)
 
 
 def _render_toggle(D: bool):
@@ -48,7 +54,7 @@ def _render_toggle(D: bool):
             st.rerun()
 
 
-def _inject_css(D: bool):
+def _inject_css(D: bool, sidebar: bool = True):
     BG      = "#08080f"  if D else "#f8fafc"
     BG_SIDE = "#0c0c18"  if D else "#f1f5f9"
     SEP     = "rgba(255,255,255,0.07)" if D else "rgba(0,0,0,0.08)"
@@ -57,8 +63,15 @@ def _inject_css(D: bool):
     TOG_BG  = "rgba(22,22,34,0.85)"    if D else "rgba(255,255,255,0.92)"
     TOG_BD  = "rgba(255,255,255,0.12)" if D else "rgba(0,0,0,0.12)"
 
+    # Hide the drawer entirely when this page wants no sidebar.
+    HIDE_SIDEBAR = (
+        'section[data-testid="stSidebar"], [data-testid="collapsedControl"] '
+        '{ display: none !important; }'
+    ) if not sidebar else ""
+
     st.markdown(f"""
 <style>
+{HIDE_SIDEBAR}
 /* ── Background ── */
 html, body, [data-testid="stAppViewContainer"], .stApp {{
     background: {BG} !important;

@@ -28,18 +28,12 @@ FOOTER_C  = "rgba(255,255,255,0.12)"  if D else "rgba(0,0,0,0.2)"
 GRID_CLR  = "rgba(99,102,241,0.045)"  if D else "rgba(99,102,241,0.055)"
 GLOW_CLR  = "rgba(99,102,241,0.13)"   if D else "rgba(99,102,241,0.07)"
 
-# ── Global theme: CSS + sidebar ────────────────────────────────────────────────
-apply_theme()
+# ── Global theme (no sidebar on the homepage) ──────────────────────────────────
+apply_theme(sidebar=False)
 
 # ── Landing-page-specific CSS (stats bar, section label, cards, footer) ────────
 st.markdown(f"""
 <style>
-/* ── Hide sidebar entirely on the homepage ── */
-section[data-testid="stSidebar"],
-[data-testid="collapsedControl"] {{
-    display: none !important;
-}}
-
 .block-container {{
     padding-top: 0 !important;
     padding-left: 2.5rem !important;
