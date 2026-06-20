@@ -1,61 +1,122 @@
+import pandas as pd
 import streamlit as st
-from pathlib import Path
-from agents.pricing_agent import get_pricing_recommendation, MOCK_SIGNALS
-from shared.llm import ask_with_file
+
+from agents.pricing_agent import (
+    DR_THEISS_PRODUCTS, MAX_DECREASE_PCT, MAX_INCREASE_PCT, PRICE_FLOOR_PCT,
+    fetch_live_signals, price_all_products,
+)
 
 st.set_page_config(page_title="Dynamic Pricing — Dr. Theiss", page_icon="💰")
 st.title("💰 Dynamic Pricing Agent")
-st.caption("Client: Dr. Theiss Naturwaren GmbH (Homburg) — Signal-driven pricing recommendations")
+st.caption("Client: Dr. Theiss Naturwaren GmbH (Homburg) — Signal-driven pricing engine with guardrails")
 
-DR_THEISS_DATA = Path("samples/dr_theiss_data.pdf")
+# ── Session state ──────────────────────────────────────────────────────────────
+if "pricing_signals"       not in st.session_state: st.session_state.pricing_signals       = None
+if "pricing_results"       not in st.session_state: st.session_state.pricing_results       = None
 
-with st.expander("📡 Simulated market signals (demo)"):
-    for k, v in MOCK_SIGNALS.items():
-        st.markdown(f"**{k.title()}:** {v}")
+# ── Live signals panel ─────────────────────────────────────────────────────────
+st.markdown("### 📡 Live Market Signals")
 
+col_sig, col_btn = st.columns([5, 1])
+with col_btn:
+    refresh = st.button("🔄 Refresh", type="secondary")
+
+if refresh or st.session_state.pricing_signals is None:
+    with st.spinner("Fetching live signals via Google Search…"):
+        try:
+            st.session_state.pricing_signals = fetch_live_signals()
+            st.session_state.pricing_results = None   # reset results on signal refresh
+        except Exception as e:
+            st.error(f"Could not fetch signals: {e}")
+
+signals = st.session_state.pricing_signals
+if signals:
+    icons = {"weather": "🌤️", "sports": "⚽", "seasonal": "📅",
+             "supply_chain": "🚢", "market": "📈"}
+    c1, c2, c3 = st.columns(3)
+    cols = [c1, c2, c3, c1, c2]
+    for col, (key, val) in zip(cols, signals.items()):
+        col.markdown(f"{icons.get(key, '•')} **{key.replace('_', ' ').title()}**  \n{val}")
+
+# ── Guardrails summary ─────────────────────────────────────────────────────────
 st.divider()
+st.markdown("### 🛡️ Guardrails")
+g1, g2, g3 = st.columns(3)
+g1.metric("Max price increase", f"+{MAX_INCREASE_PCT:.0f}%")
+g2.metric("Max price decrease", f"−{MAX_DECREASE_PCT:.0f}%")
+g3.metric("Price floor",        f"{PRICE_FLOOR_PCT:.0f}% of base")
+st.caption("Guardrails are enforced in code — not by the LLM. Any out-of-range recommendation is clamped automatically.")
 
-tab_sample, tab_manual = st.tabs(["📂 From Dr. Theiss Data Pack", "✏️ Enter Product Manually"])
+# ── Product catalogue ──────────────────────────────────────────────────────────
+st.divider()
+st.markdown("### 🛒 Product Catalogue")
+catalog_df = pd.DataFrame([
+    {"SKU": p["sku"], "Product": p["name"], "Category": p["category"],
+     "Base Price (€)": f"€{p['base_price']:.2f}", "Sensitivity": p["sensitivity"].title()}
+    for p in DR_THEISS_PRODUCTS
+])
+st.dataframe(catalog_df, use_container_width=True, hide_index=True)
 
-with tab_sample:
-    if DR_THEISS_DATA.exists():
-        st.info("Extracts product portfolio from the Dr. Theiss data pack and prices them against today's signals.")
-        if st.button("Price Dr. Theiss Product Range", type="primary", key="theiss_pricing_btn"):
-            file_bytes = DR_THEISS_DATA.read_bytes()
-            import datetime
-            signals = "\n".join(f"- {k.title()}: {v}" for k, v in MOCK_SIGNALS.items())
-            today = datetime.date.today().strftime("%A, %d %B %Y")
-            with st.spinner("Analysing product portfolio and generating pricing recommendations..."):
-                result = ask_with_file(
-                    f"Today is {today}.\n\nExtract the product list from this document, then for each product "
-                    f"provide a dynamic pricing recommendation based on these external signals:\n{signals}\n\n"
-                    "Format: for each product show CURRENT PRICE (if visible), RECOMMENDED PRICE, CHANGE %, REASONING.",
-                    file_bytes, "application/pdf"
-                )
-            st.markdown("### Pricing Recommendations")
-            st.markdown(result)
-    else:
-        st.info("Dr. Theiss data pack not found. Use manual tab.")
+# ── Price all products ─────────────────────────────────────────────────────────
+st.divider()
+if not signals:
+    st.info("Signals not loaded yet — click 🔄 Refresh above.")
+elif st.button("⚡ Price All Products", type="primary"):
+    with st.spinner("Computing price recommendations against live signals…"):
+        try:
+            st.session_state.pricing_results = price_all_products(signals)
+        except Exception as e:
+            st.error(f"Pricing error: {e}")
 
-with tab_manual:
-    col1, col2 = st.columns(2)
-    with col1:
-        product = st.text_input("Product name", placeholder="Dr. Theiss Vitamin C 1000mg (20 tabs)")
-        category = st.selectbox(
-            "Category",
-            ["Vitamins & Supplements", "Cold & Flu", "Digestion", "Pain Relief", "Skin Care", "Natural Remedies"],
-        )
-    with col2:
-        current_price = st.number_input("Current price (€)", min_value=0.50, max_value=500.0, value=5.99, step=0.10)
+# ── Results table ──────────────────────────────────────────────────────────────
+if st.session_state.pricing_results:
+    results = st.session_state.pricing_results
+    st.markdown("### 📊 Pricing Recommendations")
 
-    if st.button("Get Pricing Recommendation", type="primary", key="manual_pricing_btn") and product:
-        with st.spinner("Analysing signals and computing recommendation..."):
-            result = get_pricing_recommendation(product, current_price, category)
-        st.markdown("### Pricing Recommendation")
-        if "CHANGE: No change" in result:
-            st.info("📊 No price change recommended")
-        elif "CHANGE: +" in result:
-            st.success("📈 Price increase recommended")
-        elif "CHANGE: -" in result:
-            st.warning("📉 Price decrease recommended")
-        st.code(result, language="markdown")
+    rows = []
+    for r in results:
+        chg     = r.get("change_pct", 0.0)
+        arrow   = "↑" if chg > 0.1 else ("↓" if chg < -0.1 else "→")
+        guardrail = "⚠️ clamped" if r.get("guardrail_triggered") else "✅ within limits"
+        rows.append({
+            "SKU":            r.get("sku", ""),
+            "Product":        r.get("name", ""),
+            "Base (€)":       f"€{r.get('base_price', 0):.2f}",
+            "Recommended (€)": f"€{r.get('final_price', 0):.2f}",
+            "Change":         f"{arrow} {chg:+.1f}%",
+            "Confidence":     r.get("confidence", "—"),
+            "Guardrail":      guardrail,
+        })
+
+    # Color-coded change column not possible in st.dataframe natively,
+    # so we render a styled summary above and the table below.
+    up   = [r for r in results if r.get("change_pct", 0) >  0.1]
+    down = [r for r in results if r.get("change_pct", 0) < -0.1]
+    flat = [r for r in results if abs(r.get("change_pct", 0)) <= 0.1]
+    hit  = [r for r in results if r.get("guardrail_triggered")]
+
+    b1, b2, b3, b4 = st.columns(4)
+    b1.metric("Price increases ↑", len(up),   delta=f"+{sum(r['change_pct'] for r in up)/len(up):.1f}% avg" if up else None)
+    b2.metric("Price decreases ↓", len(down), delta=f"{sum(r['change_pct'] for r in down)/len(down):.1f}% avg" if down else None, delta_color="inverse")
+    b3.metric("No change →",       len(flat))
+    b4.metric("Guardrail triggered", len(hit), delta="clamped" if hit else None, delta_color="off")
+
+    st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
+
+    # Per-product reasoning expanders
+    st.markdown("#### Reasoning per product")
+    for r in results:
+        chg = r.get("change_pct", 0.0)
+        icon = "📈" if chg > 0.1 else ("📉" if chg < -0.1 else "➡️")
+        with st.expander(f"{icon} {r.get('name', '')} — {chg:+.1f}%"):
+            sc1, sc2, sc3 = st.columns(3)
+            sc1.metric("Base price",        f"€{r.get('base_price', 0):.2f}")
+            sc2.metric("Recommended price", f"€{r.get('final_price', 0):.2f}", delta=f"{chg:+.1f}%")
+            sc3.metric("Confidence",        r.get("confidence", "—"))
+
+            sigs = r.get("signals_applied", [])
+            if sigs:
+                st.markdown("**Signals applied:** " + " · ".join(f"`{s}`" for s in sigs))
+            if r.get("guardrail_triggered"):
+                st.warning(f"Guardrail triggered — LLM suggested €{r.get('recommended_price', 0):.2f}, clamped to €{r.get('final_price', 0):.2f} (±{MAX_INCREASE_PCT:.0f}%/{MAX_DECREASE_PCT:.0f}% band)")
+            st.markdown(f"**Reasoning:** {r.get('reasoning', '—')}")

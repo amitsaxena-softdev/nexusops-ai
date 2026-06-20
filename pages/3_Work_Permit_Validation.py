@@ -2,24 +2,18 @@ import re
 import io
 import streamlit as st
 import pdfplumber
-from pathlib import Path
-from agents.work_permit_agent import validate_permit, validate_permit_text
-from shared.file_utils import read_sample
+from agents.work_permit_agent import validate_permit
+from shared.file_utils import mime_for
 
 st.set_page_config(page_title="Work Permit Validation — Leistenschneider", page_icon="📋")
 st.title("📋 Work Permit Validation Agent")
 st.caption("Client: Leistenschneider Personaldienstleistungen GmbH (Saarbrücken) — Instant permit validation with confidence score")
 
-PERMITS_DIR = Path("samples/work_permits")
-SAMPLE_PERMITS = sorted(PERMITS_DIR.iterdir()) if PERMITS_DIR.exists() else []
-
 
 def _parse_result(text: str) -> dict:
     inner = re.search(r'---\s*(.*?)\s*---', text, re.DOTALL)
     content = inner.group(1) if inner else text
-    fields = {}
-    current_key = None
-    current_lines = []
+    fields, current_key, current_lines = {}, None, []
     for line in content.strip().split('\n'):
         m = re.match(r'^([A-Za-z][A-Za-z0-9 &\/]+):\s*(.*)', line, re.IGNORECASE)
         if m:
@@ -35,36 +29,26 @@ def _parse_result(text: str) -> dict:
     return fields
 
 
-def _show_doc_preview(file_bytes: bytes, filename: str = "permit.pdf"):
-    st.download_button(
-        "⬇ Download PDF",
-        data=file_bytes,
-        file_name=filename,
-        mime="application/pdf",
-        use_container_width=True,
-    )
+def _show_doc_preview(file_bytes: bytes, filename: str):
+    st.download_button("⬇ Download PDF", data=file_bytes, file_name=filename,
+                       mime="application/pdf", use_container_width=True)
     try:
         with pdfplumber.open(io.BytesIO(file_bytes)) as pdf:
             text = "\n".join(p.extract_text() or "" for p in pdf.pages).strip()
+        text = re.sub(r'SYNTHETISCHE TESTDATEN.*?Sample ID:.*', '', text, flags=re.DOTALL).strip()
     except Exception:
         text = "(Could not extract document text)"
-
-    # Strip the specimen footer so the preview looks clean
-    text = re.sub(
-        r'SYNTHETISCHE TESTDATEN.*?Sample ID:.*', '', text, flags=re.DOTALL
-    ).strip()
-
     st.markdown(f"""
 <div style="background:#ffffff; border:1px solid #d0d7de; border-radius:8px;
-            padding:20px 22px; height:500px; overflow-y:auto;
+            padding:20px 22px; height:460px; overflow-y:auto;
             font-family:'Courier New', monospace; font-size:11.5px;
             line-height:1.8; color:#24292f; white-space:pre-wrap;">{text}</div>
 """, unsafe_allow_html=True)
 
 
-def _show_result(result: str, file_bytes: bytes = None):
+def _show_result(result: str, file_bytes: bytes = None, filename: str = "permit.pdf"):
     fields = _parse_result(result)
-    valid = fields.get("VALID WORK PERMIT", "").upper()
+    valid  = fields.get("VALID WORK PERMIT", "").upper()
 
     if "YES" in valid:
         color, icon, label = "#14532d", "✅", "VALID — Employment Permitted"
@@ -76,15 +60,13 @@ def _show_result(result: str, file_bytes: bytes = None):
         color, icon, label = "#78350f", "⚠️", "UNCERTAIN — Manual Review Required"
         bg, border = "#fffbeb", "#d97706"
 
-    # Two-column layout when a PDF is available
-    if file_bytes:
+    if file_bytes and filename.lower().endswith(".pdf"):
         col_left, col_right = st.columns([1, 1])
     else:
         col_left = st.container()
         col_right = None
 
     with col_left:
-        # Verdict banner
         st.markdown(f"""
 <div style="background:{bg}; border:2px solid {border}; border-radius:10px;
             padding:16px 20px; margin-bottom:18px;">
@@ -117,60 +99,29 @@ def _show_result(result: str, file_bytes: bytes = None):
         else:
             st.success("No red flags detected")
 
-        with st.expander("Raw output"):
-            st.code(result, language="markdown")
-
-    if col_right is not None and file_bytes:
+    if col_right is not None:
         with col_right:
             st.markdown("**Document Preview**")
-            _show_doc_preview(file_bytes)
+            _show_doc_preview(file_bytes, filename)
 
 
-# ── TABS ──────────────────────────────────────────────────────────────────────
-tab_sample, tab_upload, tab_text = st.tabs(["📂 Load Sample", "⬆️ Upload Document", "✏️ Manual Entry"])
+# ── Upload ────────────────────────────────────────────────────────────────────
+uploaded_files = st.file_uploader(
+    "Upload work permits / Aufenthaltstitel",
+    type=["pdf", "png", "jpg", "jpeg"],
+    accept_multiple_files=True,
+)
+st.caption("💡 To upload an entire folder, open it in the file picker and press **Ctrl+A** (or **⌘+A** on Mac).")
 
-with tab_sample:
-    if not SAMPLE_PERMITS:
-        st.info("No sample permits found in samples/work_permits/")
-    else:
-        permit_names = {f.name: f for f in SAMPLE_PERMITS}
-        chosen = st.selectbox(
-            "Pick a sample permit", list(permit_names.keys()),
-            help="valid_01/02 → should pass  |  invalid_01 → expired  |  invalid_02 → student permit, employment not allowed"
-        )
-        selected = permit_names[chosen]
-        if st.button("Validate This Permit", type="primary", key="sample_permit_btn"):
-            file_bytes = read_sample(selected)
-            with st.spinner("Validating..."):
-                result = validate_permit(file_bytes, "application/pdf")
-            _show_result(result, file_bytes)
+if uploaded_files:
+    n = len(uploaded_files)
+    st.caption(f"{n} file{'s' if n > 1 else ''} selected")
 
-with tab_upload:
-    uploaded = st.file_uploader(
-        "Upload work permit / Aufenthaltstitel (PDF or image)",
-        type=["pdf", "png", "jpg", "jpeg"],
-    )
-    if uploaded:
-        is_pdf = uploaded.name.lower().endswith(".pdf")
-        ext = uploaded.name.rsplit(".", 1)[-1].lower()
-        mime = "application/pdf" if is_pdf else f"image/{ext}"
-
-        if not is_pdf:
-            st.image(uploaded, caption="Uploaded document", use_container_width=True)
-
-        if st.button("Validate Document", type="primary", key="upload_permit_btn"):
-            file_bytes = uploaded.read()
-            with st.spinner("Validating work permit..."):
-                result = validate_permit(file_bytes, mime)
-            _show_result(result, file_bytes if is_pdf else None)
-
-with tab_text:
-    text = st.text_area(
-        "Describe the document or paste extracted text",
-        placeholder="Name: John Smith\nPermit type: Aufenthaltserlaubnis §18a\nValid until: 31.12.2025\n...",
-        height=200,
-    )
-    if st.button("Validate", key="text_permit_btn") and text:
-        with st.spinner("Validating..."):
-            result = validate_permit_text(text)
-        _show_result(result)
+    if st.button("▶ Validate All Permits", type="primary"):
+        for f in uploaded_files:
+            file_bytes = f.read()
+            with st.spinner(f"Validating **{f.name}**…"):
+                result = validate_permit(file_bytes, mime_for(f.name))
+            with st.container(border=True):
+                st.markdown(f"**📄 {f.name}**")
+                _show_result(result, file_bytes, f.name)
