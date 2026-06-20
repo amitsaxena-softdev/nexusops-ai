@@ -169,119 +169,140 @@ def _process_file(f: Path) -> dict:
 # ── TABS ───────────────────────────────────────────────────────────────────────
 tab_inbox, tab_single = st.tabs(["📬 Finance Inbox", "✉️ Simulate Single Email"])
 
-# ══════════════════════════════════════════════════════════════════════════════
+def _update_metrics(slot, processed, forwarded, held, total):
+    with slot.container():
+        c = st.columns(4)
+        c[0].metric("Total Emails", total)
+        c[1].metric("Processed", f"{processed}/{total}")
+        c[2].metric("✅ Forwarded", forwarded)
+        c[3].metric("⚠️ On Hold", held)
+
+
+def _render_row(slot, f, result=None, forwarded=False):
+    meta = MOCK_EMAILS.get(f.name, {})
+    manifest_row = MANIFEST.get(f.name, {})
+    expected_total = manifest_row.get("total", "")
+    invoice_type = manifest_row.get("invoice_type", "")
+    quality = manifest_row.get("quality", "")
+    quality_icon = "📸" if "bad" in quality.lower() else "✅"
+    quality_desc = quality.replace("bad", "").strip().strip("()") if "bad" in quality.lower() else "Good quality"
+
+    with slot.container(border=True):
+        col_info, col_badge = st.columns([5, 1])
+        with col_info:
+            st.markdown(f"📧 **{meta.get('from_name', f.name)}** &nbsp; {quality_icon} *{quality_desc}*")
+            st.caption(f"{meta.get('subject', '')} · 📎 `{f.name}`")
+            if invoice_type or expected_total:
+                st.caption(f"{invoice_type}{(' · Expected: ' + expected_total) if expected_total else ''}")
+        with col_badge:
+            if result is None:
+                st.caption("📬 Unread")
+            else:
+                status_raw = result["fields"].get("STATUS", result["fields"].get("VALIDITY", ""))
+                _, _, s_label = _status_style(status_raw)
+                if forwarded:
+                    st.success("Forwarded")
+                elif "INCOMPLETE" in s_label.upper() or "REVIEW" in s_label.upper():
+                    st.warning("On Hold")
+                elif "NOT AN INVOICE" in s_label.upper() or "REJECTED" in s_label.upper():
+                    st.error("Not invoice")
+                else:
+                    st.success("Forwarded")
+
+        if result:
+            fields = result["fields"]
+            status_raw = fields.get("STATUS", fields.get("VALIDITY", ""))
+            dept = fields.get("ROUTED TO", "—")
+            amount = fields.get("TOTAL AMOUNT", "")
+            _, _, s_label = _status_style(status_raw)
+            can_forward = "NOT AN INVOICE" not in s_label.upper() and "REJECTED" not in s_label.upper()
+
+            def _norm(s): return re.sub(r"[^0-9]", "", s or "")
+            accuracy_ok = _norm(amount) == _norm(expected_total) if expected_total else None
+            acc_str = (" · ✅ amount correct" if accuracy_ok is True
+                       else (f" · ⚠️ expected {expected_total}" if accuracy_ok is False else ""))
+
+            if forwarded:
+                st.success(f"✅ Forwarded to **{dept}** · {amount}{acc_str}")
+            elif not can_forward:
+                st.error("❌ Not an invoice — returned to sender")
+            else:
+                st.warning(f"⚠️ On hold — Finance following up · {dept}")
+
+            with st.expander("Details"):
+                st.code(result["raw"], language="markdown")
+
+
 with tab_inbox:
     if not SAMPLE_FILES:
         st.info("No sample invoices found in samples/invoices/")
     else:
         results = st.session_state.inbox_results
-        processed = len(results)
+        forwarded_set = st.session_state.inbox_forwarded
         total = len(SAMPLE_FILES)
-        forwarded_count = len(st.session_state.inbox_forwarded)
 
-        # ── Inbox header ──────────────────────────────────────────────────────
         col_hdr, col_btn = st.columns([3, 1])
         with col_hdr:
-            st.markdown(
-                f"**📬 finanzen@globus.de** &nbsp;·&nbsp; "
-                f"`{total}` emails &nbsp;·&nbsp; "
-                f"`{processed}` processed &nbsp;·&nbsp; "
-                f"`{forwarded_count}` forwarded"
-            )
+            st.markdown("**📬 finanzen@globus.de** — Finance inbox")
         with col_btn:
-            if st.button("▶ Process & Route All Invoices", type="primary", use_container_width=True):
-                st.session_state.inbox_forwarded = set()
-                st.session_state.inbox_results = {}
-                new_results = {}
-                bar = st.progress(0, text="Starting…")
-                for i, f in enumerate(SAMPLE_FILES):
-                    meta = MOCK_EMAILS.get(f.name, {})
-                    sender = meta.get("from_name", f.name)
-                    bar.progress((i + 1) / total, text=f"Reading invoice from {sender}…")
-                    new_results[f.name] = _process_file(f)
-                bar.empty()
-                # Auto-forward all processable invoices immediately
-                auto_forwarded = set()
-                for name, r in new_results.items():
-                    s = r["fields"].get("STATUS", r["fields"].get("VALIDITY", "")).upper()
-                    if "NOT AN INVOICE" not in s and "REJECTED" not in s:
-                        auto_forwarded.add(name)
-                st.session_state.inbox_forwarded = auto_forwarded
-                st.session_state.inbox_results = new_results
-                st.rerun()
+            process_clicked = st.button(
+                "▶ Process & Route All", type="primary", use_container_width=True
+            )
 
-        if results:
-            ready = sum(1 for n, r in results.items()
-                        if n in st.session_state.inbox_forwarded)
-            held = len(results) - ready
-            cols = st.columns(3)
-            cols[0].metric("Forwarded", ready)
-            cols[1].metric("Held / Incomplete", held)
-            cols[2].metric("Total Emails", len(results))
+        # Dynamic slots — updated in real time during processing
+        metrics_slot = st.empty()
+        bar_slot = st.empty()
+
+        # Show current metrics from session state (before any click)
+        if results and not process_clicked:
+            _update_metrics(metrics_slot, len(results), len(forwarded_set),
+                            len(results) - len(forwarded_set), total)
 
         st.divider()
 
-        # ── Inbox rows ────────────────────────────────────────────────────────
-        for f in SAMPLE_FILES:
-            meta = MOCK_EMAILS.get(f.name, {})
-            result = results.get(f.name)
-            forwarded = f.name in st.session_state.inbox_forwarded
-            manifest_row = MANIFEST.get(f.name, {})
-            expected_total = manifest_row.get("total", "")
-            invoice_type = manifest_row.get("invoice_type", "")
-            quality = manifest_row.get("quality", "")
-            quality_icon = "📸" if "bad" in quality.lower() else "✅"
-            quality_desc = quality.replace("bad", "").strip().strip("()") if "bad" in quality.lower() else "Good quality"
+        # Row slots created upfront — filled below
+        row_slots = [st.empty() for _ in SAMPLE_FILES]
 
-            if result:
-                fields = result["fields"]
-                status_raw = fields.get("STATUS", fields.get("VALIDITY", ""))
-                dept = fields.get("ROUTED TO", "—")
-                amount = fields.get("TOTAL AMOUNT", "")
-                _, _, s_label = _status_style(status_raw)
-                can_forward = "NOT AN INVOICE" not in s_label and "REJECTED" not in s_label
-                # Accuracy check
-                def _norm(s): return re.sub(r"[^0-9]", "", s or "")
-                accuracy_ok = _norm(amount) == _norm(expected_total) if expected_total else None
-            else:
-                dept, amount, s_label, can_forward, accuracy_ok = "—", "", "Unprocessed", False, None
+        if process_clicked:
+            # Reset
+            st.session_state.inbox_results = {}
+            st.session_state.inbox_forwarded = set()
+            new_results = {}
+            auto_forwarded = set()
 
-            with st.container(border=True):
-                col_info, col_badge = st.columns([5, 1])
-                with col_info:
-                    st.markdown(
-                        f"📧 **{meta.get('from_name', f.name)}** &nbsp; "
-                        f"{quality_icon} *{quality_desc}*"
-                    )
-                    st.caption(f"{meta.get('subject', '')} · 📎 `{f.name}`")
-                    if invoice_type or expected_total:
-                        st.caption(f"{invoice_type}{' · Expected: ' + expected_total if expected_total else ''}")
-                with col_badge:
-                    if not result:
-                        st.caption("● Pending")
-                    elif "READY" in s_label.upper() or forwarded:
-                        st.success("Ready")
-                    elif "INCOMPLETE" in s_label.upper():
-                        st.warning("Incomplete")
-                    else:
-                        st.error("Not invoice")
+            # Show all emails as unread immediately
+            for i, f in enumerate(SAMPLE_FILES):
+                _render_row(row_slots[i], f, None, False)
 
-                if result:
-                    acc_str = ""
-                    if accuracy_ok is True:
-                        acc_str = " · ✅ amount correct"
-                    elif accuracy_ok is False:
-                        acc_str = f" · ⚠️ expected {expected_total}"
+            _update_metrics(metrics_slot, 0, 0, 0, total)
+            bar = bar_slot.progress(0, text="Starting…")
 
-                    if forwarded:
-                        st.success(f"✅ Forwarded to **{dept}** · Extracted: {amount}{acc_str}")
-                    elif not can_forward:
-                        st.error("❌ Not an invoice — returned to sender")
-                    else:
-                        st.warning(f"⚠️ On hold — Finance following up with vendor · {dept}")
+            for i, f in enumerate(SAMPLE_FILES):
+                sender = MOCK_EMAILS.get(f.name, {}).get("from_name", f.name)
+                bar.progress((i + 1) / total, text=f"Processing invoice from {sender}…")
 
-                    with st.expander("Details"):
-                        st.code(result["raw"], language="markdown")
+                result = _process_file(f)
+                new_results[f.name] = result
+
+                s = result["fields"].get("STATUS", result["fields"].get("VALIDITY", "")).upper()
+                if "NOT AN INVOICE" not in s and "REJECTED" not in s:
+                    auto_forwarded.add(f.name)
+
+                # Update this row immediately
+                _render_row(row_slots[i], f, result, f.name in auto_forwarded)
+
+                # Update metrics immediately
+                fwd = len(auto_forwarded)
+                _update_metrics(metrics_slot, i + 1, fwd, (i + 1) - fwd, total)
+
+            bar_slot.empty()
+            st.session_state.inbox_results = new_results
+            st.session_state.inbox_forwarded = auto_forwarded
+
+        else:
+            # Restore from session state on any non-button render
+            for i, f in enumerate(SAMPLE_FILES):
+                _render_row(row_slots[i], f, results.get(f.name), f.name in forwarded_set)
 
 # ══════════════════════════════════════════════════════════════════════════════
 with tab_single:
