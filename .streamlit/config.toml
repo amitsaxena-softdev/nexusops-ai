@@ -2,3 +2,8 @@
 base = "dark"
 primaryColor = "#6366f1"
 font = "sans serif"
+
+[client]
+# Disable Streamlit's auto-generated multipage nav at config time (before first
+# paint) so the drawer never flashes on load. Each page renders its own sidebar.
+showSidebarNavigation = false
