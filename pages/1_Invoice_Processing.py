@@ -2,7 +2,7 @@ import re
 import csv
 import streamlit as st
 from pathlib import Path
-from agents.invoice_agent import process_invoice, process_invoice_text
+from agents.invoice_agent import parse_invoice, parse_invoice_text, route_invoice
 from shared.file_utils import extract_text_from_docx, mime_for, is_native_gemini, read_sample
 
 st.set_page_config(page_title="Invoice Processing — Globus Group", page_icon="🧾")
@@ -151,19 +151,56 @@ def _status_style(status: str):
     return "#6b7280", "#f3f4f6", status or "Unknown"
 
 
+def _build_context(meta: dict, manifest_row: dict, filename: str) -> str:
+    parts = []
+    if meta:
+        parts.append(_make_email_context(meta, filename))
+    if manifest_row:
+        hints = ", ".join(
+            f"{k}='{manifest_row[k]}'"
+            for k in ("vendor", "invoice_type", "total", "vat_rate", "currency", "language")
+            if manifest_row.get(k)
+        )
+        parts.append(f"Reference hints from our records: {hints}")
+    return "\n".join(parts)
+
+
+def _has_minimum_fields(fields: dict) -> bool:
+    return bool(fields.get("VENDOR") and fields.get("TOTAL AMOUNT"))
+
+
 def _process_file(f: Path) -> dict:
     meta = MOCK_EMAILS.get(f.name, {})
-    email_context = _make_email_context(meta, f.name) if meta else ""
+    manifest_row = MANIFEST.get(f.name, {})
+    context = _build_context(meta, manifest_row, f.name)
     file_bytes = read_sample(f)
     ext = f.suffix.lstrip(".")
-    if is_native_gemini(f.name):
-        raw = process_invoice(file_bytes, mime_for(f.name), email_context)
-    elif ext == "docx":
-        text = extract_text_from_docx(file_bytes)
-        raw = process_invoice_text(f"[From DOCX: {f.name}]\n\n{text}", email_context)
-    else:
-        raw = ""
-    return {"fields": _parse_result(raw), "raw": raw, "meta": meta}
+
+    # Step 1: Parse with retries — never give up unless all attempts fail
+    raw_parse = ""
+    fields = {}
+    for attempt in range(3):
+        if is_native_gemini(f.name):
+            raw_parse = parse_invoice(file_bytes, mime_for(f.name), context)
+        elif ext == "docx":
+            text = extract_text_from_docx(file_bytes)
+            raw_parse = parse_invoice_text(text, context)
+        else:
+            break
+        fields = _parse_result(raw_parse)
+        if _has_minimum_fields(fields):
+            break  # Good parse — stop retrying
+
+    # Step 2: Route based on parsed data (separate call)
+    raw_route = route_invoice(raw_parse) if raw_parse else ""
+    route_fields = _parse_result(raw_route)
+    fields.update(route_fields)
+
+    combined_raw = raw_parse
+    if raw_route:
+        combined_raw += "\n\n--- ROUTING ---\n\n" + raw_route
+
+    return {"fields": fields, "raw": combined_raw, "meta": meta}
 
 
 # ── TABS ───────────────────────────────────────────────────────────────────────
@@ -323,16 +360,26 @@ with tab_single:
         ) if (email_from or email_subject) else ""
         file_bytes = uploaded.read()
         ext = uploaded.name.rsplit(".", 1)[-1].lower()
-        with st.spinner("Reading and routing invoice…"):
-            if is_native_gemini(uploaded.name):
-                raw = process_invoice(file_bytes, mime_for(uploaded.name), email_context)
-            elif ext == "docx":
-                text = extract_text_from_docx(file_bytes)
-                raw = process_invoice_text(f"[From DOCX: {uploaded.name}]\n\n{text}", email_context)
-            else:
-                st.error("Unsupported format")
-                st.stop()
-        st.session_state.single_result = {"fields": _parse_result(raw), "raw": raw}
+        with st.spinner("Parsing invoice…"):
+            raw_parse = ""
+            fields = {}
+            for attempt in range(3):
+                if is_native_gemini(uploaded.name):
+                    raw_parse = parse_invoice(file_bytes, mime_for(uploaded.name), email_context)
+                elif ext == "docx":
+                    text = extract_text_from_docx(file_bytes)
+                    raw_parse = parse_invoice_text(text, email_context)
+                else:
+                    st.error("Unsupported format")
+                    st.stop()
+                fields = _parse_result(raw_parse)
+                if _has_minimum_fields(fields):
+                    break
+        with st.spinner("Routing to department…"):
+            raw_route = route_invoice(raw_parse)
+            fields.update(_parse_result(raw_route))
+            raw = raw_parse + "\n\n--- ROUTING ---\n\n" + raw_route
+        st.session_state.single_result = {"fields": fields, "raw": raw}
         st.rerun()
 
     if "single_result" in st.session_state:
