@@ -26,49 +26,64 @@ with st.expander("👥 View available staff database"):
         )
 
 st.divider()
+
+# Initialize session state so demo pre-fill works before widgets render
+for key, default in [
+    ("ward_input", ""),
+    ("qual_input", ""),
+    ("reason_input", ""),
+    ("notes_input", ""),
+]:
+    if key not in st.session_state:
+        st.session_state[key] = default
+
 st.markdown("**Describe the shift gap:**")
+
+# Demo button fires BEFORE widgets so session state is set on rerun
+if st.button("⬇ Load demo gap"):
+    st.session_state["ward_input"] = "Intensivstation 3 (ICU)"
+    st.session_state["qual_input"] = "Intensivpflegefachkraft, Beatmung"
+    st.session_state["reason_input"] = "Krankheitsfall — Thomas Kraus"
+    st.session_state["notes_input"] = "Zwei Beatmungspatienten, Erfahrung mit Beatmung zwingend erforderlich"
+    st.rerun()
 
 col1, col2 = st.columns(2)
 with col1:
-    ward = st.text_input("Ward / Department", placeholder="ICU Station 3")
+    ward = st.text_input(
+        "Ward / Department", key="ward_input", placeholder="ICU Station 3"
+    )
     shift_date = st.date_input("Shift Date")
 with col2:
-    shift_time = st.selectbox("Shift", ["Night (22:00–06:00)", "Day (06:00–14:00)", "Late (14:00–22:00)"])
-    qualification = st.text_input("Required Qualification", placeholder="Intensivpflegefachkraft / ICU")
+    shift_time = st.selectbox(
+        "Shift", ["Night (22:00–06:00)", "Day (06:00–14:00)", "Late (14:00–22:00)"]
+    )
+    qualification = st.text_input(
+        "Required Qualification", key="qual_input",
+        placeholder="Intensivpflegefachkraft / ICU"
+    )
 
-reason = st.text_input("Reason for gap", placeholder="Called in sick — Anna Weber")
+reason = st.text_input(
+    "Reason for gap", key="reason_input", placeholder="Called in sick — Anna Weber"
+)
 notes = st.text_area(
-    "Additional notes",
+    "Additional notes", key="notes_input",
     placeholder="High patient load expected, minimum 2 years ICU experience required",
     height=80,
 )
 
-col_demo, col_run = st.columns([1, 2])
-with col_demo:
-    if st.button("Load demo gap"):
-        st.session_state["demo_gap"] = True
-        st.rerun()
-
-if st.session_state.get("demo_gap"):
-    ward = "Intensivstation 3 (ICU)"
-    qualification = "Intensivpflegefachkraft, Beatmung"
-    reason = "Krankheitsfall — Thomas Kraus"
-    notes = "Zwei Beatmungspatienten, Erfahrung mit Beatmung zwingend erforderlich"
-
-with col_run:
-    if st.button("Find Available Staff & Draft Messages", type="primary"):
-        if ward and qualification:
-            gap = (
-                f"Ward: {ward}\n"
-                f"Date: {shift_date}\n"
-                f"Shift: {shift_time}\n"
-                f"Required qualification: {qualification}\n"
-                f"Reason: {reason}\n"
-                f"Notes: {notes}"
-            )
-            with st.spinner("Searching staff database and drafting messages..."):
-                result = find_staff(gap)
-            st.markdown("### Recommended Staff & Draft Messages")
-            st.markdown(result)
-        else:
-            st.warning("Please fill in ward and required qualification at minimum.")
+if st.button("Find Available Staff & Draft Messages", type="primary"):
+    if ward and qualification:
+        gap = (
+            f"Ward: {ward}\n"
+            f"Date: {shift_date}\n"
+            f"Shift: {shift_time}\n"
+            f"Required qualification: {qualification}\n"
+            f"Reason: {reason}\n"
+            f"Notes: {notes}"
+        )
+        with st.spinner("Searching staff database and drafting messages..."):
+            result = find_staff(gap)
+        st.markdown("### Recommended Staff & Draft Messages")
+        st.markdown(result)
+    else:
+        st.warning("Please fill in ward and required qualification at minimum.")

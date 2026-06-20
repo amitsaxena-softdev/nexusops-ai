@@ -9,7 +9,7 @@ st.caption("Client: Dr. Theiss Naturwaren GmbH (Homburg) — Signal-driven prici
 
 DR_THEISS_DATA = Path("samples/dr_theiss_data.pdf")
 
-with st.expander("📡 Live signals used today"):
+with st.expander("📡 Simulated market signals (demo)"):
     for k, v in MOCK_SIGNALS.items():
         st.markdown(f"**{k.title()}:** {v}")
 
