@@ -185,7 +185,7 @@ def _show_result(fields, raw_text):
 
 
 # ── TABS ──────────────────────────────────────────────────────────────────────
-tab_sample, tab_upload, tab_text = st.tabs(["📂 Load Sample", "⬆️ Upload Invoice", "✏️ Paste Text"])
+tab_sample, tab_upload, tab_text = st.tabs(["📂 Sample Email Inbox", "✉️ Simulate Email", "✏️ Paste Text"])
 
 with tab_sample:
     if not SAMPLE_FILES:
@@ -220,15 +220,18 @@ with tab_sample:
             _show_result(_parse_result(result), result)
 
 with tab_upload:
-    uploaded = st.file_uploader(
-        "Upload invoice (PDF, PNG, JPG, DOCX)", type=["pdf", "png", "jpg", "jpeg", "docx"]
-    )
-    with st.expander("Add email context (optional)"):
-        email_from = st.text_input("From", placeholder="billing@vendor.com")
+    st.markdown("**Simulate an incoming supplier email with an invoice attachment.**")
+    col_a, col_b = st.columns(2)
+    with col_a:
+        email_from = st.text_input("From (sender)", placeholder="billing@vendor.com")
+    with col_b:
         email_subject = st.text_input("Subject", placeholder="Invoice #1234 – June 2026")
-        email_body = st.text_area("Email body snippet", placeholder="Please find attached...", height=80)
+    email_body = st.text_area("Email body", placeholder="Please find attached our invoice for...", height=80)
+    uploaded = st.file_uploader(
+        "📎 Attach invoice (PDF, PNG, JPG, DOCX)", type=["pdf", "png", "jpg", "jpeg", "docx"]
+    )
 
-    if uploaded and st.button("Analyse Invoice", key="upload_btn"):
+    if uploaded and st.button("📨 Process Email", type="primary", key="upload_btn"):
         file_bytes = uploaded.read()
         ext = uploaded.name.rsplit(".", 1)[-1].lower()
         email_context = ""
