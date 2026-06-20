@@ -6,8 +6,10 @@ import streamlit as st
 
 from agents.shift_agent import find_staff
 from shared.file_utils import extract_text_from_xlsx, read_sample
+from shared.theme import apply_theme
 
 st.set_page_config(page_title="Shift Replacement — UKS", page_icon="🏥")
+apply_theme()
 st.title("🏥 Shift Replacement Agent")
 st.caption("Client: Universitätsklinikum des Saarlandes (Homburg) — Fill last-minute shift gaps instantly")
 

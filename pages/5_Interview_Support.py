@@ -4,8 +4,10 @@ from agents.interview_agent import (
     extract_cv_summary, fetch_job_from_indeed, generate_feedback_letter,
 )
 from shared.file_utils import mime_for
+from shared.theme import apply_theme
 
 st.set_page_config(page_title="Interview Support — Kohlpharma", page_icon="💼")
+apply_theme()
 st.title("💼 Interview Support Agent")
 st.caption("Client: Kohlpharma GmbH (Merzig) — AI interview coach for non-technical hiring managers")
 

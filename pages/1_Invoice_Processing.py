@@ -5,8 +5,10 @@ import streamlit as st
 from pathlib import Path
 from agents.invoice_agent import parse_invoice, parse_invoice_text, route_invoice
 from shared.file_utils import extract_text_from_docx, mime_for, is_native_gemini, read_sample
+from shared.theme import apply_theme
 
 st.set_page_config(page_title="Invoice Processing — Globus Group", page_icon="🧾")
+apply_theme()
 st.title("🧾 Invoice Processing Agent")
 st.caption("Client: Globus Group (St. Wendel) — Automated invoice routing from the Finance inbox")
 

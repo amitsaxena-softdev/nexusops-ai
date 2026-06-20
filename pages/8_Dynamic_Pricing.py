@@ -5,8 +5,10 @@ from agents.pricing_agent import (
     DR_THEISS_PRODUCTS, MAX_DECREASE_PCT, MAX_INCREASE_PCT, PRICE_FLOOR_PCT,
     fetch_live_signals, price_all_products,
 )
+from shared.theme import apply_theme
 
 st.set_page_config(page_title="Dynamic Pricing — Dr. Theiss", page_icon="💰")
+apply_theme()
 st.title("💰 Dynamic Pricing Agent")
 st.caption("Client: Dr. Theiss Naturwaren GmbH (Homburg) — Signal-driven pricing engine with guardrails")
 

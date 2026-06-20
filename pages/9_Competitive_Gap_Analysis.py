@@ -6,8 +6,10 @@ from agents.competitive_agent import (
     extract_products_from_file, fetch_category_intel,
     analyse_portfolio, send_followup,
 )
+from shared.theme import apply_theme
 
 st.set_page_config(page_title="Competitive Gap Analysis", page_icon="🔭")
+apply_theme()
 st.title("🔭 Competitive Gap Analysis Agent")
 st.caption("Upload a product catalog, benchmark it against competitors, and surface white-space gaps.")
 

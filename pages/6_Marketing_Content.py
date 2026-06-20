@@ -1,7 +1,9 @@
 import streamlit as st
 from agents.marketing_agent import create_content, DR_THEISS_CATALOG
+from shared.theme import apply_theme
 
 st.set_page_config(page_title="Marketing Content — Dr. Theiss", page_icon="🎬")
+apply_theme()
 st.title("🎬 Marketing Content / Filmmaker Agent")
 st.caption("Client: Dr. Theiss Naturwaren GmbH (Homburg) — Studio-quality reel storyboards with TikTok/Instagram safe zones")
 

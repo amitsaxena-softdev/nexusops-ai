@@ -6,8 +6,10 @@ import pandas as pd
 import streamlit as st
 
 from agents.analytics_agent import build_stats_summary, generate_targeting_signals
+from shared.theme import apply_theme
 
 st.set_page_config(page_title="Customer Analytics — Dr. Theiss", page_icon="📊")
+apply_theme()
 st.title("📊 Customer Analytics Agent")
 st.caption("Client: Dr. Theiss Naturwaren GmbH (Homburg) — Behavioural patterns, targeting signals, and campaign lift measurement")
 

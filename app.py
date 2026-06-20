@@ -1,5 +1,6 @@
 import streamlit as st
 import streamlit.components.v1 as components
+from shared.theme import apply_theme
 
 st.set_page_config(
     page_title="NexusOps AI",
@@ -14,35 +15,25 @@ if "theme" not in st.session_state:
 
 D = st.session_state.theme == "dark"
 
-# ── Colour tokens ──────────────────────────────────────────────────────────────
-BG         = "#08080f"  if D else "#f8fafc"
-BG_SIDE    = "#0c0c18"  if D else "#f1f5f9"
-CARD_BG    = "rgba(255,255,255,0.025)" if D else "rgba(0,0,0,0.028)"
-CARD_BD    = "rgba(255,255,255,0.06)"  if D else "rgba(0,0,0,0.08)"
-TEXT       = "#f1f5f9"  if D else "#0f172a"
-MUTED      = "rgba(255,255,255,0.28)"  if D else "rgba(0,0,0,0.38)"
-DESC       = "rgba(255,255,255,0.3)"   if D else "rgba(0,0,0,0.42)"
-SEP        = "rgba(255,255,255,0.07)"  if D else "rgba(0,0,0,0.08)"
-SECTION_C  = "rgba(255,255,255,0.18)"  if D else "rgba(0,0,0,0.22)"
-FOOTER_C   = "rgba(255,255,255,0.12)"  if D else "rgba(0,0,0,0.2)"
-GRID_CLR   = "rgba(99,102,241,0.045)"  if D else "rgba(99,102,241,0.055)"
-GLOW_CLR   = "rgba(99,102,241,0.13)"   if D else "rgba(99,102,241,0.07)"
-NAV_HOVER  = "rgba(99,102,241,0.1)"    if D else "rgba(99,102,241,0.08)"
-NAV_LINK   = "#cbd5e1"  if D else "#334155"
-NAV_CAT    = "rgba(255,255,255,0.22)"  if D else "rgba(0,0,0,0.28)"
+# ── Colour tokens (hero + cards need these) ────────────────────────────────────
+BG        = "#08080f"  if D else "#f8fafc"
+CARD_BG   = "rgba(255,255,255,0.025)" if D else "rgba(0,0,0,0.028)"
+CARD_BD   = "rgba(255,255,255,0.06)"  if D else "rgba(0,0,0,0.08)"
+TEXT      = "#f1f5f9"  if D else "#0f172a"
+MUTED     = "rgba(255,255,255,0.28)"  if D else "rgba(0,0,0,0.38)"
+DESC      = "rgba(255,255,255,0.3)"   if D else "rgba(0,0,0,0.42)"
+SEP       = "rgba(255,255,255,0.07)"  if D else "rgba(0,0,0,0.08)"
+SECTION_C = "rgba(255,255,255,0.18)"  if D else "rgba(0,0,0,0.22)"
+FOOTER_C  = "rgba(255,255,255,0.12)"  if D else "rgba(0,0,0,0.2)"
+GRID_CLR  = "rgba(99,102,241,0.045)"  if D else "rgba(99,102,241,0.055)"
+GLOW_CLR  = "rgba(99,102,241,0.13)"   if D else "rgba(99,102,241,0.07)"
 
-# ── Global CSS ─────────────────────────────────────────────────────────────────
+# ── Global theme: CSS + sidebar ────────────────────────────────────────────────
+apply_theme()
+
+# ── Landing-page-specific CSS (stats bar, section label, cards, footer) ────────
 st.markdown(f"""
 <style>
-/* ── Page background ── */
-html, body, [data-testid="stAppViewContainer"], .stApp {{
-    background: {BG} !important;
-}}
-[data-testid="stHeader"] {{ background: transparent !important; box-shadow: none !important; }}
-#MainMenu, footer {{ visibility: hidden !important; }}
-.stDeployButton {{ display: none !important; }}
-
-/* ── Main content area ── */
 .block-container {{
     padding-top: 0 !important;
     padding-left: 2.5rem !important;
@@ -52,51 +43,6 @@ html, body, [data-testid="stAppViewContainer"], .stApp {{
 }}
 [data-testid="column"] {{ padding: 5px !important; }}
 
-/* ── Sidebar ── */
-section[data-testid="stSidebar"] > div:first-child {{
-    background: {BG_SIDE} !important;
-    border-right: 1px solid {SEP} !important;
-    padding: 0 !important;
-}}
-/* Hide the ugly auto-generated page nav */
-[data-testid="stSidebarNav"] {{ display: none !important; }}
-
-/* ── Sidebar page links ── */
-[data-testid="stPageLink"] {{
-    margin: 1px 0 !important;
-}}
-[data-testid="stPageLink"] a {{
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    padding: 8px 16px !important;
-    border-radius: 9px !important;
-    text-decoration: none !important;
-    font-size: 13px !important;
-    font-weight: 500 !important;
-    color: {NAV_LINK} !important;
-    transition: background 0.15s ease, color 0.15s ease !important;
-    background: transparent !important;
-    border: none !important;
-}}
-[data-testid="stPageLink"] a:hover {{
-    background: {NAV_HOVER} !important;
-    color: #818cf8 !important;
-}}
-
-/* ── Sidebar theme toggle buttons ── */
-[data-testid="stSidebar"] div[data-testid="stButton"] button {{
-    font-size: 12px !important;
-    font-weight: 600 !important;
-    padding: 7px 12px !important;
-    border-radius: 8px !important;
-    height: 34px !important;
-    min-height: unset !important;
-    transition: all 0.15s ease !important;
-    width: 100% !important;
-}}
-
-/* ── Stats bar ── */
 .stats-bar {{
     display: flex; justify-content: center; align-items: center;
     padding: 0 0 36px;
@@ -112,7 +58,6 @@ section[data-testid="stSidebar"] > div:first-child {{
 }}
 .stat-sep {{ width: 1px; height: 40px; background: {SEP}; }}
 
-/* ── Section label ── */
 .section-label {{ text-align: center; margin-bottom: 20px; }}
 .section-label span {{
     font-size: 10px; font-weight: 700; letter-spacing: 4px;
@@ -126,7 +71,6 @@ section[data-testid="stSidebar"] > div:first-child {{
 .section-label span::before {{ right: 100%; }}
 .section-label span::after  {{ left:  100%; }}
 
-/* ── Agent cards ── */
 .nexus-card {{
     position: relative; background: {CARD_BG};
     border: 1px solid {CARD_BD}; border-radius: 18px;
@@ -164,7 +108,6 @@ section[data-testid="stSidebar"] > div:first-child {{
     padding: 3px 8px; border-radius: 100px;
 }}
 
-/* ── Footer ── */
 .nx-footer {{
     text-align: center; padding: 40px 0 20px;
     font-size: 11px; color: {FOOTER_C}; letter-spacing: 1px;
@@ -172,61 +115,6 @@ section[data-testid="stSidebar"] > div:first-child {{
 .nx-footer b {{ color: {SECTION_C}; }}
 </style>
 """, unsafe_allow_html=True)
-
-# ── Sidebar ────────────────────────────────────────────────────────────────────
-NAV = [
-    ("pages/1_Invoice_Processing.py",       "🧾", "Invoice Processing"),
-    ("pages/2_Shift_Replacement.py",         "🏥", "Shift Replacement"),
-    ("pages/3_Work_Permit_Validation.py",    "📋", "Work Permit Validation"),
-    ("pages/4_CV_Fraud_Detection.py",        "🔍", "CV Fraud Detection"),
-    ("pages/5_Interview_Support.py",         "💼", "Interview Support"),
-    ("pages/6_Marketing_Content.py",         "🎬", "Marketing Content"),
-    ("pages/7_Customer_Analytics.py",        "📊", "Customer Analytics"),
-    ("pages/8_Dynamic_Pricing.py",           "💰", "Dynamic Pricing"),
-    ("pages/9_Competitive_Gap_Analysis.py",  "🔭", "Competitive Gap Analysis"),
-    ("pages/10_Secure_Email_Agent.py",       "🛡️", "Secure Email Agent"),
-]
-
-with st.sidebar:
-    # ── Logo ──
-    st.markdown(f"""
-<div style="padding:24px 20px 20px;">
-  <div style="font-size:22px;font-weight:900;letter-spacing:-0.5px;color:{TEXT};line-height:1;">
-    <span style="color:#6366f1;">⚡</span> NexusOps <span style="color:#818cf8;">AI</span>
-  </div>
-  <div style="font-size:9.5px;color:{MUTED};letter-spacing:2.5px;text-transform:uppercase;margin-top:5px;">
-    Enterprise Operations Suite
-  </div>
-</div>
-""", unsafe_allow_html=True)
-
-    # ── Theme toggle ──
-    st.markdown(f'<div style="padding:0 12px 4px;"><div style="font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:{NAV_CAT};margin-bottom:6px;">Appearance</div></div>', unsafe_allow_html=True)
-    t1, t2 = st.columns(2)
-    with t1:
-        if st.button("🌙  Dark",  key="btn_dark",  use_container_width=True,
-                     type="primary" if D else "secondary"):
-            if not D:
-                st.session_state.theme = "dark"; st.rerun()
-    with t2:
-        if st.button("☀️  Light", key="btn_light", use_container_width=True,
-                     type="primary" if not D else "secondary"):
-            if D:
-                st.session_state.theme = "light"; st.rerun()
-
-    st.markdown(f'<hr style="border:none;border-top:1px solid {SEP};margin:18px 0 10px;">', unsafe_allow_html=True)
-
-    # ── Navigation ──
-    GROUPS = [
-        ("HR & Operations", NAV[:5]),
-        ("Dr. Theiss",      NAV[5:9]),
-        ("Security",        NAV[9:]),
-    ]
-    for group_label, pages in GROUPS:
-        st.markdown(f'<div style="padding:6px 16px 3px;font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:{NAV_CAT};">{group_label}</div>', unsafe_allow_html=True)
-        for path, icon, label in pages:
-            st.page_link(path, label=label, icon=icon)
-        st.markdown('<div style="height:6px;"></div>', unsafe_allow_html=True)
 
 # ── Hero ───────────────────────────────────────────────────────────────────────
 components.html(f"""

@@ -4,8 +4,10 @@ import streamlit as st
 import pdfplumber
 from agents.work_permit_agent import validate_permit
 from shared.file_utils import mime_for
+from shared.theme import apply_theme
 
 st.set_page_config(page_title="Work Permit Validation — Leistenschneider", page_icon="📋")
+apply_theme()
 st.title("📋 Work Permit Validation Agent")
 st.caption("Client: Leistenschneider Personaldienstleistungen GmbH (Saarbrücken) — Instant permit validation with confidence score")
 

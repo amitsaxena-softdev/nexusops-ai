@@ -4,8 +4,10 @@ import threading
 import streamlit as st
 from agents.cv_fraud_agent import analyse_document, verify_employers
 from shared.file_utils import mime_for
+from shared.theme import apply_theme
 
 st.set_page_config(page_title="CV Fraud Detection — Persowerk", page_icon="🔍")
+apply_theme()
 st.title("🔍 CV & Certificate Fraud Detection")
 st.caption("Client: Persowerk Deutschland GmbH (Saarbrücken) — Detect AI-generated CVs and fraudulent certificates")
 

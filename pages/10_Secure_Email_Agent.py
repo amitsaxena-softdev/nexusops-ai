@@ -4,8 +4,10 @@ import pandas as pd
 import streamlit as st
 
 from agents.secure_email_agent import process_email
+from shared.theme import apply_theme
 
 st.set_page_config(page_title="Secure Email Agent — Rheinmetall", page_icon="🛡️")
+apply_theme()
 st.title("🛡️ Prompt-Injection-Resistant Email Agent")
 st.caption("Client: Rheinmetall — Securely process job application emails and verify required documents")
 
