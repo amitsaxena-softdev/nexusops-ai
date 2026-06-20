@@ -21,11 +21,11 @@ def _parse_result(text: str) -> dict:
     current_key = None
     current_lines = []
     for line in content.strip().split('\n'):
-        m = re.match(r'^([A-Z][A-Z0-9 &\/]+):\s*(.*)', line)
+        m = re.match(r'^([A-Za-z][A-Za-z0-9 &\/]+):\s*(.*)', line, re.IGNORECASE)
         if m:
             if current_key:
                 fields[current_key] = '\n'.join(current_lines).strip()
-            current_key = m.group(1).strip()
+            current_key = m.group(1).strip().upper()
             val = m.group(2).strip()
             current_lines = [val] if val else []
         elif current_key and line.strip():
