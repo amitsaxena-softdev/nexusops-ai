@@ -1,5 +1,6 @@
 import re
 import csv
+import time
 import streamlit as st
 from pathlib import Path
 from agents.invoice_agent import parse_invoice, parse_invoice_text, route_invoice
@@ -9,122 +10,56 @@ st.set_page_config(page_title="Invoice Processing — Globus Group", page_icon="
 st.title("🧾 Invoice Processing Agent")
 st.caption("Client: Globus Group (St. Wendel) — Automated invoice routing from the Finance inbox")
 
-SAMPLES_DIR = Path("samples/invoices")
+DEMO_EMAIL = "finanzen@globus.de"
+_EMAIL_RE  = re.compile(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
+
+SAMPLES_DIR  = Path("samples/invoices")
 SAMPLE_FILES = sorted([f for f in SAMPLES_DIR.iterdir() if f.suffix != ".csv"]) if SAMPLES_DIR.exists() else []
 
-# Load ground-truth manifest
+MOCK_EMAILS = {
+    "01_stadtwerke_gas_de.pdf":         {"from_name": "Stadtwerke St. Wendel",       "from_email": "rechnung@stadtwerke-stwenden.de",  "subject": "Ihre Rechnung – Gaslieferung Q2 2026",                  "body": "Sehr geehrte Damen und Herren, im Anhang finden Sie unsere aktuelle Rechnung für die Gaslieferung im zweiten Quartal 2026. Bitte überweisen Sie den Betrag innerhalb von 14 Tagen."},
+    "02_microsoft_licenses_en.pdf":     {"from_name": "Microsoft Billing",            "from_email": "invoicing@microsoft.com",           "subject": "Microsoft Invoice – Enterprise License Renewal 2026",  "body": "Dear Globus Group, please find attached your invoice for the annual renewal of your Microsoft 365 enterprise licenses. Payment is due within 30 days."},
+    "03_eon_strom_de.png":              {"from_name": "E.ON Energie Deutschland",     "from_email": "rechnung@eon.de",                   "subject": "E.ON Stromrechnung – Juni 2026",                       "body": "Sehr geehrte Damen und Herren, anbei erhalten Sie Ihre Stromrechnung für den aktuellen Abrechnungszeitraum."},
+    "04_aws_cloud_en.docx":             {"from_name": "Amazon Web Services",          "from_email": "aws-invoices@amazon.com",            "subject": "AWS Invoice – May 2026 Usage Statement",               "body": "Hello, your AWS invoice for the billing period May 2026 is attached."},
+    "05_buerobedarf_de.png":            {"from_name": "Office Partner GmbH",          "from_email": "rechnung@officepartner.de",          "subject": "Rechnung Bürobedarf – Bestellung Nr. BP-2026-0541",    "body": "Sehr geehrte Damen und Herren, im Anhang finden Sie die Rechnung für die gelieferten Büromaterialien."},
+    "06_brightpath_consulting_en.docx": {"from_name": "Brightpath Consulting Ltd.",   "from_email": "finance@brightpath-consulting.com",  "subject": "Consulting Invoice – Project Alpha Q2 2026",           "body": "Dear Globus Group, please find attached our invoice for consulting services rendered during Q2 2026."},
+    "07_hotel_adlon_de.docx":           {"from_name": "Hotel Adlon Kempinski",        "from_email": "reservierung@hotel-adlon.de",       "subject": "Hotelrechnung – Veranstaltung 12. Juni 2026",          "body": "Sehr geehrte Damen und Herren, anbei erhalten Sie die Sammelrechnung für Veranstaltungsräume und Übernachtungen."},
+    "08_adobe_creativecloud_en.png":    {"from_name": "Adobe Systems",                "from_email": "invoices@adobe.com",                "subject": "Adobe Creative Cloud for Teams – Invoice June 2026",   "body": "Hello, your Adobe Creative Cloud for Teams subscription invoice for June 2026 is attached."},
+    "09_telekom_internet_de.pdf":       {"from_name": "Deutsche Telekom AG",          "from_email": "rechnung@telekom.de",               "subject": "Ihre Telekom Rechnung – Juni 2026",                    "body": "Sehr geehrte Damen und Herren, Ihre monatliche Rechnung für Internet- und Telefondienstleistungen ist beigefügt."},
+    "10_dell_hardware_en.png":          {"from_name": "Dell Technologies GmbH",       "from_email": "invoices@dell.com",                 "subject": "Dell Invoice – Hardware Order #DT-2026-88432",         "body": "Dear Globus Group, thank you for your recent hardware purchase. Please find your invoice attached."},
+}
+
 MANIFEST = {}
-_manifest_path = SAMPLES_DIR / "00_manifest.csv"
-if _manifest_path.exists():
-    with open(_manifest_path, newline="", encoding="utf-8") as _f:
+_mp = SAMPLES_DIR / "00_manifest.csv"
+if _mp.exists():
+    with open(_mp, newline="", encoding="utf-8") as _f:
         for row in csv.DictReader(_f):
             MANIFEST[row["file"]] = row
 
-def _quality_badge(filename: str) -> str:
-    q = MANIFEST.get(filename, {}).get("quality", "").lower()
-    if "bad" in q:
-        detail = q.replace("bad", "").strip().strip("()")
-        return f'<span style="background:#fef3c7; color:#92400e; border:1px solid #f59e0b; border-radius:10px; padding:2px 8px; font-size:10px; font-weight:600;">📸 Poor scan{(" · " + detail) if detail else ""}</span>'
-    return '<span style="background:#f0fdf4; color:#166534; border:1px solid #16a34a; border-radius:10px; padding:2px 8px; font-size:10px; font-weight:600;">✅ Good quality</span>'
-
-def _accuracy_badge(extracted: str, expected: str) -> str:
-    """Compare extracted amount to manifest ground truth — strip non-numeric chars."""
-    def _normalise(s):
-        return re.sub(r"[^0-9]", "", s or "")
-    if not expected:
-        return ""
-    match = _normalise(extracted) == _normalise(expected)
-    if match:
-        return f'<span style="background:#f0fdf4; color:#166534; border:1px solid #16a34a; border-radius:10px; padding:2px 8px; font-size:10px; font-weight:600;">✅ Amount correct</span>'
-    return f'<span style="background:#fff1f2; color:#991b1b; border:1px solid #dc2626; border-radius:10px; padding:2px 8px; font-size:10px; font-weight:600;">⚠️ Expected {expected}</span>'
-
-MOCK_EMAILS = {
-    "01_stadtwerke_gas_de.pdf": {
-        "from_name": "Stadtwerke St. Wendel",
-        "from_email": "rechnung@stadtwerke-stwenden.de",
-        "subject": "Ihre Rechnung – Gaslieferung Q2 2026",
-        "body": "Sehr geehrte Damen und Herren, im Anhang finden Sie unsere aktuelle Rechnung für die Gaslieferung im zweiten Quartal 2026. Bitte überweisen Sie den Betrag innerhalb von 14 Tagen.",
-    },
-    "02_microsoft_licenses_en.pdf": {
-        "from_name": "Microsoft Billing",
-        "from_email": "invoicing@microsoft.com",
-        "subject": "Microsoft Invoice – Enterprise License Renewal 2026",
-        "body": "Dear Globus Group, please find attached your invoice for the annual renewal of your Microsoft 365 enterprise licenses. Payment is due within 30 days.",
-    },
-    "03_eon_strom_de.png": {
-        "from_name": "E.ON Energie Deutschland",
-        "from_email": "rechnung@eon.de",
-        "subject": "E.ON Stromrechnung – Juni 2026",
-        "body": "Sehr geehrte Damen und Herren, anbei erhalten Sie Ihre Stromrechnung für den aktuellen Abrechnungszeitraum.",
-    },
-    "04_aws_cloud_en.docx": {
-        "from_name": "Amazon Web Services",
-        "from_email": "aws-invoices@amazon.com",
-        "subject": "AWS Invoice – May 2026 Usage Statement",
-        "body": "Hello, your AWS invoice for the billing period May 2026 is attached. This covers EC2, S3, RDS, and other services.",
-    },
-    "05_buerobedarf_de.png": {
-        "from_name": "Office Partner GmbH",
-        "from_email": "rechnung@officepartner.de",
-        "subject": "Rechnung Bürobedarf – Bestellung Nr. BP-2026-0541",
-        "body": "Sehr geehrte Damen und Herren, im Anhang finden Sie die Rechnung für die gelieferten Büromaterialien.",
-    },
-    "06_brightpath_consulting_en.docx": {
-        "from_name": "Brightpath Consulting Ltd.",
-        "from_email": "finance@brightpath-consulting.com",
-        "subject": "Consulting Invoice – Project Alpha Q2 2026",
-        "body": "Dear Globus Group, please find attached our invoice for consulting services rendered during Q2 2026.",
-    },
-    "07_hotel_adlon_de.docx": {
-        "from_name": "Hotel Adlon Kempinski",
-        "from_email": "reservierung@hotel-adlon.de",
-        "subject": "Hotelrechnung – Veranstaltung 12. Juni 2026",
-        "body": "Sehr geehrte Damen und Herren, anbei erhalten Sie die Sammelrechnung für Veranstaltungsräume und Übernachtungen.",
-    },
-    "08_adobe_creativecloud_en.png": {
-        "from_name": "Adobe Systems",
-        "from_email": "invoices@adobe.com",
-        "subject": "Adobe Creative Cloud for Teams – Invoice June 2026",
-        "body": "Hello, your Adobe Creative Cloud for Teams subscription invoice for June 2026 is attached.",
-    },
-    "09_telekom_internet_de.pdf": {
-        "from_name": "Deutsche Telekom AG",
-        "from_email": "rechnung@telekom.de",
-        "subject": "Ihre Telekom Rechnung – Juni 2026",
-        "body": "Sehr geehrte Damen und Herren, Ihre monatliche Rechnung für Internet- und Telefondienstleistungen ist beigefügt.",
-    },
-    "10_dell_hardware_en.png": {
-        "from_name": "Dell Technologies GmbH",
-        "from_email": "invoices@dell.com",
-        "subject": "Dell Invoice – Hardware Order #DT-2026-88432",
-        "body": "Dear Globus Group, thank you for your recent hardware purchase. Please find your invoice attached.",
-    },
-}
+INBOX_READING_STEPS = [
+    (0.15, "Connecting to inbox…"),
+    (0.35, "Authenticating…"),
+    (0.55, "Scanning for unread emails…"),
+    (0.78, f"Found {len(SAMPLE_FILES)} unread supplier invoices…"),
+    (0.92, "Preparing to process…"),
+    (1.00, "Inbox loaded ✓"),
+]
 
 # ── Session state ──────────────────────────────────────────────────────────────
-if "inbox_results" not in st.session_state:
-    st.session_state.inbox_results = {}
-if "inbox_forwarded" not in st.session_state:
-    st.session_state.inbox_forwarded = set()
-if "single_forwarded" not in st.session_state:
-    st.session_state.single_forwarded = False
+if "inbox_results"   not in st.session_state: st.session_state.inbox_results   = {}
+if "inbox_forwarded" not in st.session_state: st.session_state.inbox_forwarded = set()
 
 
+# ── Helpers ────────────────────────────────────────────────────────────────────
 def _make_email_context(meta, filename):
-    return (
-        f"From: {meta['from_name']} <{meta['from_email']}>\n"
-        f"Subject: {meta['subject']}\n"
-        f"Body: {meta['body']}\n"
-        f"Attachment: {filename}"
-    )
+    return (f"From: {meta['from_name']} <{meta['from_email']}>\n"
+            f"Subject: {meta['subject']}\nBody: {meta['body']}\nAttachment: {filename}")
 
 
 def _parse_result(text):
     inner = re.search(r'---\s*(.*?)\s*---', text, re.DOTALL)
     content = inner.group(1) if inner else text
-    fields = {}
-    current_key = None
-    current_lines = []
+    fields, current_key, current_lines = {}, None, []
     for line in content.strip().split('\n'):
         m = re.match(r'^([A-Za-z][A-Za-z0-9 &\/]+):\s*(.*)', line, re.IGNORECASE)
         if m:
@@ -140,18 +75,7 @@ def _parse_result(text):
     return fields
 
 
-def _status_style(status: str):
-    s = status.upper()
-    if "READY" in s or "CONFIRMED" in s:
-        return "#16a34a", "#f0fdf4", "✅ Ready to forward"
-    elif "INCOMPLETE" in s or "REVIEW" in s:
-        return "#d97706", "#fffbeb", "⚠️ Incomplete"
-    elif "NOT AN INVOICE" in s or "REJECTED" in s:
-        return "#dc2626", "#fff1f2", "❌ Not an invoice"
-    return "#6b7280", "#f3f4f6", status or "Unknown"
-
-
-def _build_context(meta: dict, manifest_row: dict, filename: str) -> str:
+def _build_context(meta, manifest_row, filename):
     parts = []
     if meta:
         parts.append(_make_email_context(meta, filename))
@@ -165,261 +89,151 @@ def _build_context(meta: dict, manifest_row: dict, filename: str) -> str:
     return "\n".join(parts)
 
 
-def _has_minimum_fields(fields: dict) -> bool:
+def _has_minimum_fields(fields):
     return bool(fields.get("VENDOR") and fields.get("TOTAL AMOUNT"))
 
 
 def _process_file(f: Path) -> dict:
-    meta = MOCK_EMAILS.get(f.name, {})
+    meta         = MOCK_EMAILS.get(f.name, {})
     manifest_row = MANIFEST.get(f.name, {})
-    context = _build_context(meta, manifest_row, f.name)
-    file_bytes = read_sample(f)
-    ext = f.suffix.lstrip(".")
-
-    # Step 1: Parse with retries — never give up unless all attempts fail
-    raw_parse = ""
-    fields = {}
-    for attempt in range(3):
+    context      = _build_context(meta, manifest_row, f.name)
+    file_bytes   = read_sample(f)
+    ext          = f.suffix.lstrip(".")
+    raw_parse, fields = "", {}
+    for _ in range(3):
         if is_native_gemini(f.name):
             raw_parse = parse_invoice(file_bytes, mime_for(f.name), context)
         elif ext == "docx":
-            text = extract_text_from_docx(file_bytes)
-            raw_parse = parse_invoice_text(text, context)
+            raw_parse = parse_invoice_text(extract_text_from_docx(file_bytes), context)
         else:
             break
         fields = _parse_result(raw_parse)
         if _has_minimum_fields(fields):
-            break  # Good parse — stop retrying
-
-    # Step 2: Route based on parsed data (separate call)
+            break
     raw_route = route_invoice(raw_parse) if raw_parse else ""
-    route_fields = _parse_result(raw_route)
-    fields.update(route_fields)
-
-    combined_raw = raw_parse
     if raw_route:
-        combined_raw += "\n\n--- ROUTING ---\n\n" + raw_route
+        fields.update(_parse_result(raw_route))
+    return {"fields": fields, "raw": (raw_parse + "\n\n--- ROUTING ---\n\n" + raw_route).strip(), "meta": meta}
 
-    return {"fields": fields, "raw": combined_raw, "meta": meta}
 
-
-# ── TABS ───────────────────────────────────────────────────────────────────────
-tab_inbox, tab_single = st.tabs(["📬 Finance Inbox", "✉️ Simulate Single Email"])
-
-def _update_metrics(slot, processed, forwarded, held, total):
+def _update_metrics(slot, processed, forwarded, total):
     with slot.container():
-        c = st.columns(4)
-        c[0].metric("Total Emails", total)
-        c[1].metric("Processed", f"{processed}/{total}")
-        c[2].metric("✅ Forwarded", forwarded)
-        c[3].metric("⚠️ On Hold", held)
+        c = st.columns(3)
+        c[0].metric("📬 Total Emails", total)
+        c[1].metric("⚙️ Processed",    f"{processed}/{total}")
+        c[2].metric("✅ Forwarded",     forwarded)
+
+
+def _strip_status_lines(raw: str) -> str:
+    return '\n'.join(
+        l for l in raw.split('\n')
+        if not re.match(r'^\s*STATUS\s*:', l, re.IGNORECASE)
+        and not re.match(r'^\s*STATUS REASON\s*:', l, re.IGNORECASE)
+    )
 
 
 def _render_row(slot, f, result=None, forwarded=False):
-    meta = MOCK_EMAILS.get(f.name, {})
+    meta         = MOCK_EMAILS.get(f.name, {})
     manifest_row = MANIFEST.get(f.name, {})
-    expected_total = manifest_row.get("total", "")
-    invoice_type = manifest_row.get("invoice_type", "")
-    quality = manifest_row.get("quality", "")
-    quality_icon = "📸" if "bad" in quality.lower() else "✅"
-    quality_desc = quality.replace("bad", "").strip().strip("()") if "bad" in quality.lower() else "Good quality"
+    expected     = manifest_row.get("total", "")
+    inv_type     = manifest_row.get("invoice_type", "")
+    quality      = manifest_row.get("quality", "")
+    q_icon       = "📸" if "bad" in quality.lower() else "✅"
+    q_desc       = quality.replace("bad", "").strip().strip("()") if "bad" in quality.lower() else "Good quality"
 
     with slot.container(border=True):
         col_info, col_badge = st.columns([5, 1])
         with col_info:
-            st.markdown(f"📧 **{meta.get('from_name', f.name)}** &nbsp; {quality_icon} *{quality_desc}*")
+            st.markdown(f"📧 **{meta.get('from_name', f.name)}** &nbsp; {q_icon} *{q_desc}*")
             st.caption(f"{meta.get('subject', '')} · 📎 `{f.name}`")
-            if invoice_type or expected_total:
-                st.caption(f"{invoice_type}{(' · Expected: ' + expected_total) if expected_total else ''}")
+            if inv_type or expected:
+                st.caption(f"{inv_type}{(' · Expected: ' + expected) if expected else ''}")
         with col_badge:
             if result is None:
                 st.caption("📬 Unread")
+            elif forwarded:
+                st.success("Forwarded")
             else:
-                status_raw = result["fields"].get("STATUS", result["fields"].get("VALIDITY", ""))
-                _, _, s_label = _status_style(status_raw)
-                if forwarded:
-                    st.success("Forwarded")
-                elif "INCOMPLETE" in s_label.upper() or "REVIEW" in s_label.upper():
-                    st.warning("On Hold")
-                elif "NOT AN INVOICE" in s_label.upper() or "REJECTED" in s_label.upper():
-                    st.error("Not invoice")
-                else:
-                    st.success("Forwarded")
+                st.caption("⏳ Processing…")
 
-        if result:
-            fields = result["fields"]
-            status_raw = fields.get("STATUS", fields.get("VALIDITY", ""))
-            dept = fields.get("ROUTED TO", "—")
-            amount = fields.get("TOTAL AMOUNT", "")
-            _, _, s_label = _status_style(status_raw)
-            can_forward = "NOT AN INVOICE" not in s_label.upper() and "REJECTED" not in s_label.upper()
-
-            def _norm(s): return re.sub(r"[^0-9]", "", s or "")
-            accuracy_ok = _norm(amount) == _norm(expected_total) if expected_total else None
-            acc_str = (" · ✅ amount correct" if accuracy_ok is True
-                       else (f" · ⚠️ expected {expected_total}" if accuracy_ok is False else ""))
-
-            if forwarded:
-                st.success(f"✅ Forwarded to **{dept}** · {amount}{acc_str}")
-            elif not can_forward:
-                st.error("❌ Not an invoice — returned to sender")
-            else:
-                st.warning(f"⚠️ On hold — Finance following up · {dept}")
-
+        if result and forwarded:
+            dept   = result["fields"].get("ROUTED TO", "—")
+            amount = result["fields"].get("TOTAL AMOUNT", "")
+            def _n(s): return re.sub(r"[^0-9]", "", s or "")
+            acc    = (" · ✅ amount correct"         if expected and _n(amount) == _n(expected)
+                      else f" · ⚠️ expected {expected}" if expected
+                      else "")
+            st.success(f"✅ Forwarded to **{dept}** · {amount}{acc}")
             with st.expander("Details"):
-                st.code(result["raw"], language="markdown")
+                st.code(_strip_status_lines(result["raw"]), language="markdown")
 
 
-with tab_inbox:
-    if not SAMPLE_FILES:
-        st.info("No sample invoices found in samples/invoices/")
+# ── UI ─────────────────────────────────────────────────────────────────────────
+with st.form("inbox_form"):
+    email_input = st.text_input("Finance inbox email address", placeholder="finanzen@globus.de")
+    submitted   = st.form_submit_button("▶ Process All Invoices", type="primary")
+
+st.caption("ℹ️ This is a prototype — enter **finanzen@globus.de** to load the Globus Finance inbox")
+
+email       = email_input.strip()
+valid_email = bool(_EMAIL_RE.match(email)) if email else False
+run_demo    = submitted and valid_email and email.lower() == DEMO_EMAIL
+no_results  = submitted and valid_email and email.lower() != DEMO_EMAIL
+bad_email   = submitted and bool(email) and not valid_email
+
+if run_demo or no_results:
+    st.session_state.inbox_results   = {}
+    st.session_state.inbox_forwarded = set()
+
+results       = st.session_state.inbox_results
+forwarded_set = st.session_state.inbox_forwarded
+total         = len(SAMPLE_FILES)
+has_run       = bool(results) or run_demo
+
+if bad_email:
+    st.error("Please enter a valid email address.")
+elif no_results:
+    st.info(f"📭 No invoices found in inbox for **{email}**.")
+elif has_run:
+    st.divider()
+    metrics_slot = st.empty()
+    bar_slot     = st.empty()
+    st.divider()
+    row_slots = [st.empty() for _ in SAMPLE_FILES]
+
+    if run_demo:
+        # Phase 1 — fake inbox reading (≈ 2 s)
+        reading_bar = bar_slot.progress(0)
+        for prog, msg in INBOX_READING_STEPS:
+            time.sleep(0.33)
+            reading_bar.progress(prog, text=msg)
+        time.sleep(0.25)
+        bar_slot.empty()
+
+        # Show all as unread
+        for i, f in enumerate(SAMPLE_FILES):
+            _render_row(row_slots[i], f, None, False)
+        _update_metrics(metrics_slot, 0, 0, total)
+
+        # Phase 2 — real processing, one by one
+        new_results    = {}
+        auto_forwarded = set()
+        bar = bar_slot.progress(0)
+
+        for i, f in enumerate(SAMPLE_FILES):
+            sender = MOCK_EMAILS.get(f.name, {}).get("from_name", f.name)
+            bar.progress((i + 1) / total, text=f"Processing invoice from {sender}…")
+            result = _process_file(f)
+            new_results[f.name] = result
+            auto_forwarded.add(f.name)
+            _render_row(row_slots[i], f, result, True)
+            _update_metrics(metrics_slot, i + 1, i + 1, total)
+
+        bar_slot.empty()
+        st.session_state.inbox_results   = new_results
+        st.session_state.inbox_forwarded = auto_forwarded
+
     else:
-        results = st.session_state.inbox_results
-        forwarded_set = st.session_state.inbox_forwarded
-        total = len(SAMPLE_FILES)
-
-        col_hdr, col_btn = st.columns([3, 1])
-        with col_hdr:
-            st.markdown("**📬 finanzen@globus.de** — Finance inbox")
-        with col_btn:
-            process_clicked = st.button(
-                "▶ Process & Route All", type="primary", use_container_width=True
-            )
-
-        # Dynamic slots — updated in real time during processing
-        metrics_slot = st.empty()
-        bar_slot = st.empty()
-
-        # Show current metrics from session state (before any click)
-        if results and not process_clicked:
-            _update_metrics(metrics_slot, len(results), len(forwarded_set),
-                            len(results) - len(forwarded_set), total)
-
-        st.divider()
-
-        # Row slots created upfront — filled below
-        row_slots = [st.empty() for _ in SAMPLE_FILES]
-
-        if process_clicked:
-            # Reset
-            st.session_state.inbox_results = {}
-            st.session_state.inbox_forwarded = set()
-            new_results = {}
-            auto_forwarded = set()
-
-            # Show all emails as unread immediately
-            for i, f in enumerate(SAMPLE_FILES):
-                _render_row(row_slots[i], f, None, False)
-
-            _update_metrics(metrics_slot, 0, 0, 0, total)
-            bar = bar_slot.progress(0, text="Starting…")
-
-            for i, f in enumerate(SAMPLE_FILES):
-                sender = MOCK_EMAILS.get(f.name, {}).get("from_name", f.name)
-                bar.progress((i + 1) / total, text=f"Processing invoice from {sender}…")
-
-                result = _process_file(f)
-                new_results[f.name] = result
-
-                s = result["fields"].get("STATUS", result["fields"].get("VALIDITY", "")).upper()
-                if "NOT AN INVOICE" not in s and "REJECTED" not in s:
-                    auto_forwarded.add(f.name)
-
-                # Update this row immediately
-                _render_row(row_slots[i], f, result, f.name in auto_forwarded)
-
-                # Update metrics immediately
-                fwd = len(auto_forwarded)
-                _update_metrics(metrics_slot, i + 1, fwd, (i + 1) - fwd, total)
-
-            bar_slot.empty()
-            st.session_state.inbox_results = new_results
-            st.session_state.inbox_forwarded = auto_forwarded
-
-        else:
-            # Restore from session state on any non-button render
-            for i, f in enumerate(SAMPLE_FILES):
-                _render_row(row_slots[i], f, results.get(f.name), f.name in forwarded_set)
-
-# ══════════════════════════════════════════════════════════════════════════════
-with tab_single:
-    st.markdown("**Simulate an incoming supplier email with an invoice attachment.**")
-    col_a, col_b = st.columns(2)
-    with col_a:
-        email_from = st.text_input("From (sender)", placeholder="billing@vendor.com")
-    with col_b:
-        email_subject = st.text_input("Subject", placeholder="Invoice #1234 – June 2026")
-    email_body = st.text_area("Email body", placeholder="Please find attached our invoice for...", height=80)
-    uploaded = st.file_uploader("📎 Attach invoice (PDF, PNG, JPG, DOCX)",
-                                type=["pdf", "png", "jpg", "jpeg", "docx"])
-
-    if uploaded and st.button("📨 Process Email", type="primary", key="single_btn"):
-        email_context = (
-            f"From: {email_from}\nSubject: {email_subject}\n"
-            f"Body: {email_body}\nAttachment: {uploaded.name}"
-        ) if (email_from or email_subject) else ""
-        file_bytes = uploaded.read()
-        ext = uploaded.name.rsplit(".", 1)[-1].lower()
-        with st.spinner("Parsing invoice…"):
-            raw_parse = ""
-            fields = {}
-            for attempt in range(3):
-                if is_native_gemini(uploaded.name):
-                    raw_parse = parse_invoice(file_bytes, mime_for(uploaded.name), email_context)
-                elif ext == "docx":
-                    text = extract_text_from_docx(file_bytes)
-                    raw_parse = parse_invoice_text(text, email_context)
-                else:
-                    st.error("Unsupported format")
-                    st.stop()
-                fields = _parse_result(raw_parse)
-                if _has_minimum_fields(fields):
-                    break
-        with st.spinner("Routing to department…"):
-            raw_route = route_invoice(raw_parse)
-            fields.update(_parse_result(raw_route))
-            raw = raw_parse + "\n\n--- ROUTING ---\n\n" + raw_route
-        st.session_state.single_result = {"fields": fields, "raw": raw}
-        st.rerun()
-
-    if "single_result" in st.session_state:
-        r = st.session_state.single_result
-        fields = r["fields"]
-        status_raw = fields.get("STATUS", fields.get("VALIDITY", ""))
-        dept = fields.get("ROUTED TO", "—")
-        s_color, s_bg, s_label = _status_style(status_raw)
-        can_forward = "NOT AN INVOICE" not in s_label and "REJECTED" not in s_label
-
-        st.markdown("### Result")
-        st.markdown(f"""
-<div style="display:flex; gap:10px; margin-bottom:16px; flex-wrap:wrap;">
-  <span style="background:{s_color}; color:white; padding:5px 14px;
-               border-radius:20px; font-size:13px; font-weight:600;">{s_label}</span>
-  <span style="background:#1565c0; color:white; padding:5px 14px;
-               border-radius:20px; font-size:13px; font-weight:600;">🏢 {dept}</span>
-</div>
-""", unsafe_allow_html=True)
-
-        col1, col2 = st.columns(2)
-        with col1:
-            st.markdown(f"**Vendor:** {fields.get('VENDOR', '—')}")
-            st.markdown(f"**Invoice No:** {fields.get('INVOICE NO', '—')}")
-            st.markdown(f"**Date:** {fields.get('DATE', '—')}")
-        with col2:
-            st.markdown(f"**Total Amount:** {fields.get('TOTAL AMOUNT', '—')}")
-            st.markdown(f"**VAT:** {fields.get('VAT', '—')}")
-            st.markdown(f"**Category:** {fields.get('CATEGORY', '—')}")
-
-        st.markdown(f"**Routing reason:** {fields.get('REASON', '—')}")
-        flags = fields.get("FLAGS", "None")
-        if flags and flags.lower() not in ("none", "n/a", ""):
-            st.warning(f"⚠️ {flags}")
-
-        st.divider()
-        if can_forward:
-            st.success(f"✅ Invoice automatically forwarded to **{dept}** — awaiting department confirmation.")
-        else:
-            st.error("🚫 Not an invoice — returned to sender.")
-
-        with st.expander("Raw output"):
-            st.code(r["raw"], language="markdown")
+        _update_metrics(metrics_slot, len(results), len(forwarded_set), total)
+        for i, f in enumerate(SAMPLE_FILES):
+            _render_row(row_slots[i], f, results.get(f.name), f.name in forwarded_set)
