@@ -1,3 +1,5 @@
+from urllib.parse import quote
+
 import streamlit as st
 import streamlit.components.v1 as components
 from shared.theme import apply_theme
@@ -117,14 +119,16 @@ st.markdown(f"""
 .nexus-card {{
     position: relative; background: {CARD_BG};
     border: 1px solid {CARD_BD}; border-radius: 18px;
-    padding: 20px 18px 16px; height: 174px; overflow: hidden; cursor: pointer;
+    padding: 22px 16px; height: 152px; overflow: hidden; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; gap: 12px;
     transition: transform 0.26s cubic-bezier(0.34,1.56,0.64,1),
                 border-color 0.22s ease, box-shadow 0.26s ease;
     animation: cardIn 0.5s cubic-bezier(0.22,1,0.36,1) backwards;
 }}
 .nexus-card::after {{
     content: ""; position: absolute; inset: 0; border-radius: 18px;
-    background: linear-gradient(135deg, var(--c) 0%, transparent 55%);
+    background: linear-gradient(160deg, var(--c) 0%, transparent 60%);
     opacity: 0; transition: opacity 0.26s ease;
 }}
 /* hover sheen sweep */
@@ -141,24 +145,27 @@ st.markdown(f"""
     border-color: var(--c);
     box-shadow: 0 20px 56px color-mix(in srgb, var(--c) 28%, transparent);
 }}
-.nexus-card:hover::after {{ opacity: {0.07 if D else 0.05}; }}
+.nexus-card:hover::after {{ opacity: {0.06 if D else 0.04}; }}
 .card-link {{ position: absolute; inset: 0; z-index: 30; border-radius: 18px; }}
-.card-num {{
-    font-size: 10px; font-weight: 700; letter-spacing: 2.5px;
-    color: var(--c); font-family: 'SF Mono','Fira Code',monospace;
-    margin-bottom: 10px; opacity: 0.6;
+
+.card-icon-wrap {{
+    width: 50px; height: 50px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    background: color-mix(in srgb, var(--c) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--c) 22%, transparent);
+    transition: transform 0.26s cubic-bezier(0.34,1.56,0.64,1);
 }}
-.card-icon  {{ font-size: 26px; line-height: 1; margin-bottom: 9px; }}
-.card-name  {{ font-size: 13.5px; font-weight: 700; color: {TEXT}; line-height: 1.25; margin-bottom: 4px; }}
-.card-client {{ font-size: 10.5px; color: var(--c); font-weight: 500; margin-bottom: 6px; opacity: 0.8; }}
-.card-desc  {{ font-size: 10.5px; color: {DESC}; line-height: 1.5; }}
-.card-tag {{
-    position: absolute; top: 14px; right: 14px;
-    font-size: 8.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--c);
-    background: color-mix(in srgb, var(--c) 12%, transparent);
-    border: 1px solid color-mix(in srgb, var(--c) 35%, transparent);
-    padding: 3px 8px; border-radius: 100px;
+.nexus-card:hover .card-icon-wrap {{ transform: scale(1.1) translateY(-1px); }}
+.card-icon {{
+    width: 25px; height: 25px; display: block;
+    background-color: var(--c);
+    -webkit-mask: var(--icon) center / contain no-repeat;
+            mask: var(--icon) center / contain no-repeat;
+}}
+.card-name {{ font-size: 14.5px; font-weight: 700; color: {TEXT}; line-height: 1.3; }}
+.card-cat {{
+    font-size: 9px; font-weight: 700; letter-spacing: 1.8px;
+    text-transform: uppercase; color: var(--c); opacity: 0.9;
 }}
 
 .nx-footer {{
@@ -273,29 +280,49 @@ st.markdown(f"""
 st.markdown('<div class="section-label"><span>Choose Your Agent</span></div>', unsafe_allow_html=True)
 
 # ── Agent cards ────────────────────────────────────────────────────────────────
+# Line icons (Lucide-style) rendered as accent-coloured CSS masks — no emojis.
+_ICON_PATHS = {
+    "file":      "<path d='M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z'/><path d='M14 2v6h6'/><path d='M16 13H8'/><path d='M16 17H8'/><path d='M10 9H8'/>",
+    "pulse":     "<path d='M22 12h-4l-3 9L9 3l-3 9H2'/>",
+    "clipboard": "<rect width='8' height='4' x='8' y='2' rx='1' ry='1'/><path d='M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2'/><path d='m9 14 2 2 4-4'/>",
+    "search":    "<circle cx='11' cy='11' r='8'/><path d='m21 21-4.3-4.3'/>",
+    "briefcase": "<rect width='20' height='14' x='2' y='7' rx='2'/><path d='M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16'/>",
+    "clapper":   "<path d='M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z'/><path d='m6.2 5.3 3.1 3.9'/><path d='m12.4 3.4 3.1 4'/><path d='M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z'/>",
+    "chart":     "<path d='M3 3v18h18'/><path d='M18 17V9'/><path d='M13 17V5'/><path d='M8 17v-3'/>",
+    "tag":       "<path d='M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z'/><circle cx='7.5' cy='7.5' r='1.5'/>",
+    "target":    "<circle cx='12' cy='12' r='10'/><circle cx='12' cy='12' r='6'/><circle cx='12' cy='12' r='2'/>",
+    "shield":    "<path d='M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z'/><path d='m9 12 2 2 4-4'/>",
+}
+
+def _icon_uri(key):
+    svg = (
+        "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' "
+        "stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>"
+        + _ICON_PATHS[key] + "</svg>"
+    )
+    return "data:image/svg+xml," + quote(svg)
+
+# (icon, name, page, accent colour, category)
 AGENTS = [
-    ("01","🧾","Invoice Processing",      "Globus Group · St. Wendel",          "Auto-sort & route supplier invoices to the right department",          "Invoice_Processing",      "#f59e0b","Finance"),
-    ("02","🏥","Shift Replacement",        "UKS · Homburg",                       "Fill last-minute night-shift gaps and draft outreach messages",         "Shift_Replacement",       "#ef4444","Healthcare"),
-    ("03","📋","Work Permit Validation",   "Leistenschneider GmbH · Saarbrücken", "Validate permits and confirm expiry dates in seconds",                 "Work_Permit_Validation",  "#8b5cf6","HR & Legal"),
-    ("04","🔍","CV Fraud Detection",       "Persowerk Deutschland · Saarbrücken", "Spot AI-generated CVs, fake certs and misrepresented history",         "CV_Fraud_Detection",      "#6366f1","HR Security"),
-    ("05","💼","Interview Support",        "Kohlpharma GmbH · Merzig",            "Smart questions, red flags & feedback letters for hirers",             "Interview_Support",       "#06b6d4","Recruiting"),
-    ("06","🎬","Marketing Content",        "Dr. Theiss Naturwaren · Homburg",     "Production briefs for TikTok & Instagram reels with safe zones",      "Marketing_Content",       "#ec4899","Marketing"),
-    ("07","📊","Customer Analytics",       "Dr. Theiss Naturwaren · Homburg",     "Behavioural patterns, targeting signals, and campaign lift",           "Customer_Analytics",      "#10b981","Analytics"),
-    ("08","💰","Dynamic Pricing",          "Dr. Theiss Naturwaren · Homburg",     "Signal-driven pricing engine — weather, events, supply chain",        "Dynamic_Pricing",         "#f59e0b","Pricing"),
-    ("09","🔭","Competitive Gap Analysis", "Dr. Theiss Naturwaren · Homburg",     "White-space gaps competitors aren't filling — live research",          "Competitive_Gap_Analysis","#a855f7","Strategy"),
-    ("10","🛡️","Secure Email Agent",       "Rheinmetall",                         "Prompt-injection-resistant job application processing",               "Secure_Email_Agent",      "#64748b","Security"),
+    ("file",      "Invoice Processing",       "Invoice_Processing",       "#f59e0b", "Finance"),
+    ("pulse",     "Shift Replacement",        "Shift_Replacement",        "#ef4444", "Healthcare"),
+    ("clipboard", "Work Permit Validation",   "Work_Permit_Validation",   "#8b5cf6", "HR & Legal"),
+    ("search",    "CV Fraud Detection",       "CV_Fraud_Detection",       "#6366f1", "HR Security"),
+    ("briefcase", "Interview Support",        "Interview_Support",        "#06b6d4", "Recruiting"),
+    ("clapper",   "Marketing Content",        "Marketing_Content",        "#ec4899", "Marketing"),
+    ("chart",     "Customer Analytics",       "Customer_Analytics",       "#10b981", "Analytics"),
+    ("tag",       "Dynamic Pricing",          "Dynamic_Pricing",          "#f59e0b", "Pricing"),
+    ("target",    "Competitive Gap Analysis", "Competitive_Gap_Analysis", "#a855f7", "Strategy"),
+    ("shield",    "Secure Email Agent",       "Secure_Email_Agent",       "#64748b", "Security"),
 ]
 
-def _card(num, icon, name, client, desc, page, color, tag, delay=0.0):
+def _card(icon, name, page, color, cat, delay=0.0):
     return f"""
-<div class="nexus-card" style="--c:{color}; animation-delay:{delay:.2f}s;">
+<div class="nexus-card" style="--c:{color}; --icon:url('{_icon_uri(icon)}'); animation-delay:{delay:.2f}s;">
   <a href="/{page}" target="_self" class="card-link" aria-label="{name}"></a>
-  <div class="card-num">{num}</div>
-  <div class="card-icon">{icon}</div>
+  <div class="card-icon-wrap"><span class="card-icon"></span></div>
   <div class="card-name">{name}</div>
-  <div class="card-client">{client}</div>
-  <div class="card-desc">{desc}</div>
-  <div class="card-tag">{tag}</div>
+  <div class="card-cat">{cat}</div>
 </div>"""
 
 cards_html = "".join(_card(*a, delay=0.35 + i * 0.05) for i, a in enumerate(AGENTS))
