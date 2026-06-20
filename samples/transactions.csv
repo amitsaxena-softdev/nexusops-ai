@@ -1,0 +1,1601 @@
+customer_id,segment,sku,sku_name,date,month,qty,channel,price,region,revenue
+C1017,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-01,1,3,pharmacy,7.99,NRW,23.97
+C1020,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-01,1,1,pharmacy,7.99,NRW,7.99
+C1106,SELFCARE,BEI001,5in1 Beinlotion,2025-01-01,1,2,pharmacy,9.99,Saarland,19.98
+C1173,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-01,1,1,supermarket,7.99,Hessen,7.99
+C1203,BUDGET,BEI001,5in1 Beinlotion,2025-01-01,1,3,supermarket,9.99,NRW,29.97
+C1213,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-01,1,1,drugstore,4.99,Baden-Württemberg,4.99
+C1264,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-01,1,2,drugstore,4.99,Baden-Württemberg,9.98
+C1050,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-02,1,1,pharmacy,7.99,NRW,7.99
+C1136,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-02,1,3,supermarket,7.99,Bayern,23.97
+C1147,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-02,1,1,supermarket,4.99,Saarland,4.99
+C1183,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-02,1,2,supermarket,7.99,Hessen,15.98
+C1047,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-03,1,1,pharmacy,7.99,NRW,7.99
+C1162,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-04,1,2,pharmacy,7.99,Saarland,15.98
+C1189,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-04,1,1,supermarket,7.99,Saarland,7.99
+C1211,BUDGET,EIS001,Eisspray akut,2025-01-04,1,1,drugstore,8.49,Baden-Württemberg,8.49
+C1212,BUDGET,BEI001,5in1 Beinlotion,2025-01-04,1,2,supermarket,9.99,NRW,19.98
+C1113,SELFCARE,BEI001,5in1 Beinlotion,2025-01-05,1,1,pharmacy,9.99,Saarland,9.99
+C1140,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-05,1,1,pharmacy,4.99,Hessen,4.99
+C1141,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-05,1,1,supermarket,4.99,Bayern,4.99
+C1155,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-05,1,1,pharmacy,4.99,Bayern,4.99
+C1174,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-05,1,2,pharmacy,4.99,Saarland,9.98
+C1190,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-05,1,2,pharmacy,7.99,Hessen,15.98
+C1190,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-05,1,1,pharmacy,7.99,Hessen,7.99
+C1221,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-05,1,1,drugstore,4.99,NRW,4.99
+C1110,SELFCARE,BEI001,5in1 Beinlotion,2025-01-06,1,1,drugstore,9.99,Hessen,9.99
+C1151,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-06,1,1,pharmacy,4.99,Hessen,4.99
+C1154,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-06,1,3,supermarket,7.99,Bayern,23.97
+C1180,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-06,1,1,supermarket,4.99,Bayern,4.99
+C1067,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-01-07,1,1,drugstore,5.49,Saarland,5.49
+C1130,SELFCARE,BEI001,5in1 Beinlotion,2025-01-07,1,1,pharmacy,9.99,Hessen,9.99
+C1137,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-07,1,1,pharmacy,4.99,Saarland,4.99
+C1169,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-07,1,2,supermarket,7.99,Hessen,15.98
+C1202,BUDGET,BEI001,5in1 Beinlotion,2025-01-07,1,2,drugstore,9.99,Hessen,19.98
+C1245,BUDGET,HOR001,Hornhaut Entferner Maske,2025-01-07,1,1,supermarket,5.49,Hessen,5.49
+C1023,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-08,1,3,online,7.99,Baden-Württemberg,23.97
+C1173,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-08,1,1,supermarket,7.99,Hessen,7.99
+C1175,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-08,1,2,pharmacy,4.99,Saarland,9.98
+C1195,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-08,1,1,pharmacy,7.99,Hessen,7.99
+C1215,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-08,1,1,supermarket,4.99,Baden-Württemberg,4.99
+C1001,ATHLETE,EIS001,Eisspray akut,2025-01-09,1,1,online,8.49,Baden-Württemberg,8.49
+C1034,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-09,1,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1036,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-09,1,2,pharmacy,7.99,NRW,15.98
+C1105,SELFCARE,BEI001,5in1 Beinlotion,2025-01-09,1,1,pharmacy,9.99,NRW,9.99
+C1114,SELFCARE,BEI001,5in1 Beinlotion,2025-01-09,1,1,drugstore,9.99,Saarland,9.99
+C1167,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-09,1,2,supermarket,7.99,Bayern,15.98
+C1208,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-09,1,1,drugstore,4.99,NRW,4.99
+C1229,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-09,1,1,drugstore,4.99,NRW,4.99
+C1214,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-10,1,2,drugstore,4.99,Baden-Württemberg,9.98
+C1214,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-10,1,2,drugstore,4.99,Baden-Württemberg,9.98
+C1181,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-11,1,1,pharmacy,4.99,Saarland,4.99
+C1256,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-11,1,2,supermarket,4.99,Hessen,9.98
+C1042,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-12,1,2,online,7.99,NRW,15.98
+C1111,SELFCARE,BEI001,5in1 Beinlotion,2025-01-12,1,2,drugstore,9.99,NRW,19.98
+C1179,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-12,1,1,supermarket,4.99,Saarland,4.99
+C1183,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-12,1,1,pharmacy,7.99,Hessen,7.99
+C1187,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-12,1,1,pharmacy,4.99,Bayern,4.99
+C1221,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-12,1,1,supermarket,4.99,Hessen,4.99
+C1261,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-12,1,2,drugstore,4.99,Hessen,9.98
+C1006,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-13,1,1,pharmacy,7.99,NRW,7.99
+C1133,SELFCARE,BEI001,5in1 Beinlotion,2025-01-13,1,1,pharmacy,9.99,Saarland,9.99
+C1139,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-13,1,1,supermarket,4.99,Saarland,4.99
+C1248,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-13,1,1,supermarket,4.99,Baden-Württemberg,4.99
+C1135,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-01-14,1,2,pharmacy,5.49,Saarland,10.98
+C1155,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-14,1,3,supermarket,4.99,Hessen,14.97
+C1160,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-14,1,1,pharmacy,7.99,Hessen,7.99
+C1185,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-14,1,2,pharmacy,7.99,Saarland,15.98
+C1230,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-14,1,2,supermarket,4.99,Baden-Württemberg,9.98
+C1264,BUDGET,HOR001,Hornhaut Entferner Maske,2025-01-14,1,1,supermarket,5.49,Hessen,5.49
+C1026,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-15,1,1,online,7.99,NRW,7.99
+C1171,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-15,1,2,pharmacy,7.99,Hessen,15.98
+C1207,BUDGET,BEI001,5in1 Beinlotion,2025-01-15,1,2,drugstore,9.99,Baden-Württemberg,19.98
+C1258,BUDGET,BEI001,5in1 Beinlotion,2025-01-15,1,2,supermarket,9.99,NRW,19.98
+C1079,SELFCARE,BEI001,5in1 Beinlotion,2025-01-16,1,1,pharmacy,9.99,NRW,9.99
+C1160,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-16,1,3,supermarket,4.99,Bayern,14.97
+C1161,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-16,1,1,pharmacy,7.99,Saarland,7.99
+C1191,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-16,1,1,pharmacy,4.99,Saarland,4.99
+C1204,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-16,1,1,drugstore,4.99,Hessen,4.99
+C1116,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-01-17,1,2,drugstore,5.49,NRW,10.98
+C1146,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-17,1,1,supermarket,7.99,Saarland,7.99
+C1153,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-17,1,1,supermarket,7.99,Saarland,7.99
+C1203,BUDGET,EIS001,Eisspray akut,2025-01-17,1,1,drugstore,8.49,Hessen,8.49
+C1064,SELFCARE,BEI001,5in1 Beinlotion,2025-01-18,1,3,drugstore,9.99,Hessen,29.97
+C1065,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-01-18,1,1,pharmacy,5.49,Saarland,5.49
+C1111,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-01-18,1,1,pharmacy,5.49,NRW,5.49
+C1168,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-18,1,2,pharmacy,4.99,Hessen,9.98
+C1169,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-18,1,2,supermarket,7.99,Hessen,15.98
+C1193,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-18,1,2,pharmacy,4.99,Hessen,9.98
+C1223,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-18,1,2,drugstore,4.99,Hessen,9.98
+C1146,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-19,1,2,pharmacy,7.99,Saarland,15.98
+C1175,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-19,1,1,pharmacy,4.99,Bayern,4.99
+C1190,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-19,1,2,supermarket,4.99,Hessen,9.98
+C1011,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-20,1,1,pharmacy,7.99,NRW,7.99
+C1091,SELFCARE,BEI001,5in1 Beinlotion,2025-01-20,1,1,drugstore,9.99,Saarland,9.99
+C1141,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-21,1,1,supermarket,7.99,Bayern,7.99
+C1172,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-21,1,1,pharmacy,4.99,Bayern,4.99
+C1252,BUDGET,BEI001,5in1 Beinlotion,2025-01-21,1,3,drugstore,9.99,NRW,29.97
+C1011,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-22,1,3,pharmacy,7.99,Baden-Württemberg,23.97
+C1117,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-01-22,1,1,pharmacy,5.49,NRW,5.49
+C1134,SELFCARE,BEI001,5in1 Beinlotion,2025-01-22,1,1,drugstore,9.99,Hessen,9.99
+C1149,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-22,1,1,pharmacy,4.99,Bayern,4.99
+C1196,BUDGET,HOR001,Hornhaut Entferner Maske,2025-01-22,1,2,drugstore,5.49,Baden-Württemberg,10.98
+C1035,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-23,1,1,online,7.99,NRW,7.99
+C1080,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-01-23,1,1,pharmacy,5.49,Hessen,5.49
+C1154,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-23,1,1,pharmacy,4.99,Bayern,4.99
+C1170,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-23,1,2,pharmacy,4.99,Bayern,9.98
+C1203,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-23,1,1,drugstore,4.99,Baden-Württemberg,4.99
+C1220,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-23,1,1,drugstore,4.99,NRW,4.99
+C1253,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-23,1,1,supermarket,4.99,Hessen,4.99
+C1035,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-24,1,1,online,7.99,Baden-Württemberg,7.99
+C1175,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-24,1,1,supermarket,4.99,Saarland,4.99
+C1182,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-24,1,1,pharmacy,4.99,Hessen,4.99
+C1256,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-24,1,1,supermarket,4.99,Hessen,4.99
+C1011,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-26,1,1,online,7.99,NRW,7.99
+C1160,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-26,1,3,pharmacy,4.99,Bayern,14.97
+C1180,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-26,1,1,pharmacy,4.99,Saarland,4.99
+C1036,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-28,1,1,pharmacy,7.99,Bayern,7.99
+C1038,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-01-28,1,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1110,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-01-28,1,2,pharmacy,5.49,NRW,10.98
+C1156,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-28,1,1,pharmacy,4.99,Hessen,4.99
+C1176,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-01-28,1,1,supermarket,4.99,Hessen,4.99
+C1234,BUDGET,EIS001,Eisspray akut,2025-02-01,2,1,supermarket,8.49,Baden-Württemberg,8.49
+C1126,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-02-02,2,2,drugstore,5.49,NRW,10.98
+C1139,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-02,2,2,supermarket,7.99,Bayern,15.98
+C1142,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-02,2,1,pharmacy,7.99,Hessen,7.99
+C1149,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-02,2,1,pharmacy,4.99,Bayern,4.99
+C1159,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-02,2,1,supermarket,4.99,Bayern,4.99
+C1171,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-02,2,3,supermarket,4.99,Saarland,14.97
+C1174,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-02,2,1,pharmacy,4.99,Saarland,4.99
+C1222,BUDGET,HOR001,Hornhaut Entferner Maske,2025-02-02,2,1,drugstore,5.49,Hessen,5.49
+C1246,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-02,2,1,drugstore,4.99,Hessen,4.99
+C1048,ATHLETE,EIS001,Eisspray akut,2025-02-03,2,1,pharmacy,8.49,Bayern,8.49
+C1191,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-03,2,2,pharmacy,7.99,Hessen,15.98
+C1236,BUDGET,EIS001,Eisspray akut,2025-02-03,2,1,drugstore,8.49,NRW,8.49
+C1043,ATHLETE,EIS001,Eisspray akut,2025-02-04,2,2,pharmacy,8.49,Bayern,16.98
+C1159,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-04,2,1,supermarket,4.99,Bayern,4.99
+C1005,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-05,2,2,pharmacy,7.99,Bayern,15.98
+C1030,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-05,2,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1042,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-05,2,1,pharmacy,7.99,Bayern,7.99
+C1150,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-05,2,1,supermarket,4.99,Bayern,4.99
+C1198,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-05,2,2,drugstore,4.99,Baden-Württemberg,9.98
+C1212,BUDGET,EIS001,Eisspray akut,2025-02-05,2,2,drugstore,8.49,Baden-Württemberg,16.98
+C1220,BUDGET,EIS001,Eisspray akut,2025-02-05,2,1,drugstore,8.49,NRW,8.49
+C1232,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-05,2,2,supermarket,4.99,NRW,9.98
+C1235,BUDGET,EIS001,Eisspray akut,2025-02-05,2,2,supermarket,8.49,Hessen,16.98
+C1006,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-06,2,1,online,7.99,Bayern,7.99
+C1117,SELFCARE,BEI001,5in1 Beinlotion,2025-02-06,2,2,pharmacy,9.99,NRW,19.98
+C1181,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-06,2,2,supermarket,7.99,Bayern,15.98
+C1210,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-06,2,2,supermarket,4.99,NRW,9.98
+C1234,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-06,2,2,supermarket,4.99,Baden-Württemberg,9.98
+C1008,ATHLETE,EIS001,Eisspray akut,2025-02-07,2,1,online,8.49,NRW,8.49
+C1018,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-07,2,1,pharmacy,7.99,NRW,7.99
+C1030,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-07,2,2,online,7.99,Baden-Württemberg,15.98
+C1049,ATHLETE,EIS001,Eisspray akut,2025-02-07,2,2,online,8.49,NRW,16.98
+C1083,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-02-07,2,3,pharmacy,5.49,NRW,16.47
+C1105,SELFCARE,BEI001,5in1 Beinlotion,2025-02-07,2,2,pharmacy,9.99,Hessen,19.98
+C1242,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-07,2,1,drugstore,4.99,NRW,4.99
+C1001,ATHLETE,EIS001,Eisspray akut,2025-02-08,2,1,online,8.49,Baden-Württemberg,8.49
+C1005,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-08,2,1,online,7.99,Baden-Württemberg,7.99
+C1031,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-08,2,2,online,7.99,NRW,15.98
+C1190,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-08,2,1,pharmacy,7.99,Bayern,7.99
+C1202,BUDGET,EIS001,Eisspray akut,2025-02-08,2,1,supermarket,8.49,Hessen,8.49
+C1214,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-08,2,1,drugstore,4.99,Hessen,4.99
+C1247,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-08,2,1,drugstore,4.99,Hessen,4.99
+C1166,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-09,2,1,pharmacy,7.99,Bayern,7.99
+C1007,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-10,2,1,online,7.99,Baden-Württemberg,7.99
+C1044,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-10,2,1,online,7.99,Bayern,7.99
+C1146,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-10,2,2,supermarket,4.99,Bayern,9.98
+C1159,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-10,2,2,pharmacy,4.99,Hessen,9.98
+C1188,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-10,2,1,supermarket,7.99,Bayern,7.99
+C1254,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-10,2,1,supermarket,4.99,Hessen,4.99
+C1033,ATHLETE,EIS001,Eisspray akut,2025-02-11,2,1,online,8.49,Baden-Württemberg,8.49
+C1218,BUDGET,EIS001,Eisspray akut,2025-02-11,2,1,supermarket,8.49,Baden-Württemberg,8.49
+C1218,BUDGET,EIS001,Eisspray akut,2025-02-11,2,1,supermarket,8.49,Hessen,8.49
+C1002,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-12,2,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1034,ATHLETE,EIS001,Eisspray akut,2025-02-12,2,2,online,8.49,Baden-Württemberg,16.98
+C1246,BUDGET,EIS001,Eisspray akut,2025-02-12,2,1,supermarket,8.49,NRW,8.49
+C1049,ATHLETE,EIS001,Eisspray akut,2025-02-13,2,3,pharmacy,8.49,Baden-Württemberg,25.47
+C1137,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-13,2,1,pharmacy,4.99,Bayern,4.99
+C1003,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-14,2,1,online,7.99,Baden-Württemberg,7.99
+C1015,ATHLETE,EIS001,Eisspray akut,2025-02-14,2,1,pharmacy,8.49,Bayern,8.49
+C1067,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-02-14,2,1,pharmacy,5.49,Hessen,5.49
+C1147,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-14,2,1,supermarket,4.99,Bayern,4.99
+C1051,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-15,2,1,online,7.99,Bayern,7.99
+C1178,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-15,2,2,supermarket,7.99,Saarland,15.98
+C1192,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-15,2,1,pharmacy,7.99,Saarland,7.99
+C1225,BUDGET,HOR001,Hornhaut Entferner Maske,2025-02-15,2,1,supermarket,5.49,Baden-Württemberg,5.49
+C1239,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-15,2,2,supermarket,4.99,Baden-Württemberg,9.98
+C1247,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-15,2,1,drugstore,4.99,NRW,4.99
+C1247,BUDGET,EIS001,Eisspray akut,2025-02-16,2,1,supermarket,8.49,NRW,8.49
+C1257,BUDGET,EIS001,Eisspray akut,2025-02-16,2,2,supermarket,8.49,NRW,16.98
+C1259,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-16,2,2,drugstore,4.99,Hessen,9.98
+C1007,ATHLETE,EIS001,Eisspray akut,2025-02-17,2,1,online,8.49,Bayern,8.49
+C1037,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-17,2,1,pharmacy,7.99,Bayern,7.99
+C1053,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-17,2,1,pharmacy,7.99,Bayern,7.99
+C1143,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-17,2,2,supermarket,7.99,Hessen,15.98
+C1149,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-17,2,3,supermarket,4.99,Bayern,14.97
+C1244,BUDGET,BEI001,5in1 Beinlotion,2025-02-17,2,1,drugstore,9.99,Baden-Württemberg,9.99
+C1251,BUDGET,EIS001,Eisspray akut,2025-02-17,2,2,drugstore,8.49,Hessen,16.98
+C1059,SELFCARE,BEI001,5in1 Beinlotion,2025-02-18,2,3,pharmacy,9.99,NRW,29.97
+C1082,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-02-18,2,1,pharmacy,5.49,Hessen,5.49
+C1148,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-18,2,1,pharmacy,7.99,Hessen,7.99
+C1164,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-18,2,1,pharmacy,7.99,Saarland,7.99
+C1204,BUDGET,HOR001,Hornhaut Entferner Maske,2025-02-18,2,1,drugstore,5.49,NRW,5.49
+C1062,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-02-19,2,2,pharmacy,5.49,NRW,10.98
+C1080,SELFCARE,BEI001,5in1 Beinlotion,2025-02-19,2,1,pharmacy,9.99,Hessen,9.99
+C1123,SELFCARE,BEI001,5in1 Beinlotion,2025-02-19,2,1,pharmacy,9.99,NRW,9.99
+C1184,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-19,2,1,supermarket,7.99,Bayern,7.99
+C1234,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-19,2,3,drugstore,4.99,NRW,14.97
+C1048,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-20,2,1,pharmacy,7.99,Bayern,7.99
+C1050,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-20,2,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1112,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-02-21,2,2,pharmacy,5.49,Hessen,10.98
+C1173,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-21,2,1,pharmacy,4.99,Saarland,4.99
+C1044,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-22,2,1,pharmacy,7.99,Bayern,7.99
+C1141,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-22,2,1,supermarket,7.99,Hessen,7.99
+C1146,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-22,2,2,pharmacy,4.99,Saarland,9.98
+C1162,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-22,2,1,pharmacy,4.99,Bayern,4.99
+C1162,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-22,2,2,pharmacy,7.99,Hessen,15.98
+C1191,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-22,2,1,supermarket,7.99,Saarland,7.99
+C1017,ATHLETE,EIS001,Eisspray akut,2025-02-23,2,2,online,8.49,Bayern,16.98
+C1018,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-23,2,1,pharmacy,7.99,NRW,7.99
+C1041,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-23,2,3,pharmacy,7.99,Baden-Württemberg,23.97
+C1054,ATHLETE,EIS001,Eisspray akut,2025-02-23,2,1,online,8.49,NRW,8.49
+C1099,SELFCARE,BEI001,5in1 Beinlotion,2025-02-23,2,1,pharmacy,9.99,NRW,9.99
+C1153,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-23,2,2,supermarket,4.99,Hessen,9.98
+C1154,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-23,2,1,pharmacy,4.99,Saarland,4.99
+C1167,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-23,2,1,supermarket,4.99,Hessen,4.99
+C1175,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-23,2,1,pharmacy,7.99,Bayern,7.99
+C1182,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-23,2,1,pharmacy,4.99,Saarland,4.99
+C1203,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-23,2,2,supermarket,4.99,Baden-Württemberg,9.98
+C1236,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-23,2,1,drugstore,4.99,Hessen,4.99
+C1018,ATHLETE,EIS001,Eisspray akut,2025-02-24,2,1,online,8.49,Baden-Württemberg,8.49
+C1165,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-24,2,1,pharmacy,4.99,Saarland,4.99
+C1184,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-24,2,3,pharmacy,7.99,Hessen,23.97
+C1254,BUDGET,EIS001,Eisspray akut,2025-02-24,2,1,supermarket,8.49,Hessen,8.49
+C1260,BUDGET,BEI001,5in1 Beinlotion,2025-02-24,2,1,supermarket,9.99,Hessen,9.99
+C1033,ATHLETE,EIS001,Eisspray akut,2025-02-25,2,1,online,8.49,Bayern,8.49
+C1228,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-25,2,2,supermarket,4.99,NRW,9.98
+C1026,ATHLETE,EIS001,Eisspray akut,2025-02-26,2,3,pharmacy,8.49,Baden-Württemberg,25.47
+C1045,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-26,2,1,online,7.99,NRW,7.99
+C1077,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-02-26,2,2,pharmacy,5.49,Hessen,10.98
+C1219,BUDGET,EIS001,Eisspray akut,2025-02-26,2,1,drugstore,8.49,NRW,8.49
+C1043,ATHLETE,EIS001,Eisspray akut,2025-02-27,2,1,online,8.49,Baden-Württemberg,8.49
+C1198,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-02-27,2,2,drugstore,4.99,Baden-Württemberg,9.98
+C1027,ATHLETE,EIS001,Eisspray akut,2025-02-28,2,1,online,8.49,NRW,8.49
+C1084,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-02-28,2,1,drugstore,5.49,Saarland,5.49
+C1085,SELFCARE,BEI001,5in1 Beinlotion,2025-02-28,2,1,pharmacy,9.99,Hessen,9.99
+C1151,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-02-28,2,2,pharmacy,7.99,Bayern,15.98
+C1258,BUDGET,HOR001,Hornhaut Entferner Maske,2025-02-28,2,2,supermarket,5.49,Baden-Württemberg,10.98
+C1076,SELFCARE,BEI001,5in1 Beinlotion,2025-03-01,3,2,pharmacy,9.99,Hessen,19.98
+C1096,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-01,3,1,drugstore,5.49,Saarland,5.49
+C1254,BUDGET,BEI001,5in1 Beinlotion,2025-03-01,3,1,drugstore,9.99,Baden-Württemberg,9.99
+C1082,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-02,3,3,drugstore,5.49,NRW,16.47
+C1091,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-02,3,1,pharmacy,5.49,NRW,5.49
+C1096,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-02,3,1,drugstore,5.49,Hessen,5.49
+C1138,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-03-02,3,1,supermarket,7.99,Hessen,7.99
+C1158,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-02,3,2,supermarket,4.99,Saarland,9.98
+C1209,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-02,3,1,supermarket,4.99,Hessen,4.99
+C1251,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-02,3,3,drugstore,4.99,NRW,14.97
+C1259,BUDGET,EIS001,Eisspray akut,2025-03-02,3,3,drugstore,8.49,Hessen,25.47
+C1068,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-03,3,1,drugstore,5.49,NRW,5.49
+C1068,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-03,3,1,pharmacy,5.49,NRW,5.49
+C1166,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-03,3,1,supermarket,4.99,Saarland,4.99
+C1167,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-03,3,3,supermarket,4.99,Saarland,14.97
+C1237,BUDGET,BEI001,5in1 Beinlotion,2025-03-03,3,1,supermarket,9.99,Baden-Württemberg,9.99
+C1239,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-03,3,1,supermarket,4.99,Baden-Württemberg,4.99
+C1036,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-03-04,3,1,pharmacy,7.99,Bayern,7.99
+C1172,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-04,3,1,pharmacy,4.99,Bayern,4.99
+C1197,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-04,3,2,supermarket,4.99,Hessen,9.98
+C1240,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-04,3,1,drugstore,4.99,Baden-Württemberg,4.99
+C1244,BUDGET,EIS001,Eisspray akut,2025-03-04,3,2,supermarket,8.49,Hessen,16.98
+C1261,BUDGET,BEI001,5in1 Beinlotion,2025-03-04,3,1,drugstore,9.99,NRW,9.99
+C1067,SELFCARE,BEI001,5in1 Beinlotion,2025-03-05,3,1,pharmacy,9.99,NRW,9.99
+C1077,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-05,3,2,pharmacy,5.49,Saarland,10.98
+C1084,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-05,3,2,drugstore,5.49,NRW,10.98
+C1136,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-05,3,2,supermarket,4.99,Bayern,9.98
+C1192,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-03-05,3,1,supermarket,7.99,Bayern,7.99
+C1256,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-05,3,1,supermarket,4.99,Hessen,4.99
+C1003,ATHLETE,EIS001,Eisspray akut,2025-03-06,3,2,pharmacy,8.49,Baden-Württemberg,16.98
+C1095,SELFCARE,BEI001,5in1 Beinlotion,2025-03-06,3,2,pharmacy,9.99,NRW,19.98
+C1119,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-06,3,2,pharmacy,5.49,NRW,10.98
+C1123,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-06,3,1,pharmacy,5.49,NRW,5.49
+C1087,SELFCARE,BEI001,5in1 Beinlotion,2025-03-07,3,1,pharmacy,9.99,Saarland,9.99
+C1095,SELFCARE,BEI001,5in1 Beinlotion,2025-03-07,3,3,drugstore,9.99,NRW,29.97
+C1127,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-07,3,1,drugstore,5.49,NRW,5.49
+C1200,BUDGET,BEI001,5in1 Beinlotion,2025-03-07,3,3,drugstore,9.99,Baden-Württemberg,29.97
+C1228,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-07,3,1,supermarket,4.99,Hessen,4.99
+C1252,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-07,3,2,supermarket,4.99,NRW,9.98
+C1264,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-07,3,1,drugstore,4.99,NRW,4.99
+C1063,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-08,3,1,pharmacy,5.49,Hessen,5.49
+C1067,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-08,3,1,drugstore,5.49,NRW,5.49
+C1072,SELFCARE,BEI001,5in1 Beinlotion,2025-03-08,3,1,pharmacy,9.99,Hessen,9.99
+C1085,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-08,3,1,drugstore,5.49,Hessen,5.49
+C1115,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-08,3,2,drugstore,5.49,Hessen,10.98
+C1139,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-08,3,1,supermarket,4.99,Hessen,4.99
+C1144,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-08,3,1,pharmacy,4.99,Bayern,4.99
+C1177,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-08,3,2,supermarket,4.99,Bayern,9.98
+C1078,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-09,3,1,drugstore,5.49,Hessen,5.49
+C1103,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-09,3,2,pharmacy,5.49,NRW,10.98
+C1107,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-09,3,1,pharmacy,5.49,Saarland,5.49
+C1179,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-09,3,1,pharmacy,4.99,Saarland,4.99
+C1022,ATHLETE,EIS001,Eisspray akut,2025-03-10,3,1,pharmacy,8.49,NRW,8.49
+C1055,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-03-10,3,2,online,7.99,Baden-Württemberg,15.98
+C1234,BUDGET,EIS001,Eisspray akut,2025-03-10,3,1,drugstore,8.49,Hessen,8.49
+C1265,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-10,3,1,supermarket,4.99,Hessen,4.99
+C1010,ATHLETE,EIS001,Eisspray akut,2025-03-11,3,2,pharmacy,8.49,Baden-Württemberg,16.98
+C1150,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-03-11,3,2,supermarket,7.99,Bayern,15.98
+C1193,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-11,3,2,pharmacy,4.99,Saarland,9.98
+C1246,BUDGET,HOR001,Hornhaut Entferner Maske,2025-03-11,3,2,supermarket,5.49,Hessen,10.98
+C1253,BUDGET,EIS001,Eisspray akut,2025-03-11,3,3,drugstore,8.49,NRW,25.47
+C1096,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-12,3,1,pharmacy,5.49,Hessen,5.49
+C1161,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-12,3,2,supermarket,4.99,Hessen,9.98
+C1263,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-12,3,3,drugstore,4.99,Hessen,14.97
+C1264,BUDGET,HOR001,Hornhaut Entferner Maske,2025-03-12,3,2,supermarket,5.49,Baden-Württemberg,10.98
+C1066,SELFCARE,BEI001,5in1 Beinlotion,2025-03-13,3,1,drugstore,9.99,Saarland,9.99
+C1183,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-13,3,2,supermarket,4.99,Saarland,9.98
+C1198,BUDGET,HOR001,Hornhaut Entferner Maske,2025-03-13,3,1,drugstore,5.49,Hessen,5.49
+C1223,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-13,3,1,supermarket,4.99,Hessen,4.99
+C1020,ATHLETE,EIS001,Eisspray akut,2025-03-14,3,1,pharmacy,8.49,NRW,8.49
+C1060,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-14,3,1,pharmacy,5.49,NRW,5.49
+C1109,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-14,3,1,pharmacy,5.49,Hessen,5.49
+C1125,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-14,3,2,drugstore,5.49,Hessen,10.98
+C1146,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-14,3,2,supermarket,4.99,Bayern,9.98
+C1165,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-03-14,3,2,pharmacy,7.99,Hessen,15.98
+C1204,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-14,3,2,supermarket,4.99,Baden-Württemberg,9.98
+C1086,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-15,3,1,pharmacy,5.49,Hessen,5.49
+C1204,BUDGET,HOR001,Hornhaut Entferner Maske,2025-03-15,3,3,drugstore,5.49,Hessen,16.47
+C1233,BUDGET,HOR001,Hornhaut Entferner Maske,2025-03-15,3,2,supermarket,5.49,Baden-Württemberg,10.98
+C1265,BUDGET,HOR001,Hornhaut Entferner Maske,2025-03-15,3,2,drugstore,5.49,NRW,10.98
+C1012,ATHLETE,EIS001,Eisspray akut,2025-03-16,3,2,online,8.49,NRW,16.98
+C1016,ATHLETE,EIS001,Eisspray akut,2025-03-16,3,2,online,8.49,NRW,16.98
+C1110,SELFCARE,BEI001,5in1 Beinlotion,2025-03-16,3,1,drugstore,9.99,Hessen,9.99
+C1193,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-16,3,1,pharmacy,4.99,Hessen,4.99
+C1206,BUDGET,EIS001,Eisspray akut,2025-03-16,3,2,drugstore,8.49,NRW,16.98
+C1233,BUDGET,HOR001,Hornhaut Entferner Maske,2025-03-16,3,2,drugstore,5.49,Hessen,10.98
+C1257,BUDGET,EIS001,Eisspray akut,2025-03-16,3,1,supermarket,8.49,Hessen,8.49
+C1087,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-17,3,3,drugstore,5.49,Hessen,16.47
+C1122,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-17,3,2,drugstore,5.49,NRW,10.98
+C1126,SELFCARE,BEI001,5in1 Beinlotion,2025-03-17,3,1,drugstore,9.99,NRW,9.99
+C1213,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-17,3,1,drugstore,4.99,NRW,4.99
+C1217,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-17,3,1,drugstore,4.99,Baden-Württemberg,4.99
+C1218,BUDGET,HOR001,Hornhaut Entferner Maske,2025-03-17,3,1,drugstore,5.49,Hessen,5.49
+C1061,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-18,3,1,pharmacy,5.49,NRW,5.49
+C1067,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-18,3,3,drugstore,5.49,Saarland,16.47
+C1096,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-18,3,1,drugstore,5.49,Hessen,5.49
+C1135,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-18,3,1,pharmacy,5.49,Saarland,5.49
+C1139,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-03-18,3,2,pharmacy,7.99,Saarland,15.98
+C1150,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-18,3,1,supermarket,4.99,Bayern,4.99
+C1157,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-18,3,2,supermarket,4.99,Bayern,9.98
+C1177,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-03-18,3,2,pharmacy,7.99,Bayern,15.98
+C1182,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-18,3,3,pharmacy,4.99,Bayern,14.97
+C1214,BUDGET,HOR001,Hornhaut Entferner Maske,2025-03-18,3,1,supermarket,5.49,Baden-Württemberg,5.49
+C1225,BUDGET,EIS001,Eisspray akut,2025-03-18,3,2,supermarket,8.49,Baden-Württemberg,16.98
+C1240,BUDGET,BEI001,5in1 Beinlotion,2025-03-18,3,1,drugstore,9.99,NRW,9.99
+C1248,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-18,3,2,supermarket,4.99,Baden-Württemberg,9.98
+C1004,ATHLETE,EIS001,Eisspray akut,2025-03-19,3,3,online,8.49,Baden-Württemberg,25.47
+C1098,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-19,3,1,pharmacy,5.49,Saarland,5.49
+C1114,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-19,3,2,pharmacy,5.49,Hessen,10.98
+C1050,ATHLETE,EIS001,Eisspray akut,2025-03-20,3,2,pharmacy,8.49,Baden-Württemberg,16.98
+C1056,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-20,3,2,pharmacy,5.49,Saarland,10.98
+C1067,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-20,3,1,pharmacy,5.49,NRW,5.49
+C1081,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-20,3,1,drugstore,5.49,Hessen,5.49
+C1112,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-20,3,1,pharmacy,5.49,Hessen,5.49
+C1027,ATHLETE,EIS001,Eisspray akut,2025-03-21,3,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1065,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-21,3,1,pharmacy,5.49,Saarland,5.49
+C1257,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-21,3,1,supermarket,4.99,NRW,4.99
+C1011,ATHLETE,EIS001,Eisspray akut,2025-03-22,3,1,pharmacy,8.49,NRW,8.49
+C1058,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-22,3,1,pharmacy,5.49,Hessen,5.49
+C1070,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-22,3,1,drugstore,5.49,Hessen,5.49
+C1124,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-22,3,1,drugstore,5.49,NRW,5.49
+C1128,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-22,3,2,drugstore,5.49,Saarland,10.98
+C1180,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-22,3,1,supermarket,4.99,Saarland,4.99
+C1217,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-22,3,1,drugstore,4.99,NRW,4.99
+C1229,BUDGET,HOR001,Hornhaut Entferner Maske,2025-03-22,3,1,drugstore,5.49,Hessen,5.49
+C1256,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-22,3,1,drugstore,4.99,Baden-Württemberg,4.99
+C1013,ATHLETE,EIS001,Eisspray akut,2025-03-23,3,1,online,8.49,NRW,8.49
+C1013,ATHLETE,EIS001,Eisspray akut,2025-03-23,3,1,online,8.49,Baden-Württemberg,8.49
+C1042,ATHLETE,EIS001,Eisspray akut,2025-03-23,3,2,online,8.49,Baden-Württemberg,16.98
+C1088,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-23,3,1,drugstore,5.49,Hessen,5.49
+C1130,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-23,3,2,drugstore,5.49,Hessen,10.98
+C1180,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-23,3,1,supermarket,4.99,Bayern,4.99
+C1201,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-23,3,1,supermarket,4.99,Hessen,4.99
+C1206,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-23,3,1,drugstore,4.99,Baden-Württemberg,4.99
+C1019,ATHLETE,EIS001,Eisspray akut,2025-03-24,3,1,pharmacy,8.49,Bayern,8.49
+C1057,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-24,3,3,drugstore,5.49,Saarland,16.47
+C1059,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-24,3,3,drugstore,5.49,Hessen,16.47
+C1062,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-24,3,1,drugstore,5.49,Saarland,5.49
+C1064,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-24,3,1,drugstore,5.49,Saarland,5.49
+C1207,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-24,3,3,supermarket,4.99,NRW,14.97
+C1243,BUDGET,HOR001,Hornhaut Entferner Maske,2025-03-24,3,1,supermarket,5.49,Hessen,5.49
+C1258,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-24,3,1,supermarket,4.99,Baden-Württemberg,4.99
+C1004,ATHLETE,EIS001,Eisspray akut,2025-03-25,3,1,online,8.49,Baden-Württemberg,8.49
+C1109,SELFCARE,BEI001,5in1 Beinlotion,2025-03-25,3,2,pharmacy,9.99,Saarland,19.98
+C1116,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-25,3,2,drugstore,5.49,NRW,10.98
+C1121,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-25,3,1,drugstore,5.49,Saarland,5.49
+C1212,BUDGET,BEI001,5in1 Beinlotion,2025-03-25,3,1,drugstore,9.99,Baden-Württemberg,9.99
+C1114,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-26,3,2,drugstore,5.49,NRW,10.98
+C1172,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-26,3,1,supermarket,4.99,Hessen,4.99
+C1011,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-03-27,3,3,pharmacy,7.99,NRW,23.97
+C1198,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-27,3,3,supermarket,4.99,Baden-Württemberg,14.97
+C1202,BUDGET,HOR001,Hornhaut Entferner Maske,2025-03-27,3,2,drugstore,5.49,NRW,10.98
+C1255,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-27,3,2,supermarket,4.99,NRW,9.98
+C1114,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-03-28,3,2,pharmacy,5.49,NRW,10.98
+C1164,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-03-28,3,2,supermarket,4.99,Bayern,9.98
+C1242,BUDGET,EIS001,Eisspray akut,2025-03-28,3,1,drugstore,8.49,Hessen,8.49
+C1024,ATHLETE,EIS001,Eisspray akut,2025-04-01,4,1,online,8.49,Bayern,8.49
+C1044,ATHLETE,EIS001,Eisspray akut,2025-04-01,4,2,online,8.49,Baden-Württemberg,16.98
+C1118,SELFCARE,BEI001,5in1 Beinlotion,2025-04-01,4,1,drugstore,9.99,NRW,9.99
+C1125,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-01,4,2,pharmacy,5.49,NRW,10.98
+C1240,BUDGET,HOR001,Hornhaut Entferner Maske,2025-04-01,4,1,supermarket,5.49,NRW,5.49
+C1019,ATHLETE,EIS001,Eisspray akut,2025-04-02,4,1,online,8.49,Baden-Württemberg,8.49
+C1056,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-02,4,3,pharmacy,5.49,NRW,16.47
+C1064,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-02,4,1,pharmacy,5.49,NRW,5.49
+C1177,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-04-02,4,1,pharmacy,4.99,Hessen,4.99
+C1199,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-04-02,4,1,drugstore,4.99,NRW,4.99
+C1020,ATHLETE,EIS001,Eisspray akut,2025-04-03,4,1,online,8.49,Baden-Württemberg,8.49
+C1129,SELFCARE,BEI001,5in1 Beinlotion,2025-04-03,4,2,drugstore,9.99,NRW,19.98
+C1030,ATHLETE,EIS001,Eisspray akut,2025-04-04,4,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1067,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-04,4,1,drugstore,5.49,Hessen,5.49
+C1072,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-04,4,1,drugstore,5.49,Hessen,5.49
+C1102,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-04,4,1,drugstore,5.49,Hessen,5.49
+C1106,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-04,4,1,drugstore,5.49,Saarland,5.49
+C1127,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-04,4,2,drugstore,5.49,NRW,10.98
+C1009,ATHLETE,EIS001,Eisspray akut,2025-04-05,4,2,pharmacy,8.49,Bayern,16.98
+C1034,ATHLETE,EIS001,Eisspray akut,2025-04-05,4,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1085,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-05,4,1,pharmacy,5.49,NRW,5.49
+C1093,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-05,4,3,drugstore,5.49,NRW,16.47
+C1039,ATHLETE,EIS001,Eisspray akut,2025-04-06,4,2,online,8.49,Bayern,16.98
+C1049,ATHLETE,EIS001,Eisspray akut,2025-04-06,4,1,online,8.49,NRW,8.49
+C1214,BUDGET,HOR001,Hornhaut Entferner Maske,2025-04-06,4,1,supermarket,5.49,NRW,5.49
+C1002,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-04-07,4,3,pharmacy,7.99,Bayern,23.97
+C1012,ATHLETE,EIS001,Eisspray akut,2025-04-07,4,1,pharmacy,8.49,NRW,8.49
+C1172,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-04-07,4,2,pharmacy,4.99,Hessen,9.98
+C1198,BUDGET,BEI001,5in1 Beinlotion,2025-04-07,4,1,drugstore,9.99,Baden-Württemberg,9.99
+C1216,BUDGET,BEI001,5in1 Beinlotion,2025-04-07,4,1,drugstore,9.99,NRW,9.99
+C1235,BUDGET,EIS001,Eisspray akut,2025-04-07,4,1,supermarket,8.49,Baden-Württemberg,8.49
+C1247,BUDGET,HOR001,Hornhaut Entferner Maske,2025-04-07,4,1,supermarket,5.49,Hessen,5.49
+C1018,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-04-09,4,1,online,7.99,NRW,7.99
+C1077,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-09,4,3,pharmacy,5.49,Saarland,16.47
+C1135,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-09,4,1,pharmacy,5.49,Saarland,5.49
+C1021,ATHLETE,EIS001,Eisspray akut,2025-04-10,4,2,pharmacy,8.49,Bayern,16.98
+C1055,ATHLETE,EIS001,Eisspray akut,2025-04-10,4,3,online,8.49,NRW,25.47
+C1080,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-10,4,1,pharmacy,5.49,NRW,5.49
+C1125,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-10,4,1,drugstore,5.49,NRW,5.49
+C1132,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-10,4,2,drugstore,5.49,Hessen,10.98
+C1221,BUDGET,BEI001,5in1 Beinlotion,2025-04-10,4,3,drugstore,9.99,Baden-Württemberg,29.97
+C1233,BUDGET,BEI001,5in1 Beinlotion,2025-04-10,4,2,drugstore,9.99,Baden-Württemberg,19.98
+C1015,ATHLETE,EIS001,Eisspray akut,2025-04-11,4,1,pharmacy,8.49,NRW,8.49
+C1251,BUDGET,EIS001,Eisspray akut,2025-04-11,4,1,supermarket,8.49,Baden-Württemberg,8.49
+C1019,ATHLETE,EIS001,Eisspray akut,2025-04-12,4,1,online,8.49,Baden-Württemberg,8.49
+C1116,SELFCARE,BEI001,5in1 Beinlotion,2025-04-12,4,1,pharmacy,9.99,Saarland,9.99
+C1238,BUDGET,HOR001,Hornhaut Entferner Maske,2025-04-12,4,2,drugstore,5.49,Baden-Württemberg,10.98
+C1109,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-13,4,2,drugstore,5.49,Hessen,10.98
+C1118,SELFCARE,BEI001,5in1 Beinlotion,2025-04-13,4,2,drugstore,9.99,NRW,19.98
+C1177,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-04-13,4,1,supermarket,4.99,Saarland,4.99
+C1080,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-14,4,1,pharmacy,5.49,Saarland,5.49
+C1098,SELFCARE,BEI001,5in1 Beinlotion,2025-04-14,4,1,drugstore,9.99,Saarland,9.99
+C1132,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-14,4,1,pharmacy,5.49,NRW,5.49
+C1197,BUDGET,HOR001,Hornhaut Entferner Maske,2025-04-14,4,1,supermarket,5.49,Hessen,5.49
+C1209,BUDGET,EIS001,Eisspray akut,2025-04-14,4,1,drugstore,8.49,Baden-Württemberg,8.49
+C1240,BUDGET,HOR001,Hornhaut Entferner Maske,2025-04-14,4,1,drugstore,5.49,Hessen,5.49
+C1040,ATHLETE,EIS001,Eisspray akut,2025-04-15,4,1,pharmacy,8.49,NRW,8.49
+C1074,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-15,4,1,drugstore,5.49,NRW,5.49
+C1122,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-15,4,2,pharmacy,5.49,NRW,10.98
+C1210,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-04-15,4,2,drugstore,4.99,Baden-Württemberg,9.98
+C1227,BUDGET,HOR001,Hornhaut Entferner Maske,2025-04-15,4,3,drugstore,5.49,NRW,16.47
+C1240,BUDGET,EIS001,Eisspray akut,2025-04-15,4,2,drugstore,8.49,NRW,16.98
+C1241,BUDGET,EIS001,Eisspray akut,2025-04-15,4,1,drugstore,8.49,Baden-Württemberg,8.49
+C1026,ATHLETE,EIS001,Eisspray akut,2025-04-16,4,2,pharmacy,8.49,NRW,16.98
+C1068,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-16,4,1,pharmacy,5.49,Hessen,5.49
+C1076,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-16,4,1,drugstore,5.49,Hessen,5.49
+C1098,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-16,4,1,drugstore,5.49,Saarland,5.49
+C1110,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-16,4,2,pharmacy,5.49,Saarland,10.98
+C1182,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-04-16,4,2,pharmacy,4.99,Saarland,9.98
+C1208,BUDGET,BEI001,5in1 Beinlotion,2025-04-16,4,2,drugstore,9.99,Hessen,19.98
+C1043,ATHLETE,EIS001,Eisspray akut,2025-04-17,4,1,pharmacy,8.49,Bayern,8.49
+C1029,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-04-19,4,2,online,7.99,Baden-Württemberg,15.98
+C1049,ATHLETE,EIS001,Eisspray akut,2025-04-19,4,1,online,8.49,Baden-Württemberg,8.49
+C1091,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-19,4,1,drugstore,5.49,Hessen,5.49
+C1103,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-19,4,1,pharmacy,5.49,Hessen,5.49
+C1104,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-19,4,2,drugstore,5.49,Saarland,10.98
+C1254,BUDGET,EIS001,Eisspray akut,2025-04-19,4,1,drugstore,8.49,Baden-Württemberg,8.49
+C1246,BUDGET,EIS001,Eisspray akut,2025-04-20,4,3,drugstore,8.49,Baden-Württemberg,25.47
+C1252,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-04-20,4,2,drugstore,4.99,Baden-Württemberg,9.98
+C1054,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-04-21,4,2,online,7.99,Baden-Württemberg,15.98
+C1083,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-21,4,2,pharmacy,5.49,Hessen,10.98
+C1260,BUDGET,HOR001,Hornhaut Entferner Maske,2025-04-21,4,3,drugstore,5.49,Baden-Württemberg,16.47
+C1012,ATHLETE,EIS001,Eisspray akut,2025-04-22,4,2,pharmacy,8.49,Bayern,16.98
+C1037,ATHLETE,EIS001,Eisspray akut,2025-04-22,4,1,pharmacy,8.49,NRW,8.49
+C1253,BUDGET,EIS001,Eisspray akut,2025-04-22,4,3,drugstore,8.49,NRW,25.47
+C1070,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-23,4,2,pharmacy,5.49,Hessen,10.98
+C1092,SELFCARE,BEI001,5in1 Beinlotion,2025-04-23,4,3,pharmacy,9.99,NRW,29.97
+C1106,SELFCARE,BEI001,5in1 Beinlotion,2025-04-23,4,2,pharmacy,9.99,Hessen,19.98
+C1109,SELFCARE,BEI001,5in1 Beinlotion,2025-04-23,4,2,pharmacy,9.99,Saarland,19.98
+C1161,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-04-23,4,2,pharmacy,4.99,Hessen,9.98
+C1187,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-04-23,4,2,supermarket,7.99,Hessen,15.98
+C1067,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-24,4,1,pharmacy,5.49,NRW,5.49
+C1211,BUDGET,HOR001,Hornhaut Entferner Maske,2025-04-24,4,1,drugstore,5.49,Hessen,5.49
+C1238,BUDGET,HOR001,Hornhaut Entferner Maske,2025-04-24,4,2,drugstore,5.49,NRW,10.98
+C1246,BUDGET,EIS001,Eisspray akut,2025-04-24,4,1,supermarket,8.49,Hessen,8.49
+C1072,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-25,4,2,pharmacy,5.49,Hessen,10.98
+C1097,SELFCARE,BEI001,5in1 Beinlotion,2025-04-25,4,1,pharmacy,9.99,Saarland,9.99
+C1130,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-25,4,1,pharmacy,5.49,NRW,5.49
+C1010,ATHLETE,EIS001,Eisspray akut,2025-04-26,4,3,online,8.49,NRW,25.47
+C1011,ATHLETE,EIS001,Eisspray akut,2025-04-26,4,2,pharmacy,8.49,Bayern,16.98
+C1046,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-04-26,4,3,online,7.99,Baden-Württemberg,23.97
+C1057,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-26,4,1,pharmacy,5.49,NRW,5.49
+C1069,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-26,4,1,drugstore,5.49,Saarland,5.49
+C1070,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-26,4,1,pharmacy,5.49,NRW,5.49
+C1116,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-26,4,3,drugstore,5.49,Hessen,16.47
+C1199,BUDGET,EIS001,Eisspray akut,2025-04-26,4,1,supermarket,8.49,Hessen,8.49
+C1236,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-04-26,4,1,drugstore,4.99,Baden-Württemberg,4.99
+C1064,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-27,4,1,drugstore,5.49,Hessen,5.49
+C1069,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-27,4,2,pharmacy,5.49,Hessen,10.98
+C1091,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-27,4,3,pharmacy,5.49,Saarland,16.47
+C1100,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-27,4,2,pharmacy,5.49,Hessen,10.98
+C1118,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-27,4,2,drugstore,5.49,Saarland,10.98
+C1225,BUDGET,HOR001,Hornhaut Entferner Maske,2025-04-27,4,2,supermarket,5.49,NRW,10.98
+C1008,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-04-28,4,1,pharmacy,7.99,NRW,7.99
+C1046,ATHLETE,EIS001,Eisspray akut,2025-04-28,4,2,pharmacy,8.49,NRW,16.98
+C1104,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-28,4,2,pharmacy,5.49,Saarland,10.98
+C1122,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-28,4,1,drugstore,5.49,NRW,5.49
+C1135,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-04-28,4,1,pharmacy,5.49,Hessen,5.49
+C1211,BUDGET,HOR001,Hornhaut Entferner Maske,2025-04-28,4,2,supermarket,5.49,NRW,10.98
+C1260,BUDGET,BEI001,5in1 Beinlotion,2025-04-28,4,2,supermarket,9.99,Hessen,19.98
+C1219,BUDGET,HOR001,Hornhaut Entferner Maske,2025-05-01,5,1,supermarket,5.49,Hessen,5.49
+C1244,BUDGET,EIS001,Eisspray akut,2025-05-01,5,1,supermarket,8.49,Hessen,8.49
+C1062,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-02,5,3,drugstore,5.49,NRW,16.47
+C1153,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-05-02,5,2,supermarket,7.99,Saarland,15.98
+C1197,BUDGET,BEI001,5in1 Beinlotion,2025-05-02,5,1,drugstore,9.99,NRW,9.99
+C1218,BUDGET,EIS001,Eisspray akut,2025-05-02,5,2,supermarket,8.49,Hessen,16.98
+C1230,BUDGET,HOR001,Hornhaut Entferner Maske,2025-05-02,5,2,supermarket,5.49,NRW,10.98
+C1248,BUDGET,EIS001,Eisspray akut,2025-05-02,5,3,supermarket,8.49,Baden-Württemberg,25.47
+C1249,BUDGET,BEI001,5in1 Beinlotion,2025-05-02,5,3,drugstore,9.99,Hessen,29.97
+C1020,ATHLETE,EIS001,Eisspray akut,2025-05-03,5,1,online,8.49,Bayern,8.49
+C1121,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-03,5,1,pharmacy,5.49,NRW,5.49
+C1024,ATHLETE,EIS001,Eisspray akut,2025-05-04,5,2,online,8.49,NRW,16.98
+C1076,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-04,5,1,drugstore,5.49,NRW,5.49
+C1190,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-05-04,5,1,pharmacy,4.99,Saarland,4.99
+C1245,BUDGET,BEI001,5in1 Beinlotion,2025-05-04,5,1,drugstore,9.99,Hessen,9.99
+C1261,BUDGET,BEI001,5in1 Beinlotion,2025-05-04,5,1,supermarket,9.99,Baden-Württemberg,9.99
+C1090,SELFCARE,BEI001,5in1 Beinlotion,2025-05-05,5,1,pharmacy,9.99,NRW,9.99
+C1098,SELFCARE,BEI001,5in1 Beinlotion,2025-05-05,5,2,drugstore,9.99,Saarland,19.98
+C1106,SELFCARE,BEI001,5in1 Beinlotion,2025-05-05,5,1,pharmacy,9.99,NRW,9.99
+C1263,BUDGET,EIS001,Eisspray akut,2025-05-05,5,1,supermarket,8.49,Baden-Württemberg,8.49
+C1265,BUDGET,BEI001,5in1 Beinlotion,2025-05-05,5,1,drugstore,9.99,NRW,9.99
+C1060,SELFCARE,BEI001,5in1 Beinlotion,2025-05-06,5,2,drugstore,9.99,Hessen,19.98
+C1114,SELFCARE,BEI001,5in1 Beinlotion,2025-05-06,5,3,pharmacy,9.99,Saarland,29.97
+C1115,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-06,5,1,pharmacy,5.49,Hessen,5.49
+C1154,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-05-06,5,1,supermarket,7.99,Bayern,7.99
+C1181,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-05-06,5,2,supermarket,7.99,Hessen,15.98
+C1203,BUDGET,EIS001,Eisspray akut,2025-05-06,5,1,drugstore,8.49,Hessen,8.49
+C1224,BUDGET,BEI001,5in1 Beinlotion,2025-05-06,5,1,supermarket,9.99,NRW,9.99
+C1256,BUDGET,HOR001,Hornhaut Entferner Maske,2025-05-06,5,1,drugstore,5.49,Hessen,5.49
+C1126,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-07,5,2,drugstore,5.49,Saarland,10.98
+C1218,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-05-07,5,2,drugstore,4.99,Hessen,9.98
+C1233,BUDGET,EIS001,Eisspray akut,2025-05-07,5,3,supermarket,8.49,NRW,25.47
+C1034,ATHLETE,EIS001,Eisspray akut,2025-05-08,5,3,online,8.49,Baden-Württemberg,25.47
+C1064,SELFCARE,BEI001,5in1 Beinlotion,2025-05-08,5,1,pharmacy,9.99,Hessen,9.99
+C1091,SELFCARE,BEI001,5in1 Beinlotion,2025-05-08,5,1,pharmacy,9.99,Saarland,9.99
+C1094,SELFCARE,BEI001,5in1 Beinlotion,2025-05-08,5,2,drugstore,9.99,Hessen,19.98
+C1122,SELFCARE,BEI001,5in1 Beinlotion,2025-05-08,5,1,pharmacy,9.99,NRW,9.99
+C1129,SELFCARE,BEI001,5in1 Beinlotion,2025-05-08,5,2,drugstore,9.99,Saarland,19.98
+C1206,BUDGET,BEI001,5in1 Beinlotion,2025-05-08,5,1,drugstore,9.99,Baden-Württemberg,9.99
+C1225,BUDGET,EIS001,Eisspray akut,2025-05-08,5,3,supermarket,8.49,Baden-Württemberg,25.47
+C1022,ATHLETE,EIS001,Eisspray akut,2025-05-10,5,2,pharmacy,8.49,Baden-Württemberg,16.98
+C1041,ATHLETE,EIS001,Eisspray akut,2025-05-10,5,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1052,ATHLETE,EIS001,Eisspray akut,2025-05-10,5,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1065,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-10,5,1,drugstore,5.49,Saarland,5.49
+C1116,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-10,5,2,pharmacy,5.49,Hessen,10.98
+C1243,BUDGET,EIS001,Eisspray akut,2025-05-10,5,1,supermarket,8.49,NRW,8.49
+C1038,ATHLETE,EIS001,Eisspray akut,2025-05-11,5,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1063,SELFCARE,BEI001,5in1 Beinlotion,2025-05-11,5,2,drugstore,9.99,Hessen,19.98
+C1112,SELFCARE,BEI001,5in1 Beinlotion,2025-05-11,5,3,drugstore,9.99,Saarland,29.97
+C1174,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-05-11,5,2,pharmacy,4.99,Bayern,9.98
+C1232,BUDGET,EIS001,Eisspray akut,2025-05-11,5,1,supermarket,8.49,NRW,8.49
+C1001,ATHLETE,EIS001,Eisspray akut,2025-05-12,5,2,pharmacy,8.49,Bayern,16.98
+C1029,ATHLETE,EIS001,Eisspray akut,2025-05-12,5,1,pharmacy,8.49,Bayern,8.49
+C1063,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-12,5,1,drugstore,5.49,NRW,5.49
+C1124,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-12,5,2,drugstore,5.49,Saarland,10.98
+C1202,BUDGET,HOR001,Hornhaut Entferner Maske,2025-05-12,5,1,drugstore,5.49,Baden-Württemberg,5.49
+C1240,BUDGET,EIS001,Eisspray akut,2025-05-12,5,1,supermarket,8.49,Baden-Württemberg,8.49
+C1245,BUDGET,BEI001,5in1 Beinlotion,2025-05-12,5,1,supermarket,9.99,Baden-Württemberg,9.99
+C1015,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-05-13,5,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1089,SELFCARE,BEI001,5in1 Beinlotion,2025-05-13,5,1,pharmacy,9.99,NRW,9.99
+C1089,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-13,5,2,pharmacy,5.49,Hessen,10.98
+C1094,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-13,5,1,drugstore,5.49,Saarland,5.49
+C1124,SELFCARE,BEI001,5in1 Beinlotion,2025-05-13,5,1,pharmacy,9.99,Saarland,9.99
+C1133,SELFCARE,BEI001,5in1 Beinlotion,2025-05-13,5,1,pharmacy,9.99,Hessen,9.99
+C1204,BUDGET,HOR001,Hornhaut Entferner Maske,2025-05-13,5,1,drugstore,5.49,Hessen,5.49
+C1236,BUDGET,HOR001,Hornhaut Entferner Maske,2025-05-13,5,1,drugstore,5.49,Baden-Württemberg,5.49
+C1240,BUDGET,BEI001,5in1 Beinlotion,2025-05-13,5,1,supermarket,9.99,Baden-Württemberg,9.99
+C1078,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-14,5,1,pharmacy,5.49,NRW,5.49
+C1086,SELFCARE,BEI001,5in1 Beinlotion,2025-05-14,5,1,drugstore,9.99,NRW,9.99
+C1127,SELFCARE,BEI001,5in1 Beinlotion,2025-05-14,5,1,pharmacy,9.99,NRW,9.99
+C1206,BUDGET,HOR001,Hornhaut Entferner Maske,2025-05-14,5,2,drugstore,5.49,Hessen,10.98
+C1248,BUDGET,BEI001,5in1 Beinlotion,2025-05-14,5,3,drugstore,9.99,Hessen,29.97
+C1087,SELFCARE,BEI001,5in1 Beinlotion,2025-05-15,5,1,pharmacy,9.99,NRW,9.99
+C1090,SELFCARE,BEI001,5in1 Beinlotion,2025-05-15,5,2,pharmacy,9.99,NRW,19.98
+C1100,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-15,5,1,drugstore,5.49,NRW,5.49
+C1247,BUDGET,EIS001,Eisspray akut,2025-05-15,5,1,supermarket,8.49,NRW,8.49
+C1045,ATHLETE,EIS001,Eisspray akut,2025-05-16,5,1,pharmacy,8.49,NRW,8.49
+C1075,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-16,5,2,pharmacy,5.49,NRW,10.98
+C1167,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-05-16,5,1,supermarket,4.99,Saarland,4.99
+C1238,BUDGET,EIS001,Eisspray akut,2025-05-17,5,3,supermarket,8.49,Baden-Württemberg,25.47
+C1055,ATHLETE,EIS001,Eisspray akut,2025-05-18,5,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1076,SELFCARE,BEI001,5in1 Beinlotion,2025-05-18,5,1,drugstore,9.99,NRW,9.99
+C1098,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-18,5,1,drugstore,5.49,NRW,5.49
+C1121,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-18,5,1,pharmacy,5.49,Hessen,5.49
+C1125,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-18,5,1,drugstore,5.49,NRW,5.49
+C1130,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-18,5,1,drugstore,5.49,Hessen,5.49
+C1011,ATHLETE,EIS001,Eisspray akut,2025-05-19,5,1,online,8.49,Baden-Württemberg,8.49
+C1020,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-05-19,5,3,pharmacy,7.99,Baden-Württemberg,23.97
+C1077,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-19,5,2,drugstore,5.49,Hessen,10.98
+C1084,SELFCARE,BEI001,5in1 Beinlotion,2025-05-19,5,2,drugstore,9.99,Hessen,19.98
+C1115,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-19,5,1,pharmacy,5.49,NRW,5.49
+C1119,SELFCARE,BEI001,5in1 Beinlotion,2025-05-19,5,1,drugstore,9.99,Hessen,9.99
+C1122,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-19,5,1,drugstore,5.49,Hessen,5.49
+C1123,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-19,5,1,drugstore,5.49,Saarland,5.49
+C1129,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-19,5,2,drugstore,5.49,Saarland,10.98
+C1130,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-19,5,1,pharmacy,5.49,Saarland,5.49
+C1207,BUDGET,EIS001,Eisspray akut,2025-05-19,5,3,supermarket,8.49,Baden-Württemberg,25.47
+C1003,ATHLETE,EIS001,Eisspray akut,2025-05-20,5,3,pharmacy,8.49,Baden-Württemberg,25.47
+C1037,ATHLETE,EIS001,Eisspray akut,2025-05-20,5,1,online,8.49,NRW,8.49
+C1077,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-20,5,1,drugstore,5.49,NRW,5.49
+C1120,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-20,5,2,pharmacy,5.49,NRW,10.98
+C1120,SELFCARE,BEI001,5in1 Beinlotion,2025-05-20,5,1,drugstore,9.99,Saarland,9.99
+C1125,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-20,5,1,drugstore,5.49,Saarland,5.49
+C1130,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-20,5,1,pharmacy,5.49,Hessen,5.49
+C1214,BUDGET,BEI001,5in1 Beinlotion,2025-05-20,5,1,drugstore,9.99,Baden-Württemberg,9.99
+C1236,BUDGET,EIS001,Eisspray akut,2025-05-20,5,1,drugstore,8.49,Baden-Württemberg,8.49
+C1249,BUDGET,BEI001,5in1 Beinlotion,2025-05-20,5,1,supermarket,9.99,NRW,9.99
+C1263,BUDGET,EIS001,Eisspray akut,2025-05-20,5,1,supermarket,8.49,Hessen,8.49
+C1081,SELFCARE,BEI001,5in1 Beinlotion,2025-05-21,5,1,pharmacy,9.99,Hessen,9.99
+C1100,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-21,5,3,pharmacy,5.49,Saarland,16.47
+C1117,SELFCARE,BEI001,5in1 Beinlotion,2025-05-21,5,2,drugstore,9.99,Saarland,19.98
+C1121,SELFCARE,BEI001,5in1 Beinlotion,2025-05-21,5,1,pharmacy,9.99,Saarland,9.99
+C1126,SELFCARE,BEI001,5in1 Beinlotion,2025-05-21,5,1,pharmacy,9.99,Saarland,9.99
+C1174,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-05-21,5,2,pharmacy,4.99,Bayern,9.98
+C1186,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-05-21,5,2,pharmacy,7.99,Bayern,15.98
+C1187,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-05-21,5,3,supermarket,7.99,Hessen,23.97
+C1260,BUDGET,HOR001,Hornhaut Entferner Maske,2025-05-21,5,2,supermarket,5.49,Baden-Württemberg,10.98
+C1049,ATHLETE,EIS001,Eisspray akut,2025-05-22,5,1,online,8.49,Baden-Württemberg,8.49
+C1073,SELFCARE,BEI001,5in1 Beinlotion,2025-05-22,5,1,pharmacy,9.99,NRW,9.99
+C1106,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-22,5,3,drugstore,5.49,Hessen,16.47
+C1118,SELFCARE,BEI001,5in1 Beinlotion,2025-05-22,5,1,pharmacy,9.99,Hessen,9.99
+C1253,BUDGET,BEI001,5in1 Beinlotion,2025-05-22,5,2,supermarket,9.99,Baden-Württemberg,19.98
+C1261,BUDGET,BEI001,5in1 Beinlotion,2025-05-22,5,1,supermarket,9.99,Hessen,9.99
+C1027,ATHLETE,EIS001,Eisspray akut,2025-05-23,5,1,online,8.49,Bayern,8.49
+C1066,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-23,5,1,pharmacy,5.49,NRW,5.49
+C1077,SELFCARE,BEI001,5in1 Beinlotion,2025-05-23,5,1,pharmacy,9.99,NRW,9.99
+C1110,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-23,5,2,pharmacy,5.49,Hessen,10.98
+C1192,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-05-23,5,2,pharmacy,7.99,Hessen,15.98
+C1251,BUDGET,EIS001,Eisspray akut,2025-05-23,5,1,supermarket,8.49,NRW,8.49
+C1255,BUDGET,HOR001,Hornhaut Entferner Maske,2025-05-23,5,1,drugstore,5.49,Hessen,5.49
+C1041,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-05-24,5,2,online,7.99,NRW,15.98
+C1061,SELFCARE,BEI001,5in1 Beinlotion,2025-05-24,5,2,pharmacy,9.99,NRW,19.98
+C1177,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-05-24,5,1,supermarket,7.99,Bayern,7.99
+C1214,BUDGET,BEI001,5in1 Beinlotion,2025-05-24,5,1,drugstore,9.99,NRW,9.99
+C1234,BUDGET,BEI001,5in1 Beinlotion,2025-05-24,5,2,drugstore,9.99,Hessen,19.98
+C1076,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-25,5,1,drugstore,5.49,NRW,5.49
+C1091,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-25,5,1,pharmacy,5.49,Saarland,5.49
+C1124,SELFCARE,BEI001,5in1 Beinlotion,2025-05-25,5,1,pharmacy,9.99,Hessen,9.99
+C1040,ATHLETE,EIS001,Eisspray akut,2025-05-26,5,1,online,8.49,NRW,8.49
+C1044,ATHLETE,EIS001,Eisspray akut,2025-05-26,5,2,online,8.49,Bayern,16.98
+C1052,ATHLETE,EIS001,Eisspray akut,2025-05-26,5,3,pharmacy,8.49,Bayern,25.47
+C1247,BUDGET,BEI001,5in1 Beinlotion,2025-05-26,5,1,drugstore,9.99,Baden-Württemberg,9.99
+C1015,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-05-27,5,1,online,7.99,NRW,7.99
+C1061,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-27,5,1,drugstore,5.49,Hessen,5.49
+C1100,SELFCARE,BEI001,5in1 Beinlotion,2025-05-27,5,1,pharmacy,9.99,Saarland,9.99
+C1147,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-05-27,5,1,pharmacy,4.99,Bayern,4.99
+C1152,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-05-27,5,2,supermarket,4.99,Hessen,9.98
+C1199,BUDGET,EIS001,Eisspray akut,2025-05-27,5,2,supermarket,8.49,NRW,16.98
+C1250,BUDGET,EIS001,Eisspray akut,2025-05-27,5,1,supermarket,8.49,NRW,8.49
+C1258,BUDGET,EIS001,Eisspray akut,2025-05-27,5,1,drugstore,8.49,NRW,8.49
+C1058,SELFCARE,BEI001,5in1 Beinlotion,2025-05-28,5,2,drugstore,9.99,Hessen,19.98
+C1060,SELFCARE,BEI001,5in1 Beinlotion,2025-05-28,5,1,pharmacy,9.99,NRW,9.99
+C1066,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-28,5,3,pharmacy,5.49,Saarland,16.47
+C1102,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-05-28,5,1,pharmacy,5.49,Hessen,5.49
+C1225,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-05-28,5,2,supermarket,4.99,NRW,9.98
+C1241,BUDGET,EIS001,Eisspray akut,2025-05-28,5,1,supermarket,8.49,Baden-Württemberg,8.49
+C1256,BUDGET,EIS001,Eisspray akut,2025-05-28,5,1,supermarket,8.49,Baden-Württemberg,8.49
+C1061,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-01,6,1,pharmacy,5.49,Saarland,5.49
+C1102,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-01,6,1,drugstore,5.49,NRW,5.49
+C1153,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-01,6,1,supermarket,7.99,Saarland,7.99
+C1172,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-06-01,6,1,supermarket,4.99,Bayern,4.99
+C1207,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-01,6,1,supermarket,5.49,Hessen,5.49
+C1223,BUDGET,EIS001,Eisspray akut,2025-06-01,6,1,supermarket,8.49,Baden-Württemberg,8.49
+C1020,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-02,6,1,pharmacy,7.99,Bayern,7.99
+C1026,ATHLETE,EIS001,Eisspray akut,2025-06-02,6,1,pharmacy,8.49,Bayern,8.49
+C1046,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-02,6,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1058,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-02,6,2,drugstore,5.49,Hessen,10.98
+C1111,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-02,6,2,drugstore,5.49,Saarland,10.98
+C1261,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-02,6,1,drugstore,5.49,NRW,5.49
+C1094,SELFCARE,BEI001,5in1 Beinlotion,2025-06-03,6,1,drugstore,9.99,Saarland,9.99
+C1099,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-03,6,1,pharmacy,5.49,Hessen,5.49
+C1119,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-03,6,1,pharmacy,5.49,Hessen,5.49
+C1133,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-03,6,2,drugstore,5.49,Hessen,10.98
+C1171,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-06-03,6,2,pharmacy,4.99,Saarland,9.98
+C1107,SELFCARE,BEI001,5in1 Beinlotion,2025-06-04,6,1,pharmacy,9.99,Hessen,9.99
+C1162,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-04,6,2,supermarket,7.99,Saarland,15.98
+C1183,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-04,6,2,supermarket,7.99,Bayern,15.98
+C1209,BUDGET,BEI001,5in1 Beinlotion,2025-06-04,6,2,supermarket,9.99,Baden-Württemberg,19.98
+C1001,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-05,6,1,pharmacy,7.99,Bayern,7.99
+C1003,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-05,6,1,online,7.99,Bayern,7.99
+C1087,SELFCARE,BEI001,5in1 Beinlotion,2025-06-05,6,1,drugstore,9.99,Hessen,9.99
+C1114,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-05,6,1,drugstore,5.49,NRW,5.49
+C1145,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-05,6,1,supermarket,7.99,Bayern,7.99
+C1093,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-06,6,2,drugstore,5.49,Saarland,10.98
+C1100,SELFCARE,BEI001,5in1 Beinlotion,2025-06-06,6,2,pharmacy,9.99,Saarland,19.98
+C1187,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-06,6,1,supermarket,7.99,Hessen,7.99
+C1241,BUDGET,BEI001,5in1 Beinlotion,2025-06-06,6,2,drugstore,9.99,Baden-Württemberg,19.98
+C1014,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-07,6,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1024,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-07,6,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1069,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-07,6,1,pharmacy,5.49,Hessen,5.49
+C1062,SELFCARE,BEI001,5in1 Beinlotion,2025-06-08,6,1,pharmacy,9.99,Saarland,9.99
+C1063,SELFCARE,BEI001,5in1 Beinlotion,2025-06-08,6,1,drugstore,9.99,Hessen,9.99
+C1080,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-08,6,1,drugstore,5.49,NRW,5.49
+C1086,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-08,6,1,drugstore,5.49,Saarland,5.49
+C1103,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-08,6,1,drugstore,5.49,Hessen,5.49
+C1201,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-06-08,6,3,supermarket,4.99,Baden-Württemberg,14.97
+C1015,ATHLETE,EIS001,Eisspray akut,2025-06-09,6,1,online,8.49,NRW,8.49
+C1130,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-09,6,1,drugstore,5.49,Saarland,5.49
+C1168,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-09,6,2,pharmacy,7.99,Hessen,15.98
+C1237,BUDGET,BEI001,5in1 Beinlotion,2025-06-09,6,2,drugstore,9.99,NRW,19.98
+C1060,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-10,6,2,drugstore,5.49,Hessen,10.98
+C1095,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-10,6,1,pharmacy,5.49,Hessen,5.49
+C1101,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-10,6,2,drugstore,5.49,Hessen,10.98
+C1171,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-10,6,1,supermarket,7.99,Saarland,7.99
+C1181,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-10,6,2,supermarket,7.99,Bayern,15.98
+C1220,BUDGET,BEI001,5in1 Beinlotion,2025-06-10,6,2,supermarket,9.99,Hessen,19.98
+C1072,SELFCARE,BEI001,5in1 Beinlotion,2025-06-11,6,1,pharmacy,9.99,NRW,9.99
+C1109,SELFCARE,BEI001,5in1 Beinlotion,2025-06-11,6,1,drugstore,9.99,Hessen,9.99
+C1123,SELFCARE,BEI001,5in1 Beinlotion,2025-06-11,6,2,drugstore,9.99,NRW,19.98
+C1251,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-11,6,3,supermarket,5.49,Baden-Württemberg,16.47
+C1055,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-12,6,1,pharmacy,7.99,NRW,7.99
+C1077,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-12,6,1,drugstore,5.49,Hessen,5.49
+C1111,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-12,6,2,pharmacy,5.49,Saarland,10.98
+C1188,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-12,6,1,pharmacy,7.99,Hessen,7.99
+C1201,BUDGET,EIS001,Eisspray akut,2025-06-12,6,2,supermarket,8.49,Baden-Württemberg,16.98
+C1219,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-12,6,1,supermarket,5.49,Baden-Württemberg,5.49
+C1245,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-12,6,1,supermarket,5.49,Baden-Württemberg,5.49
+C1261,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-12,6,3,drugstore,5.49,NRW,16.47
+C1105,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-13,6,1,drugstore,5.49,Hessen,5.49
+C1127,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-13,6,1,pharmacy,5.49,Hessen,5.49
+C1220,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-13,6,1,drugstore,5.49,Baden-Württemberg,5.49
+C1037,ATHLETE,EIS001,Eisspray akut,2025-06-14,6,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1062,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-14,6,1,drugstore,5.49,Saarland,5.49
+C1073,SELFCARE,BEI001,5in1 Beinlotion,2025-06-14,6,3,pharmacy,9.99,Hessen,29.97
+C1107,SELFCARE,BEI001,5in1 Beinlotion,2025-06-14,6,1,pharmacy,9.99,NRW,9.99
+C1195,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-14,6,1,pharmacy,7.99,Saarland,7.99
+C1204,BUDGET,BEI001,5in1 Beinlotion,2025-06-14,6,2,supermarket,9.99,Baden-Württemberg,19.98
+C1205,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-14,6,1,supermarket,5.49,Baden-Württemberg,5.49
+C1265,BUDGET,BEI001,5in1 Beinlotion,2025-06-14,6,1,supermarket,9.99,NRW,9.99
+C1109,SELFCARE,BEI001,5in1 Beinlotion,2025-06-15,6,3,drugstore,9.99,NRW,29.97
+C1144,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-15,6,1,pharmacy,7.99,Bayern,7.99
+C1056,SELFCARE,BEI001,5in1 Beinlotion,2025-06-16,6,1,pharmacy,9.99,Hessen,9.99
+C1135,SELFCARE,BEI001,5in1 Beinlotion,2025-06-16,6,1,drugstore,9.99,Hessen,9.99
+C1265,BUDGET,BEI001,5in1 Beinlotion,2025-06-16,6,1,drugstore,9.99,NRW,9.99
+C1265,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-06-16,6,2,supermarket,4.99,Baden-Württemberg,9.98
+C1058,SELFCARE,BEI001,5in1 Beinlotion,2025-06-17,6,3,drugstore,9.99,NRW,29.97
+C1075,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-17,6,1,pharmacy,5.49,NRW,5.49
+C1082,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-17,6,2,drugstore,5.49,NRW,10.98
+C1112,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-17,6,1,drugstore,5.49,Saarland,5.49
+C1197,BUDGET,BEI001,5in1 Beinlotion,2025-06-17,6,2,drugstore,9.99,NRW,19.98
+C1219,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-17,6,1,supermarket,5.49,Baden-Württemberg,5.49
+C1232,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-17,6,3,drugstore,5.49,Baden-Württemberg,16.47
+C1235,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-17,6,3,drugstore,5.49,Hessen,16.47
+C1249,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-17,6,3,drugstore,5.49,Hessen,16.47
+C1113,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-18,6,2,pharmacy,5.49,Saarland,10.98
+C1127,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-18,6,3,drugstore,5.49,Hessen,16.47
+C1234,BUDGET,BEI001,5in1 Beinlotion,2025-06-18,6,1,supermarket,9.99,NRW,9.99
+C1036,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-19,6,1,online,7.99,Baden-Württemberg,7.99
+C1123,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-19,6,2,drugstore,5.49,Saarland,10.98
+C1127,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-19,6,2,drugstore,5.49,Saarland,10.98
+C1230,BUDGET,BEI001,5in1 Beinlotion,2025-06-19,6,2,supermarket,9.99,Hessen,19.98
+C1236,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-06-19,6,1,supermarket,4.99,NRW,4.99
+C1034,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-20,6,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1046,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-20,6,2,online,7.99,Baden-Württemberg,15.98
+C1057,SELFCARE,BEI001,5in1 Beinlotion,2025-06-20,6,1,drugstore,9.99,Hessen,9.99
+C1074,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-20,6,1,pharmacy,5.49,Hessen,5.49
+C1112,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-20,6,2,drugstore,5.49,Hessen,10.98
+C1124,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-20,6,1,pharmacy,5.49,NRW,5.49
+C1126,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-20,6,1,pharmacy,5.49,NRW,5.49
+C1183,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-20,6,1,supermarket,7.99,Hessen,7.99
+C1002,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-21,6,2,online,7.99,Baden-Württemberg,15.98
+C1003,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-21,6,1,pharmacy,7.99,Bayern,7.99
+C1079,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-21,6,1,drugstore,5.49,NRW,5.49
+C1080,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-21,6,2,drugstore,5.49,NRW,10.98
+C1095,SELFCARE,BEI001,5in1 Beinlotion,2025-06-21,6,1,drugstore,9.99,Saarland,9.99
+C1141,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-21,6,1,supermarket,7.99,Hessen,7.99
+C1143,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-06-21,6,1,pharmacy,4.99,Saarland,4.99
+C1147,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-06-21,6,1,supermarket,4.99,Bayern,4.99
+C1160,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-21,6,2,pharmacy,7.99,Saarland,15.98
+C1245,BUDGET,BEI001,5in1 Beinlotion,2025-06-21,6,2,drugstore,9.99,Hessen,19.98
+C1107,SELFCARE,BEI001,5in1 Beinlotion,2025-06-22,6,1,drugstore,9.99,NRW,9.99
+C1113,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-22,6,1,pharmacy,5.49,NRW,5.49
+C1138,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-06-22,6,3,pharmacy,4.99,Bayern,14.97
+C1139,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-06-22,6,2,supermarket,4.99,Bayern,9.98
+C1192,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-22,6,2,pharmacy,7.99,Saarland,15.98
+C1253,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-22,6,1,supermarket,5.49,Hessen,5.49
+C1056,SELFCARE,BEI001,5in1 Beinlotion,2025-06-23,6,1,pharmacy,9.99,Saarland,9.99
+C1057,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-23,6,1,drugstore,5.49,Hessen,5.49
+C1069,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-23,6,1,drugstore,5.49,Saarland,5.49
+C1102,SELFCARE,BEI001,5in1 Beinlotion,2025-06-23,6,1,drugstore,9.99,NRW,9.99
+C1112,SELFCARE,BEI001,5in1 Beinlotion,2025-06-23,6,2,drugstore,9.99,NRW,19.98
+C1183,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-23,6,2,pharmacy,7.99,Saarland,15.98
+C1211,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-23,6,2,drugstore,5.49,NRW,10.98
+C1227,BUDGET,BEI001,5in1 Beinlotion,2025-06-23,6,2,drugstore,9.99,Hessen,19.98
+C1250,BUDGET,BEI001,5in1 Beinlotion,2025-06-23,6,1,drugstore,9.99,NRW,9.99
+C1087,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-24,6,1,drugstore,5.49,Hessen,5.49
+C1093,SELFCARE,BEI001,5in1 Beinlotion,2025-06-24,6,2,pharmacy,9.99,Saarland,19.98
+C1099,SELFCARE,BEI001,5in1 Beinlotion,2025-06-24,6,1,drugstore,9.99,Hessen,9.99
+C1102,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-24,6,1,drugstore,5.49,Hessen,5.49
+C1118,SELFCARE,BEI001,5in1 Beinlotion,2025-06-24,6,2,drugstore,9.99,Saarland,19.98
+C1152,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-24,6,1,supermarket,7.99,Hessen,7.99
+C1168,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-24,6,1,supermarket,7.99,Bayern,7.99
+C1170,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-24,6,2,supermarket,7.99,Hessen,15.98
+C1242,BUDGET,BEI001,5in1 Beinlotion,2025-06-24,6,1,drugstore,9.99,NRW,9.99
+C1262,BUDGET,BEI001,5in1 Beinlotion,2025-06-24,6,1,drugstore,9.99,Hessen,9.99
+C1024,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-25,6,1,online,7.99,Baden-Württemberg,7.99
+C1079,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-25,6,1,pharmacy,5.49,NRW,5.49
+C1113,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-25,6,1,drugstore,5.49,NRW,5.49
+C1210,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-25,6,1,supermarket,5.49,Hessen,5.49
+C1249,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-25,6,2,supermarket,5.49,NRW,10.98
+C1046,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-26,6,2,online,7.99,Bayern,15.98
+C1072,SELFCARE,BEI001,5in1 Beinlotion,2025-06-26,6,2,pharmacy,9.99,Hessen,19.98
+C1092,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-26,6,2,drugstore,5.49,Saarland,10.98
+C1118,SELFCARE,BEI001,5in1 Beinlotion,2025-06-26,6,2,drugstore,9.99,Saarland,19.98
+C1124,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-26,6,1,pharmacy,5.49,NRW,5.49
+C1128,SELFCARE,BEI001,5in1 Beinlotion,2025-06-26,6,3,pharmacy,9.99,Hessen,29.97
+C1173,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-26,6,2,pharmacy,7.99,Hessen,15.98
+C1261,BUDGET,BEI001,5in1 Beinlotion,2025-06-26,6,1,supermarket,9.99,Hessen,9.99
+C1082,SELFCARE,BEI001,5in1 Beinlotion,2025-06-27,6,1,drugstore,9.99,NRW,9.99
+C1113,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-27,6,1,drugstore,5.49,Saarland,5.49
+C1160,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-27,6,1,supermarket,7.99,Saarland,7.99
+C1005,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-28,6,2,online,7.99,Bayern,15.98
+C1083,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-06-28,6,1,pharmacy,5.49,Saarland,5.49
+C1190,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-06-28,6,1,supermarket,7.99,Hessen,7.99
+C1199,BUDGET,HOR001,Hornhaut Entferner Maske,2025-06-28,6,1,drugstore,5.49,Baden-Württemberg,5.49
+C1262,BUDGET,BEI001,5in1 Beinlotion,2025-06-28,6,1,drugstore,9.99,Baden-Württemberg,9.99
+C1034,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-01,7,1,pharmacy,7.99,NRW,7.99
+C1041,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-01,7,1,online,7.99,Bayern,7.99
+C1092,SELFCARE,BEI001,5in1 Beinlotion,2025-07-01,7,1,pharmacy,9.99,Saarland,9.99
+C1131,SELFCARE,BEI001,5in1 Beinlotion,2025-07-01,7,1,drugstore,9.99,Saarland,9.99
+C1206,BUDGET,BEI001,5in1 Beinlotion,2025-07-01,7,1,supermarket,9.99,Baden-Württemberg,9.99
+C1040,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-02,7,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1053,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-02,7,1,pharmacy,7.99,NRW,7.99
+C1060,SELFCARE,BEI001,5in1 Beinlotion,2025-07-02,7,3,pharmacy,9.99,Hessen,29.97
+C1179,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-02,7,1,supermarket,7.99,Hessen,7.99
+C1221,BUDGET,BEI001,5in1 Beinlotion,2025-07-02,7,2,drugstore,9.99,NRW,19.98
+C1047,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-03,7,1,pharmacy,7.99,NRW,7.99
+C1095,SELFCARE,BEI001,5in1 Beinlotion,2025-07-03,7,1,drugstore,9.99,NRW,9.99
+C1097,SELFCARE,BEI001,5in1 Beinlotion,2025-07-03,7,1,pharmacy,9.99,NRW,9.99
+C1263,BUDGET,BEI001,5in1 Beinlotion,2025-07-03,7,2,drugstore,9.99,NRW,19.98
+C1004,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-04,7,3,pharmacy,7.99,Bayern,23.97
+C1085,SELFCARE,BEI001,5in1 Beinlotion,2025-07-04,7,1,pharmacy,9.99,Saarland,9.99
+C1130,SELFCARE,BEI001,5in1 Beinlotion,2025-07-04,7,2,drugstore,9.99,Hessen,19.98
+C1075,SELFCARE,BEI001,5in1 Beinlotion,2025-07-05,7,1,drugstore,9.99,NRW,9.99
+C1122,SELFCARE,BEI001,5in1 Beinlotion,2025-07-05,7,1,pharmacy,9.99,Saarland,9.99
+C1152,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-05,7,1,supermarket,7.99,Bayern,7.99
+C1167,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-05,7,1,pharmacy,7.99,Bayern,7.99
+C1212,BUDGET,BEI001,5in1 Beinlotion,2025-07-05,7,2,drugstore,9.99,Hessen,19.98
+C1239,BUDGET,BEI001,5in1 Beinlotion,2025-07-05,7,1,supermarket,9.99,Baden-Württemberg,9.99
+C1036,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-06,7,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1040,ATHLETE,EIS001,Eisspray akut,2025-07-06,7,1,pharmacy,8.49,NRW,8.49
+C1068,SELFCARE,BEI001,5in1 Beinlotion,2025-07-06,7,2,pharmacy,9.99,Saarland,19.98
+C1106,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-07-06,7,3,drugstore,5.49,Saarland,16.47
+C1113,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-07-06,7,3,drugstore,5.49,Saarland,16.47
+C1121,SELFCARE,BEI001,5in1 Beinlotion,2025-07-06,7,1,pharmacy,9.99,NRW,9.99
+C1176,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-06,7,2,supermarket,7.99,Saarland,15.98
+C1248,BUDGET,BEI001,5in1 Beinlotion,2025-07-06,7,1,drugstore,9.99,Baden-Württemberg,9.99
+C1012,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-07,7,1,online,7.99,Baden-Württemberg,7.99
+C1104,SELFCARE,BEI001,5in1 Beinlotion,2025-07-07,7,1,drugstore,9.99,NRW,9.99
+C1128,SELFCARE,BEI001,5in1 Beinlotion,2025-07-07,7,1,pharmacy,9.99,Hessen,9.99
+C1249,BUDGET,EIS001,Eisspray akut,2025-07-07,7,2,supermarket,8.49,Baden-Württemberg,16.98
+C1032,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-08,7,2,online,7.99,Baden-Württemberg,15.98
+C1043,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-08,7,1,online,7.99,NRW,7.99
+C1080,SELFCARE,BEI001,5in1 Beinlotion,2025-07-08,7,1,pharmacy,9.99,Saarland,9.99
+C1102,SELFCARE,BEI001,5in1 Beinlotion,2025-07-08,7,2,drugstore,9.99,NRW,19.98
+C1177,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-08,7,2,supermarket,7.99,Hessen,15.98
+C1220,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-07-08,7,1,supermarket,4.99,Baden-Württemberg,4.99
+C1024,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-09,7,1,pharmacy,7.99,NRW,7.99
+C1260,BUDGET,BEI001,5in1 Beinlotion,2025-07-09,7,1,drugstore,9.99,NRW,9.99
+C1028,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-10,7,1,pharmacy,7.99,NRW,7.99
+C1051,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-10,7,1,online,7.99,NRW,7.99
+C1072,SELFCARE,BEI001,5in1 Beinlotion,2025-07-10,7,1,pharmacy,9.99,Saarland,9.99
+C1108,SELFCARE,BEI001,5in1 Beinlotion,2025-07-10,7,1,pharmacy,9.99,Saarland,9.99
+C1131,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-07-10,7,1,pharmacy,5.49,Hessen,5.49
+C1152,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-10,7,2,pharmacy,7.99,Saarland,15.98
+C1158,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-10,7,1,pharmacy,7.99,Bayern,7.99
+C1182,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-10,7,3,supermarket,7.99,Hessen,23.97
+C1194,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-10,7,2,pharmacy,7.99,Bayern,15.98
+C1078,SELFCARE,BEI001,5in1 Beinlotion,2025-07-11,7,2,drugstore,9.99,NRW,19.98
+C1131,SELFCARE,BEI001,5in1 Beinlotion,2025-07-11,7,1,drugstore,9.99,NRW,9.99
+C1205,BUDGET,BEI001,5in1 Beinlotion,2025-07-11,7,2,supermarket,9.99,NRW,19.98
+C1065,SELFCARE,BEI001,5in1 Beinlotion,2025-07-12,7,1,drugstore,9.99,NRW,9.99
+C1076,SELFCARE,BEI001,5in1 Beinlotion,2025-07-12,7,2,pharmacy,9.99,Hessen,19.98
+C1100,SELFCARE,BEI001,5in1 Beinlotion,2025-07-12,7,2,drugstore,9.99,Hessen,19.98
+C1128,SELFCARE,BEI001,5in1 Beinlotion,2025-07-12,7,1,drugstore,9.99,Saarland,9.99
+C1132,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-07-12,7,2,drugstore,5.49,Hessen,10.98
+C1147,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-12,7,1,pharmacy,7.99,Hessen,7.99
+C1179,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-12,7,2,supermarket,7.99,Bayern,15.98
+C1259,BUDGET,EIS001,Eisspray akut,2025-07-12,7,3,supermarket,8.49,Baden-Württemberg,25.47
+C1038,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-13,7,2,pharmacy,7.99,Bayern,15.98
+C1122,SELFCARE,BEI001,5in1 Beinlotion,2025-07-13,7,3,pharmacy,9.99,NRW,29.97
+C1124,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-07-13,7,1,pharmacy,5.49,Hessen,5.49
+C1125,SELFCARE,BEI001,5in1 Beinlotion,2025-07-13,7,2,drugstore,9.99,Hessen,19.98
+C1194,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-07-13,7,1,pharmacy,4.99,Hessen,4.99
+C1054,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-14,7,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1063,SELFCARE,BEI001,5in1 Beinlotion,2025-07-14,7,1,pharmacy,9.99,Hessen,9.99
+C1073,SELFCARE,BEI001,5in1 Beinlotion,2025-07-14,7,1,pharmacy,9.99,Saarland,9.99
+C1112,SELFCARE,BEI001,5in1 Beinlotion,2025-07-14,7,2,drugstore,9.99,NRW,19.98
+C1088,SELFCARE,BEI001,5in1 Beinlotion,2025-07-15,7,1,pharmacy,9.99,Saarland,9.99
+C1134,SELFCARE,BEI001,5in1 Beinlotion,2025-07-15,7,2,drugstore,9.99,NRW,19.98
+C1209,BUDGET,EIS001,Eisspray akut,2025-07-15,7,2,supermarket,8.49,Baden-Württemberg,16.98
+C1078,SELFCARE,BEI001,5in1 Beinlotion,2025-07-16,7,2,pharmacy,9.99,Saarland,19.98
+C1123,SELFCARE,BEI001,5in1 Beinlotion,2025-07-16,7,2,pharmacy,9.99,Saarland,19.98
+C1186,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-16,7,3,supermarket,7.99,Bayern,23.97
+C1245,BUDGET,HOR001,Hornhaut Entferner Maske,2025-07-16,7,3,supermarket,5.49,Hessen,16.47
+C1059,SELFCARE,BEI001,5in1 Beinlotion,2025-07-17,7,2,pharmacy,9.99,NRW,19.98
+C1087,SELFCARE,BEI001,5in1 Beinlotion,2025-07-17,7,1,drugstore,9.99,Saarland,9.99
+C1048,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-18,7,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1070,SELFCARE,BEI001,5in1 Beinlotion,2025-07-18,7,1,pharmacy,9.99,NRW,9.99
+C1110,SELFCARE,BEI001,5in1 Beinlotion,2025-07-18,7,2,drugstore,9.99,Saarland,19.98
+C1114,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-07-18,7,2,pharmacy,5.49,NRW,10.98
+C1039,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-19,7,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1094,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-07-19,7,2,pharmacy,5.49,Saarland,10.98
+C1022,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-20,7,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1084,SELFCARE,BEI001,5in1 Beinlotion,2025-07-20,7,1,pharmacy,9.99,Saarland,9.99
+C1106,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-07-20,7,1,pharmacy,5.49,NRW,5.49
+C1109,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-07-20,7,1,pharmacy,5.49,Hessen,5.49
+C1154,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-20,7,2,supermarket,7.99,Hessen,15.98
+C1165,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-07-20,7,1,pharmacy,4.99,Hessen,4.99
+C1156,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-21,7,1,supermarket,7.99,Hessen,7.99
+C1250,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-07-21,7,1,drugstore,4.99,NRW,4.99
+C1258,BUDGET,BEI001,5in1 Beinlotion,2025-07-21,7,1,drugstore,9.99,NRW,9.99
+C1062,SELFCARE,BEI001,5in1 Beinlotion,2025-07-22,7,2,pharmacy,9.99,Saarland,19.98
+C1110,SELFCARE,BEI001,5in1 Beinlotion,2025-07-22,7,2,drugstore,9.99,Saarland,19.98
+C1144,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-22,7,1,pharmacy,7.99,Saarland,7.99
+C1150,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-22,7,2,supermarket,7.99,Saarland,15.98
+C1168,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-22,7,2,supermarket,7.99,Hessen,15.98
+C1178,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-07-22,7,1,supermarket,4.99,Bayern,4.99
+C1191,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-22,7,1,supermarket,7.99,Saarland,7.99
+C1233,BUDGET,EIS001,Eisspray akut,2025-07-22,7,2,supermarket,8.49,NRW,16.98
+C1241,BUDGET,BEI001,5in1 Beinlotion,2025-07-22,7,1,supermarket,9.99,NRW,9.99
+C1014,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-23,7,1,pharmacy,7.99,NRW,7.99
+C1117,SELFCARE,BEI001,5in1 Beinlotion,2025-07-23,7,2,drugstore,9.99,NRW,19.98
+C1142,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-23,7,1,supermarket,7.99,Saarland,7.99
+C1149,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-23,7,1,pharmacy,7.99,Saarland,7.99
+C1246,BUDGET,BEI001,5in1 Beinlotion,2025-07-23,7,3,supermarket,9.99,NRW,29.97
+C1255,BUDGET,BEI001,5in1 Beinlotion,2025-07-23,7,3,supermarket,9.99,Baden-Württemberg,29.97
+C1018,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-24,7,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1057,SELFCARE,BEI001,5in1 Beinlotion,2025-07-24,7,2,pharmacy,9.99,Saarland,19.98
+C1127,SELFCARE,BEI001,5in1 Beinlotion,2025-07-24,7,2,pharmacy,9.99,NRW,19.98
+C1180,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-24,7,2,pharmacy,7.99,Bayern,15.98
+C1185,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-24,7,1,supermarket,7.99,Bayern,7.99
+C1008,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-25,7,3,online,7.99,NRW,23.97
+C1105,SELFCARE,BEI001,5in1 Beinlotion,2025-07-25,7,2,pharmacy,9.99,NRW,19.98
+C1059,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-07-26,7,2,pharmacy,5.49,Saarland,10.98
+C1073,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-07-26,7,2,pharmacy,5.49,NRW,10.98
+C1091,SELFCARE,BEI001,5in1 Beinlotion,2025-07-26,7,2,drugstore,9.99,NRW,19.98
+C1110,SELFCARE,BEI001,5in1 Beinlotion,2025-07-26,7,1,pharmacy,9.99,Hessen,9.99
+C1112,SELFCARE,BEI001,5in1 Beinlotion,2025-07-26,7,1,drugstore,9.99,Saarland,9.99
+C1135,SELFCARE,BEI001,5in1 Beinlotion,2025-07-26,7,3,drugstore,9.99,Hessen,29.97
+C1137,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-26,7,1,supermarket,7.99,Bayern,7.99
+C1254,BUDGET,HOR001,Hornhaut Entferner Maske,2025-07-26,7,2,supermarket,5.49,Hessen,10.98
+C1017,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-27,7,2,pharmacy,7.99,NRW,15.98
+C1038,ATHLETE,EIS001,Eisspray akut,2025-07-27,7,2,pharmacy,8.49,Bayern,16.98
+C1045,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-27,7,1,pharmacy,7.99,Bayern,7.99
+C1052,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-27,7,2,pharmacy,7.99,NRW,15.98
+C1063,SELFCARE,BEI001,5in1 Beinlotion,2025-07-27,7,1,drugstore,9.99,Hessen,9.99
+C1065,SELFCARE,BEI001,5in1 Beinlotion,2025-07-27,7,2,pharmacy,9.99,Saarland,19.98
+C1151,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-27,7,2,pharmacy,7.99,Bayern,15.98
+C1241,BUDGET,BEI001,5in1 Beinlotion,2025-07-27,7,1,supermarket,9.99,Hessen,9.99
+C1006,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-28,7,1,online,7.99,Bayern,7.99
+C1099,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-07-28,7,1,pharmacy,5.49,NRW,5.49
+C1156,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-07-28,7,1,pharmacy,7.99,Bayern,7.99
+C1044,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-01,8,2,online,7.99,Baden-Württemberg,15.98
+C1106,SELFCARE,BEI001,5in1 Beinlotion,2025-08-01,8,1,pharmacy,9.99,Hessen,9.99
+C1158,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-01,8,1,pharmacy,7.99,Saarland,7.99
+C1227,BUDGET,BEI001,5in1 Beinlotion,2025-08-01,8,2,supermarket,9.99,NRW,19.98
+C1094,SELFCARE,BEI001,5in1 Beinlotion,2025-08-02,8,1,drugstore,9.99,Saarland,9.99
+C1131,SELFCARE,BEI001,5in1 Beinlotion,2025-08-02,8,1,drugstore,9.99,Hessen,9.99
+C1044,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-03,8,1,online,7.99,Bayern,7.99
+C1050,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-03,8,1,online,7.99,Baden-Württemberg,7.99
+C1066,SELFCARE,BEI001,5in1 Beinlotion,2025-08-03,8,1,drugstore,9.99,NRW,9.99
+C1089,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-08-03,8,3,drugstore,5.49,Saarland,16.47
+C1173,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-03,8,2,pharmacy,7.99,Saarland,15.98
+C1108,SELFCARE,BEI001,5in1 Beinlotion,2025-08-04,8,2,drugstore,9.99,Saarland,19.98
+C1114,SELFCARE,BEI001,5in1 Beinlotion,2025-08-04,8,1,drugstore,9.99,Hessen,9.99
+C1193,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-04,8,2,pharmacy,7.99,Saarland,15.98
+C1148,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-05,8,2,supermarket,7.99,Saarland,15.98
+C1072,SELFCARE,BEI001,5in1 Beinlotion,2025-08-06,8,3,pharmacy,9.99,NRW,29.97
+C1112,SELFCARE,BEI001,5in1 Beinlotion,2025-08-06,8,2,pharmacy,9.99,Saarland,19.98
+C1055,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-07,8,3,pharmacy,7.99,Baden-Württemberg,23.97
+C1159,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-07,8,1,supermarket,7.99,Saarland,7.99
+C1239,BUDGET,BEI001,5in1 Beinlotion,2025-08-07,8,1,drugstore,9.99,Hessen,9.99
+C1248,BUDGET,BEI001,5in1 Beinlotion,2025-08-07,8,1,supermarket,9.99,NRW,9.99
+C1119,SELFCARE,BEI001,5in1 Beinlotion,2025-08-08,8,1,pharmacy,9.99,Saarland,9.99
+C1135,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-08-08,8,1,drugstore,5.49,NRW,5.49
+C1242,BUDGET,EIS001,Eisspray akut,2025-08-08,8,2,drugstore,8.49,NRW,16.98
+C1065,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-08-09,8,2,pharmacy,5.49,Hessen,10.98
+C1088,SELFCARE,BEI001,5in1 Beinlotion,2025-08-09,8,2,pharmacy,9.99,Saarland,19.98
+C1100,SELFCARE,BEI001,5in1 Beinlotion,2025-08-09,8,2,pharmacy,9.99,NRW,19.98
+C1136,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-09,8,2,pharmacy,7.99,Bayern,15.98
+C1159,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-09,8,1,pharmacy,7.99,Hessen,7.99
+C1232,BUDGET,BEI001,5in1 Beinlotion,2025-08-09,8,1,drugstore,9.99,Hessen,9.99
+C1249,BUDGET,HOR001,Hornhaut Entferner Maske,2025-08-09,8,2,drugstore,5.49,Hessen,10.98
+C1058,SELFCARE,BEI001,5in1 Beinlotion,2025-08-10,8,1,pharmacy,9.99,Saarland,9.99
+C1113,SELFCARE,BEI001,5in1 Beinlotion,2025-08-10,8,1,pharmacy,9.99,Hessen,9.99
+C1178,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-10,8,1,pharmacy,7.99,Hessen,7.99
+C1046,ATHLETE,EIS001,Eisspray akut,2025-08-11,8,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1074,SELFCARE,BEI001,5in1 Beinlotion,2025-08-11,8,1,drugstore,9.99,Saarland,9.99
+C1140,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-08-11,8,2,pharmacy,4.99,Hessen,9.98
+C1144,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-11,8,2,pharmacy,7.99,Hessen,15.98
+C1165,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-11,8,1,pharmacy,7.99,Saarland,7.99
+C1025,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-12,8,1,pharmacy,7.99,NRW,7.99
+C1064,SELFCARE,BEI001,5in1 Beinlotion,2025-08-12,8,1,drugstore,9.99,Saarland,9.99
+C1071,SELFCARE,BEI001,5in1 Beinlotion,2025-08-12,8,1,pharmacy,9.99,NRW,9.99
+C1091,SELFCARE,BEI001,5in1 Beinlotion,2025-08-12,8,3,pharmacy,9.99,NRW,29.97
+C1126,SELFCARE,BEI001,5in1 Beinlotion,2025-08-12,8,1,pharmacy,9.99,Saarland,9.99
+C1001,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-13,8,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1025,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-13,8,1,online,7.99,Bayern,7.99
+C1247,BUDGET,BEI001,5in1 Beinlotion,2025-08-13,8,1,supermarket,9.99,Baden-Württemberg,9.99
+C1009,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-14,8,1,online,7.99,Bayern,7.99
+C1096,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-08-14,8,3,pharmacy,5.49,NRW,16.47
+C1097,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-08-14,8,3,drugstore,5.49,NRW,16.47
+C1120,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-08-14,8,1,drugstore,5.49,Saarland,5.49
+C1206,BUDGET,BEI001,5in1 Beinlotion,2025-08-14,8,1,drugstore,9.99,NRW,9.99
+C1213,BUDGET,EIS001,Eisspray akut,2025-08-14,8,1,supermarket,8.49,Baden-Württemberg,8.49
+C1262,BUDGET,BEI001,5in1 Beinlotion,2025-08-14,8,2,supermarket,9.99,Baden-Württemberg,19.98
+C1134,SELFCARE,BEI001,5in1 Beinlotion,2025-08-15,8,2,pharmacy,9.99,NRW,19.98
+C1165,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-15,8,1,pharmacy,7.99,Saarland,7.99
+C1173,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-15,8,1,supermarket,7.99,Bayern,7.99
+C1060,SELFCARE,BEI001,5in1 Beinlotion,2025-08-16,8,1,drugstore,9.99,Saarland,9.99
+C1090,SELFCARE,BEI001,5in1 Beinlotion,2025-08-16,8,1,drugstore,9.99,Saarland,9.99
+C1161,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-08-16,8,1,pharmacy,4.99,Bayern,4.99
+C1265,BUDGET,BEI001,5in1 Beinlotion,2025-08-16,8,3,drugstore,9.99,NRW,29.97
+C1056,SELFCARE,BEI001,5in1 Beinlotion,2025-08-17,8,1,pharmacy,9.99,Saarland,9.99
+C1262,BUDGET,HOR001,Hornhaut Entferner Maske,2025-08-17,8,1,drugstore,5.49,Hessen,5.49
+C1130,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-08-18,8,1,drugstore,5.49,Saarland,5.49
+C1245,BUDGET,BEI001,5in1 Beinlotion,2025-08-18,8,1,drugstore,9.99,NRW,9.99
+C1027,ATHLETE,EIS001,Eisspray akut,2025-08-19,8,2,online,8.49,Bayern,16.98
+C1038,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-19,8,1,pharmacy,7.99,NRW,7.99
+C1166,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-19,8,1,pharmacy,7.99,Hessen,7.99
+C1186,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-19,8,1,pharmacy,7.99,Hessen,7.99
+C1226,BUDGET,BEI001,5in1 Beinlotion,2025-08-19,8,1,supermarket,9.99,Baden-Württemberg,9.99
+C1229,BUDGET,BEI001,5in1 Beinlotion,2025-08-19,8,2,supermarket,9.99,NRW,19.98
+C1124,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-08-20,8,1,drugstore,5.49,NRW,5.49
+C1172,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-20,8,1,supermarket,7.99,Saarland,7.99
+C1021,ATHLETE,EIS001,Eisspray akut,2025-08-21,8,1,pharmacy,8.49,Bayern,8.49
+C1032,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-21,8,1,pharmacy,7.99,NRW,7.99
+C1120,SELFCARE,BEI001,5in1 Beinlotion,2025-08-21,8,1,drugstore,9.99,Saarland,9.99
+C1198,BUDGET,HOR001,Hornhaut Entferner Maske,2025-08-21,8,1,supermarket,5.49,Baden-Württemberg,5.49
+C1018,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-22,8,1,online,7.99,NRW,7.99
+C1260,BUDGET,BEI001,5in1 Beinlotion,2025-08-22,8,2,supermarket,9.99,NRW,19.98
+C1261,BUDGET,HOR001,Hornhaut Entferner Maske,2025-08-22,8,3,drugstore,5.49,Baden-Württemberg,16.47
+C1002,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-23,8,1,online,7.99,NRW,7.99
+C1084,SELFCARE,BEI001,5in1 Beinlotion,2025-08-23,8,1,drugstore,9.99,Hessen,9.99
+C1155,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-23,8,2,supermarket,7.99,Saarland,15.98
+C1185,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-08-23,8,1,supermarket,4.99,Bayern,4.99
+C1023,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-25,8,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1159,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-25,8,1,supermarket,7.99,Saarland,7.99
+C1179,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-08-25,8,1,pharmacy,4.99,Bayern,4.99
+C1200,BUDGET,BEI001,5in1 Beinlotion,2025-08-25,8,2,drugstore,9.99,Hessen,19.98
+C1008,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-26,8,2,online,7.99,Baden-Württemberg,15.98
+C1020,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-26,8,2,pharmacy,7.99,NRW,15.98
+C1036,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-26,8,1,online,7.99,Baden-Württemberg,7.99
+C1040,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-26,8,1,online,7.99,NRW,7.99
+C1045,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-26,8,1,pharmacy,7.99,Bayern,7.99
+C1214,BUDGET,HOR001,Hornhaut Entferner Maske,2025-08-26,8,3,supermarket,5.49,Hessen,16.47
+C1227,BUDGET,BEI001,5in1 Beinlotion,2025-08-26,8,1,drugstore,9.99,Hessen,9.99
+C1009,ATHLETE,EIS001,Eisspray akut,2025-08-27,8,1,online,8.49,NRW,8.49
+C1045,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-27,8,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1078,SELFCARE,BEI001,5in1 Beinlotion,2025-08-27,8,1,pharmacy,9.99,Saarland,9.99
+C1111,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-08-27,8,1,drugstore,5.49,Hessen,5.49
+C1172,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-08-27,8,1,supermarket,7.99,Bayern,7.99
+C1203,BUDGET,BEI001,5in1 Beinlotion,2025-08-27,8,1,drugstore,9.99,NRW,9.99
+C1005,ATHLETE,EIS001,Eisspray akut,2025-09-01,9,1,online,8.49,Bayern,8.49
+C1068,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-09-01,9,1,drugstore,5.49,Saarland,5.49
+C1075,SELFCARE,BEI001,5in1 Beinlotion,2025-09-01,9,1,pharmacy,9.99,Hessen,9.99
+C1084,SELFCARE,BEI001,5in1 Beinlotion,2025-09-01,9,1,drugstore,9.99,Hessen,9.99
+C1149,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-09-01,9,1,pharmacy,7.99,Hessen,7.99
+C1095,SELFCARE,BEI001,5in1 Beinlotion,2025-09-02,9,1,drugstore,9.99,Hessen,9.99
+C1162,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-09-02,9,1,supermarket,7.99,Hessen,7.99
+C1017,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-09-03,9,1,pharmacy,7.99,Bayern,7.99
+C1080,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-09-03,9,2,pharmacy,5.49,Saarland,10.98
+C1108,SELFCARE,BEI001,5in1 Beinlotion,2025-09-03,9,2,pharmacy,9.99,Hessen,19.98
+C1132,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-09-03,9,1,drugstore,5.49,Saarland,5.49
+C1223,BUDGET,EIS001,Eisspray akut,2025-09-03,9,1,supermarket,8.49,Hessen,8.49
+C1232,BUDGET,EIS001,Eisspray akut,2025-09-03,9,1,supermarket,8.49,Hessen,8.49
+C1031,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-09-04,9,1,online,7.99,NRW,7.99
+C1230,BUDGET,EIS001,Eisspray akut,2025-09-04,9,1,drugstore,8.49,NRW,8.49
+C1234,BUDGET,BEI001,5in1 Beinlotion,2025-09-04,9,1,supermarket,9.99,Baden-Württemberg,9.99
+C1041,ATHLETE,EIS001,Eisspray akut,2025-09-05,9,3,pharmacy,8.49,Baden-Württemberg,25.47
+C1089,SELFCARE,BEI001,5in1 Beinlotion,2025-09-05,9,1,pharmacy,9.99,Saarland,9.99
+C1117,SELFCARE,BEI001,5in1 Beinlotion,2025-09-05,9,1,drugstore,9.99,Saarland,9.99
+C1133,SELFCARE,BEI001,5in1 Beinlotion,2025-09-05,9,2,drugstore,9.99,NRW,19.98
+C1187,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-09-05,9,1,supermarket,4.99,Saarland,4.99
+C1229,BUDGET,BEI001,5in1 Beinlotion,2025-09-05,9,1,supermarket,9.99,Hessen,9.99
+C1254,BUDGET,EIS001,Eisspray akut,2025-09-05,9,2,drugstore,8.49,Hessen,16.98
+C1002,ATHLETE,EIS001,Eisspray akut,2025-09-06,9,1,online,8.49,Bayern,8.49
+C1054,ATHLETE,EIS001,Eisspray akut,2025-09-06,9,1,pharmacy,8.49,Bayern,8.49
+C1206,BUDGET,BEI001,5in1 Beinlotion,2025-09-06,9,2,drugstore,9.99,Hessen,19.98
+C1243,BUDGET,HOR001,Hornhaut Entferner Maske,2025-09-06,9,2,supermarket,5.49,NRW,10.98
+C1063,SELFCARE,BEI001,5in1 Beinlotion,2025-09-07,9,2,pharmacy,9.99,Hessen,19.98
+C1250,BUDGET,BEI001,5in1 Beinlotion,2025-09-07,9,1,drugstore,9.99,Baden-Württemberg,9.99
+C1255,BUDGET,BEI001,5in1 Beinlotion,2025-09-07,9,2,supermarket,9.99,Hessen,19.98
+C1047,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-09-08,9,3,online,7.99,Baden-Württemberg,23.97
+C1077,SELFCARE,BEI001,5in1 Beinlotion,2025-09-08,9,1,drugstore,9.99,NRW,9.99
+C1151,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-09-08,9,2,pharmacy,4.99,Bayern,9.98
+C1231,BUDGET,HOR001,Hornhaut Entferner Maske,2025-09-08,9,1,supermarket,5.49,Baden-Württemberg,5.49
+C1098,SELFCARE,BEI001,5in1 Beinlotion,2025-09-09,9,1,pharmacy,9.99,Saarland,9.99
+C1102,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-09-09,9,2,drugstore,5.49,Saarland,10.98
+C1169,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-09-09,9,2,supermarket,4.99,Saarland,9.98
+C1235,BUDGET,EIS001,Eisspray akut,2025-09-09,9,2,drugstore,8.49,NRW,16.98
+C1050,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-09-10,9,1,pharmacy,7.99,NRW,7.99
+C1088,SELFCARE,BEI001,5in1 Beinlotion,2025-09-10,9,2,pharmacy,9.99,Saarland,19.98
+C1096,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-09-10,9,2,drugstore,5.49,Hessen,10.98
+C1106,SELFCARE,BEI001,5in1 Beinlotion,2025-09-10,9,3,drugstore,9.99,NRW,29.97
+C1146,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-09-10,9,1,pharmacy,4.99,Bayern,4.99
+C1197,BUDGET,EIS001,Eisspray akut,2025-09-10,9,1,drugstore,8.49,Baden-Württemberg,8.49
+C1235,BUDGET,BEI001,5in1 Beinlotion,2025-09-10,9,2,drugstore,9.99,NRW,19.98
+C1254,BUDGET,BEI001,5in1 Beinlotion,2025-09-10,9,2,drugstore,9.99,Hessen,19.98
+C1041,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-09-11,9,2,online,7.99,Baden-Württemberg,15.98
+C1063,SELFCARE,BEI001,5in1 Beinlotion,2025-09-11,9,1,pharmacy,9.99,Saarland,9.99
+C1071,SELFCARE,BEI001,5in1 Beinlotion,2025-09-12,9,2,pharmacy,9.99,Saarland,19.98
+C1061,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-09-13,9,1,pharmacy,5.49,NRW,5.49
+C1158,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-09-13,9,1,supermarket,4.99,Saarland,4.99
+C1192,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-09-13,9,1,pharmacy,4.99,Hessen,4.99
+C1202,BUDGET,BEI001,5in1 Beinlotion,2025-09-13,9,1,drugstore,9.99,Baden-Württemberg,9.99
+C1254,BUDGET,EIS001,Eisspray akut,2025-09-13,9,3,drugstore,8.49,Hessen,25.47
+C1007,ATHLETE,EIS001,Eisspray akut,2025-09-14,9,2,pharmacy,8.49,NRW,16.98
+C1150,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-09-14,9,3,pharmacy,4.99,Saarland,14.97
+C1217,BUDGET,BEI001,5in1 Beinlotion,2025-09-14,9,3,drugstore,9.99,Hessen,29.97
+C1231,BUDGET,EIS001,Eisspray akut,2025-09-14,9,1,supermarket,8.49,Baden-Württemberg,8.49
+C1101,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-09-15,9,1,drugstore,5.49,Hessen,5.49
+C1018,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-09-16,9,1,online,7.99,Bayern,7.99
+C1105,SELFCARE,BEI001,5in1 Beinlotion,2025-09-16,9,1,pharmacy,9.99,Hessen,9.99
+C1107,SELFCARE,BEI001,5in1 Beinlotion,2025-09-16,9,1,pharmacy,9.99,Hessen,9.99
+C1126,SELFCARE,BEI001,5in1 Beinlotion,2025-09-17,9,1,pharmacy,9.99,NRW,9.99
+C1197,BUDGET,EIS001,Eisspray akut,2025-09-17,9,1,supermarket,8.49,Baden-Württemberg,8.49
+C1199,BUDGET,EIS001,Eisspray akut,2025-09-17,9,3,drugstore,8.49,Baden-Württemberg,25.47
+C1223,BUDGET,BEI001,5in1 Beinlotion,2025-09-17,9,2,supermarket,9.99,Hessen,19.98
+C1237,BUDGET,HOR001,Hornhaut Entferner Maske,2025-09-17,9,1,supermarket,5.49,Baden-Württemberg,5.49
+C1035,ATHLETE,EIS001,Eisspray akut,2025-09-18,9,1,online,8.49,NRW,8.49
+C1055,ATHLETE,EIS001,Eisspray akut,2025-09-18,9,1,pharmacy,8.49,NRW,8.49
+C1088,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-09-18,9,2,pharmacy,5.49,Saarland,10.98
+C1124,SELFCARE,BEI001,5in1 Beinlotion,2025-09-18,9,1,pharmacy,9.99,Saarland,9.99
+C1129,SELFCARE,BEI001,5in1 Beinlotion,2025-09-18,9,3,drugstore,9.99,Hessen,29.97
+C1226,BUDGET,BEI001,5in1 Beinlotion,2025-09-18,9,3,drugstore,9.99,NRW,29.97
+C1060,SELFCARE,BEI001,5in1 Beinlotion,2025-09-19,9,1,drugstore,9.99,Hessen,9.99
+C1096,SELFCARE,BEI001,5in1 Beinlotion,2025-09-19,9,1,pharmacy,9.99,Saarland,9.99
+C1118,SELFCARE,BEI001,5in1 Beinlotion,2025-09-19,9,1,pharmacy,9.99,Hessen,9.99
+C1121,SELFCARE,BEI001,5in1 Beinlotion,2025-09-19,9,1,pharmacy,9.99,Saarland,9.99
+C1225,BUDGET,BEI001,5in1 Beinlotion,2025-09-19,9,1,drugstore,9.99,NRW,9.99
+C1233,BUDGET,HOR001,Hornhaut Entferner Maske,2025-09-19,9,3,drugstore,5.49,Baden-Württemberg,16.47
+C1074,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-09-20,9,1,drugstore,5.49,NRW,5.49
+C1132,SELFCARE,BEI001,5in1 Beinlotion,2025-09-21,9,2,drugstore,9.99,Hessen,19.98
+C1198,BUDGET,BEI001,5in1 Beinlotion,2025-09-21,9,2,supermarket,9.99,Hessen,19.98
+C1263,BUDGET,HOR001,Hornhaut Entferner Maske,2025-09-21,9,1,supermarket,5.49,NRW,5.49
+C1055,ATHLETE,EIS001,Eisspray akut,2025-09-22,9,1,pharmacy,8.49,NRW,8.49
+C1094,SELFCARE,BEI001,5in1 Beinlotion,2025-09-22,9,2,drugstore,9.99,Hessen,19.98
+C1125,SELFCARE,BEI001,5in1 Beinlotion,2025-09-22,9,1,pharmacy,9.99,Hessen,9.99
+C1194,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-09-22,9,1,pharmacy,7.99,Saarland,7.99
+C1242,BUDGET,EIS001,Eisspray akut,2025-09-22,9,2,drugstore,8.49,Baden-Württemberg,16.98
+C1139,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-09-23,9,1,supermarket,7.99,Bayern,7.99
+C1165,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-09-23,9,1,pharmacy,4.99,Hessen,4.99
+C1020,ATHLETE,EIS001,Eisspray akut,2025-09-24,9,1,online,8.49,Baden-Württemberg,8.49
+C1055,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-09-24,9,1,online,7.99,Baden-Württemberg,7.99
+C1042,ATHLETE,EIS001,Eisspray akut,2025-09-25,9,2,pharmacy,8.49,Bayern,16.98
+C1061,SELFCARE,BEI001,5in1 Beinlotion,2025-09-25,9,1,drugstore,9.99,Hessen,9.99
+C1082,SELFCARE,BEI001,5in1 Beinlotion,2025-09-25,9,1,pharmacy,9.99,Saarland,9.99
+C1070,SELFCARE,BEI001,5in1 Beinlotion,2025-09-26,9,2,drugstore,9.99,Saarland,19.98
+C1078,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-09-26,9,1,pharmacy,5.49,Hessen,5.49
+C1081,SELFCARE,BEI001,5in1 Beinlotion,2025-09-26,9,3,drugstore,9.99,Hessen,29.97
+C1091,SELFCARE,BEI001,5in1 Beinlotion,2025-09-26,9,2,drugstore,9.99,NRW,19.98
+C1121,SELFCARE,BEI001,5in1 Beinlotion,2025-09-26,9,3,pharmacy,9.99,NRW,29.97
+C1180,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-09-26,9,1,pharmacy,7.99,Saarland,7.99
+C1223,BUDGET,EIS001,Eisspray akut,2025-09-26,9,2,drugstore,8.49,Hessen,16.98
+C1252,BUDGET,HOR001,Hornhaut Entferner Maske,2025-09-26,9,2,drugstore,5.49,NRW,10.98
+C1202,BUDGET,HOR001,Hornhaut Entferner Maske,2025-09-27,9,2,drugstore,5.49,Baden-Württemberg,10.98
+C1027,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-09-28,9,1,pharmacy,7.99,NRW,7.99
+C1040,ATHLETE,EIS001,Eisspray akut,2025-09-28,9,1,pharmacy,8.49,NRW,8.49
+C1078,SELFCARE,BEI001,5in1 Beinlotion,2025-09-28,9,2,drugstore,9.99,NRW,19.98
+C1098,SELFCARE,BEI001,5in1 Beinlotion,2025-09-28,9,1,drugstore,9.99,Hessen,9.99
+C1099,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-09-28,9,2,pharmacy,5.49,Saarland,10.98
+C1109,SELFCARE,BEI001,5in1 Beinlotion,2025-09-28,9,1,drugstore,9.99,Hessen,9.99
+C1263,BUDGET,BEI001,5in1 Beinlotion,2025-09-28,9,2,supermarket,9.99,Baden-Württemberg,19.98
+C1036,ATHLETE,EIS001,Eisspray akut,2025-10-01,10,1,online,8.49,NRW,8.49
+C1099,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-10-01,10,1,drugstore,5.49,Hessen,5.49
+C1152,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-01,10,3,pharmacy,7.99,Bayern,23.97
+C1178,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-01,10,2,supermarket,7.99,Saarland,15.98
+C1218,BUDGET,HOR001,Hornhaut Entferner Maske,2025-10-01,10,2,supermarket,5.49,Hessen,10.98
+C1007,ATHLETE,EIS001,Eisspray akut,2025-10-02,10,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1168,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-02,10,3,supermarket,4.99,Hessen,14.97
+C1014,ATHLETE,EIS001,Eisspray akut,2025-10-03,10,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1030,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-03,10,3,pharmacy,7.99,Baden-Württemberg,23.97
+C1142,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-03,10,1,supermarket,4.99,Hessen,4.99
+C1183,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-03,10,3,pharmacy,7.99,Bayern,23.97
+C1003,ATHLETE,EIS001,Eisspray akut,2025-10-04,10,2,pharmacy,8.49,Baden-Württemberg,16.98
+C1148,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-04,10,1,pharmacy,7.99,Bayern,7.99
+C1157,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-04,10,2,pharmacy,7.99,Saarland,15.98
+C1168,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-04,10,1,supermarket,4.99,Saarland,4.99
+C1216,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-04,10,1,drugstore,4.99,Baden-Württemberg,4.99
+C1251,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-04,10,1,drugstore,4.99,NRW,4.99
+C1049,ATHLETE,EIS001,Eisspray akut,2025-10-05,10,1,online,8.49,Bayern,8.49
+C1123,SELFCARE,BEI001,5in1 Beinlotion,2025-10-05,10,1,drugstore,9.99,Saarland,9.99
+C1139,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-05,10,1,supermarket,7.99,Bayern,7.99
+C1158,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-05,10,2,supermarket,7.99,Hessen,15.98
+C1164,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-05,10,2,pharmacy,4.99,Hessen,9.98
+C1171,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-05,10,1,supermarket,7.99,Hessen,7.99
+C1203,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-05,10,1,drugstore,4.99,NRW,4.99
+C1243,BUDGET,EIS001,Eisspray akut,2025-10-05,10,1,supermarket,8.49,NRW,8.49
+C1012,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-06,10,2,pharmacy,7.99,NRW,15.98
+C1017,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-06,10,2,online,7.99,Bayern,15.98
+C1057,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-10-06,10,3,pharmacy,5.49,Hessen,16.47
+C1168,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-06,10,1,supermarket,7.99,Hessen,7.99
+C1216,BUDGET,BEI001,5in1 Beinlotion,2025-10-06,10,2,drugstore,9.99,Hessen,19.98
+C1256,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-06,10,3,supermarket,4.99,Baden-Württemberg,14.97
+C1008,ATHLETE,EIS001,Eisspray akut,2025-10-07,10,2,pharmacy,8.49,Baden-Württemberg,16.98
+C1024,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-07,10,1,online,7.99,NRW,7.99
+C1156,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-07,10,1,supermarket,4.99,Saarland,4.99
+C1221,BUDGET,HOR001,Hornhaut Entferner Maske,2025-10-07,10,1,drugstore,5.49,NRW,5.49
+C1258,BUDGET,EIS001,Eisspray akut,2025-10-07,10,3,supermarket,8.49,NRW,25.47
+C1007,ATHLETE,EIS001,Eisspray akut,2025-10-08,10,1,online,8.49,Baden-Württemberg,8.49
+C1012,ATHLETE,EIS001,Eisspray akut,2025-10-08,10,2,online,8.49,Bayern,16.98
+C1016,ATHLETE,EIS001,Eisspray akut,2025-10-08,10,1,online,8.49,Baden-Württemberg,8.49
+C1141,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-08,10,1,supermarket,7.99,Hessen,7.99
+C1167,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-08,10,2,supermarket,7.99,Bayern,15.98
+C1154,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-09,10,1,pharmacy,4.99,Saarland,4.99
+C1157,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-09,10,2,pharmacy,4.99,Saarland,9.98
+C1158,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-09,10,1,pharmacy,7.99,Bayern,7.99
+C1165,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-09,10,1,pharmacy,4.99,Bayern,4.99
+C1169,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-09,10,2,pharmacy,4.99,Saarland,9.98
+C1012,ATHLETE,EIS001,Eisspray akut,2025-10-10,10,1,pharmacy,8.49,NRW,8.49
+C1053,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-10,10,1,online,7.99,NRW,7.99
+C1189,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-10,10,1,supermarket,4.99,Bayern,4.99
+C1194,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-10,10,1,supermarket,7.99,Hessen,7.99
+C1224,BUDGET,EIS001,Eisspray akut,2025-10-10,10,1,drugstore,8.49,NRW,8.49
+C1247,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-10,10,2,supermarket,4.99,Hessen,9.98
+C1007,ATHLETE,EIS001,Eisspray akut,2025-10-11,10,1,pharmacy,8.49,Bayern,8.49
+C1035,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-11,10,1,pharmacy,7.99,NRW,7.99
+C1098,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-10-11,10,2,pharmacy,5.49,NRW,10.98
+C1139,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-11,10,1,pharmacy,4.99,Hessen,4.99
+C1235,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-11,10,1,supermarket,4.99,NRW,4.99
+C1045,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-12,10,2,pharmacy,7.99,Bayern,15.98
+C1052,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-12,10,1,online,7.99,Baden-Württemberg,7.99
+C1227,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-12,10,3,drugstore,4.99,Hessen,14.97
+C1248,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-12,10,2,drugstore,4.99,Baden-Württemberg,9.98
+C1005,ATHLETE,EIS001,Eisspray akut,2025-10-13,10,3,pharmacy,8.49,NRW,25.47
+C1102,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-10-13,10,1,pharmacy,5.49,NRW,5.49
+C1132,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-10-13,10,2,drugstore,5.49,NRW,10.98
+C1163,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-13,10,1,supermarket,7.99,Hessen,7.99
+C1017,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-14,10,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1050,ATHLETE,EIS001,Eisspray akut,2025-10-14,10,2,online,8.49,NRW,16.98
+C1117,SELFCARE,BEI001,5in1 Beinlotion,2025-10-14,10,1,drugstore,9.99,Hessen,9.99
+C1143,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-14,10,2,supermarket,7.99,Bayern,15.98
+C1120,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-10-15,10,1,drugstore,5.49,Hessen,5.49
+C1184,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-15,10,2,pharmacy,4.99,Saarland,9.98
+C1220,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-15,10,2,drugstore,4.99,Hessen,9.98
+C1236,BUDGET,BEI001,5in1 Beinlotion,2025-10-15,10,2,drugstore,9.99,NRW,19.98
+C1034,ATHLETE,EIS001,Eisspray akut,2025-10-16,10,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1034,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-16,10,2,pharmacy,7.99,Bayern,15.98
+C1035,ATHLETE,EIS001,Eisspray akut,2025-10-16,10,1,online,8.49,Bayern,8.49
+C1109,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-10-16,10,2,drugstore,5.49,Saarland,10.98
+C1135,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-10-16,10,1,pharmacy,5.49,Hessen,5.49
+C1154,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-16,10,1,pharmacy,4.99,Saarland,4.99
+C1241,BUDGET,HOR001,Hornhaut Entferner Maske,2025-10-16,10,1,supermarket,5.49,Hessen,5.49
+C1043,ATHLETE,EIS001,Eisspray akut,2025-10-17,10,2,pharmacy,8.49,Bayern,16.98
+C1065,SELFCARE,BEI001,5in1 Beinlotion,2025-10-17,10,1,pharmacy,9.99,NRW,9.99
+C1087,SELFCARE,BEI001,5in1 Beinlotion,2025-10-17,10,1,drugstore,9.99,Hessen,9.99
+C1150,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-17,10,3,pharmacy,7.99,Bayern,23.97
+C1154,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-17,10,2,supermarket,7.99,Saarland,15.98
+C1162,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-17,10,1,supermarket,4.99,Saarland,4.99
+C1001,ATHLETE,EIS001,Eisspray akut,2025-10-18,10,1,pharmacy,8.49,Bayern,8.49
+C1003,ATHLETE,EIS001,Eisspray akut,2025-10-18,10,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1012,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-18,10,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1111,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-10-18,10,1,drugstore,5.49,Hessen,5.49
+C1140,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-18,10,1,pharmacy,7.99,Bayern,7.99
+C1165,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-18,10,2,pharmacy,4.99,Hessen,9.98
+C1231,BUDGET,EIS001,Eisspray akut,2025-10-18,10,1,drugstore,8.49,Baden-Württemberg,8.49
+C1037,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-19,10,1,pharmacy,7.99,Bayern,7.99
+C1167,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-19,10,2,pharmacy,4.99,Saarland,9.98
+C1196,BUDGET,EIS001,Eisspray akut,2025-10-19,10,1,drugstore,8.49,Baden-Württemberg,8.49
+C1197,BUDGET,EIS001,Eisspray akut,2025-10-19,10,1,drugstore,8.49,Baden-Württemberg,8.49
+C1152,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-20,10,2,pharmacy,7.99,Hessen,15.98
+C1156,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-20,10,1,supermarket,4.99,Saarland,4.99
+C1166,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-20,10,2,pharmacy,4.99,Bayern,9.98
+C1211,BUDGET,EIS001,Eisspray akut,2025-10-20,10,1,supermarket,8.49,Baden-Württemberg,8.49
+C1101,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-10-21,10,1,pharmacy,5.49,Saarland,5.49
+C1175,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-21,10,1,pharmacy,7.99,Bayern,7.99
+C1202,BUDGET,BEI001,5in1 Beinlotion,2025-10-21,10,1,drugstore,9.99,NRW,9.99
+C1202,BUDGET,EIS001,Eisspray akut,2025-10-21,10,2,drugstore,8.49,Hessen,16.98
+C1233,BUDGET,BEI001,5in1 Beinlotion,2025-10-21,10,1,supermarket,9.99,Baden-Württemberg,9.99
+C1249,BUDGET,EIS001,Eisspray akut,2025-10-21,10,1,drugstore,8.49,Hessen,8.49
+C1249,BUDGET,EIS001,Eisspray akut,2025-10-21,10,2,drugstore,8.49,Baden-Württemberg,16.98
+C1010,ATHLETE,EIS001,Eisspray akut,2025-10-22,10,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1062,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-10-22,10,1,drugstore,5.49,Hessen,5.49
+C1066,SELFCARE,BEI001,5in1 Beinlotion,2025-10-22,10,3,pharmacy,9.99,Saarland,29.97
+C1085,SELFCARE,BEI001,5in1 Beinlotion,2025-10-22,10,2,pharmacy,9.99,NRW,19.98
+C1161,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-22,10,1,pharmacy,4.99,Saarland,4.99
+C1228,BUDGET,EIS001,Eisspray akut,2025-10-22,10,3,drugstore,8.49,NRW,25.47
+C1252,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-22,10,2,drugstore,4.99,Hessen,9.98
+C1001,ATHLETE,EIS001,Eisspray akut,2025-10-23,10,1,online,8.49,NRW,8.49
+C1048,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-23,10,1,pharmacy,7.99,NRW,7.99
+C1049,ATHLETE,EIS001,Eisspray akut,2025-10-23,10,2,pharmacy,8.49,Baden-Württemberg,16.98
+C1066,SELFCARE,BEI001,5in1 Beinlotion,2025-10-23,10,2,drugstore,9.99,Hessen,19.98
+C1107,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-10-23,10,3,drugstore,5.49,Saarland,16.47
+C1204,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-23,10,1,drugstore,4.99,Hessen,4.99
+C1032,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-24,10,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1045,ATHLETE,EIS001,Eisspray akut,2025-10-24,10,2,online,8.49,Bayern,16.98
+C1179,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-24,10,3,supermarket,4.99,Hessen,14.97
+C1242,BUDGET,EIS001,Eisspray akut,2025-10-24,10,3,drugstore,8.49,Baden-Württemberg,25.47
+C1263,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-24,10,1,drugstore,4.99,Hessen,4.99
+C1263,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-24,10,1,supermarket,4.99,Hessen,4.99
+C1037,ATHLETE,EIS001,Eisspray akut,2025-10-25,10,1,pharmacy,8.49,Bayern,8.49
+C1143,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-25,10,2,pharmacy,7.99,Hessen,15.98
+C1151,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-25,10,1,pharmacy,4.99,Saarland,4.99
+C1015,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-26,10,1,online,7.99,NRW,7.99
+C1033,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-26,10,3,online,7.99,NRW,23.97
+C1042,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-26,10,1,online,7.99,NRW,7.99
+C1145,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-26,10,1,pharmacy,4.99,Hessen,4.99
+C1189,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-26,10,1,supermarket,7.99,Saarland,7.99
+C1201,BUDGET,EIS001,Eisspray akut,2025-10-26,10,2,drugstore,8.49,Hessen,16.98
+C1218,BUDGET,HOR001,Hornhaut Entferner Maske,2025-10-26,10,2,supermarket,5.49,Baden-Württemberg,10.98
+C1025,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-27,10,1,pharmacy,7.99,Bayern,7.99
+C1049,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-27,10,1,online,7.99,NRW,7.99
+C1191,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-27,10,1,pharmacy,7.99,Saarland,7.99
+C1201,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-27,10,1,supermarket,4.99,Hessen,4.99
+C1025,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-28,10,1,pharmacy,7.99,Bayern,7.99
+C1118,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-10-28,10,1,pharmacy,5.49,Saarland,5.49
+C1152,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-28,10,1,supermarket,7.99,Saarland,7.99
+C1157,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-10-28,10,1,pharmacy,4.99,Saarland,4.99
+C1178,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-10-28,10,2,supermarket,7.99,Saarland,15.98
+C1215,BUDGET,HOR001,Hornhaut Entferner Maske,2025-10-28,10,2,supermarket,5.49,Hessen,10.98
+C1001,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-01,11,2,online,7.99,Baden-Württemberg,15.98
+C1050,ATHLETE,EIS001,Eisspray akut,2025-11-01,11,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1058,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-11-01,11,1,pharmacy,5.49,Hessen,5.49
+C1087,SELFCARE,BEI001,5in1 Beinlotion,2025-11-01,11,2,drugstore,9.99,NRW,19.98
+C1098,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-11-01,11,2,drugstore,5.49,Saarland,10.98
+C1149,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-01,11,1,pharmacy,7.99,Bayern,7.99
+C1168,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-01,11,1,supermarket,4.99,Hessen,4.99
+C1187,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-01,11,1,pharmacy,7.99,Saarland,7.99
+C1027,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-02,11,2,online,7.99,Baden-Württemberg,15.98
+C1038,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-02,11,1,pharmacy,7.99,Bayern,7.99
+C1043,ATHLETE,EIS001,Eisspray akut,2025-11-02,11,2,pharmacy,8.49,Baden-Württemberg,16.98
+C1089,SELFCARE,BEI001,5in1 Beinlotion,2025-11-02,11,1,drugstore,9.99,NRW,9.99
+C1122,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-11-02,11,1,drugstore,5.49,Saarland,5.49
+C1215,BUDGET,EIS001,Eisspray akut,2025-11-02,11,1,supermarket,8.49,Hessen,8.49
+C1018,ATHLETE,EIS001,Eisspray akut,2025-11-03,11,1,pharmacy,8.49,Bayern,8.49
+C1038,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-03,11,1,online,7.99,Baden-Württemberg,7.99
+C1086,SELFCARE,BEI001,5in1 Beinlotion,2025-11-03,11,2,drugstore,9.99,Hessen,19.98
+C1089,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-11-03,11,1,pharmacy,5.49,Saarland,5.49
+C1145,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-03,11,1,supermarket,7.99,Hessen,7.99
+C1152,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-03,11,1,pharmacy,4.99,Hessen,4.99
+C1178,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-03,11,2,pharmacy,4.99,Hessen,9.98
+C1240,BUDGET,BEI001,5in1 Beinlotion,2025-11-03,11,1,supermarket,9.99,Baden-Württemberg,9.99
+C1006,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-04,11,1,online,7.99,Baden-Württemberg,7.99
+C1017,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-04,11,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1063,SELFCARE,BEI001,5in1 Beinlotion,2025-11-04,11,2,drugstore,9.99,Saarland,19.98
+C1196,BUDGET,EIS001,Eisspray akut,2025-11-04,11,1,supermarket,8.49,Hessen,8.49
+C1257,BUDGET,BEI001,5in1 Beinlotion,2025-11-04,11,3,drugstore,9.99,Hessen,29.97
+C1261,BUDGET,EIS001,Eisspray akut,2025-11-04,11,1,drugstore,8.49,Hessen,8.49
+C1037,ATHLETE,EIS001,Eisspray akut,2025-11-05,11,1,online,8.49,Baden-Württemberg,8.49
+C1206,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-05,11,1,drugstore,4.99,NRW,4.99
+C1220,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-05,11,1,drugstore,4.99,Hessen,4.99
+C1247,BUDGET,BEI001,5in1 Beinlotion,2025-11-05,11,1,supermarket,9.99,NRW,9.99
+C1117,SELFCARE,BEI001,5in1 Beinlotion,2025-11-06,11,3,pharmacy,9.99,NRW,29.97
+C1147,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-06,11,3,pharmacy,4.99,Hessen,14.97
+C1192,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-06,11,1,supermarket,4.99,Saarland,4.99
+C1208,BUDGET,EIS001,Eisspray akut,2025-11-06,11,1,drugstore,8.49,Baden-Württemberg,8.49
+C1251,BUDGET,EIS001,Eisspray akut,2025-11-06,11,1,supermarket,8.49,Baden-Württemberg,8.49
+C1005,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-07,11,1,pharmacy,7.99,NRW,7.99
+C1070,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-11-07,11,1,drugstore,5.49,NRW,5.49
+C1157,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-07,11,2,pharmacy,4.99,Saarland,9.98
+C1157,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-07,11,1,pharmacy,4.99,Hessen,4.99
+C1163,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-08,11,1,pharmacy,7.99,Hessen,7.99
+C1172,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-08,11,3,supermarket,4.99,Hessen,14.97
+C1243,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-08,11,1,supermarket,4.99,NRW,4.99
+C1254,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-08,11,1,drugstore,4.99,NRW,4.99
+C1013,ATHLETE,EIS001,Eisspray akut,2025-11-09,11,2,pharmacy,8.49,Baden-Württemberg,16.98
+C1030,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-09,11,3,pharmacy,7.99,NRW,23.97
+C1049,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-09,11,1,pharmacy,7.99,Bayern,7.99
+C1077,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-11-09,11,2,pharmacy,5.49,NRW,10.98
+C1143,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-09,11,1,supermarket,4.99,Saarland,4.99
+C1169,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-09,11,2,pharmacy,4.99,Saarland,9.98
+C1223,BUDGET,BEI001,5in1 Beinlotion,2025-11-09,11,2,supermarket,9.99,Hessen,19.98
+C1252,BUDGET,EIS001,Eisspray akut,2025-11-09,11,3,supermarket,8.49,Baden-Württemberg,25.47
+C1020,ATHLETE,EIS001,Eisspray akut,2025-11-10,11,1,online,8.49,Bayern,8.49
+C1027,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-10,11,1,pharmacy,7.99,Bayern,7.99
+C1029,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-10,11,2,online,7.99,Baden-Württemberg,15.98
+C1058,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-11-10,11,1,pharmacy,5.49,Hessen,5.49
+C1185,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-10,11,1,supermarket,4.99,Saarland,4.99
+C1205,BUDGET,HOR001,Hornhaut Entferner Maske,2025-11-10,11,3,drugstore,5.49,Hessen,16.47
+C1207,BUDGET,EIS001,Eisspray akut,2025-11-10,11,1,supermarket,8.49,Hessen,8.49
+C1023,ATHLETE,EIS001,Eisspray akut,2025-11-11,11,1,pharmacy,8.49,NRW,8.49
+C1069,SELFCARE,BEI001,5in1 Beinlotion,2025-11-11,11,2,drugstore,9.99,Hessen,19.98
+C1144,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-11,11,2,supermarket,7.99,Saarland,15.98
+C1175,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-11,11,1,supermarket,4.99,Saarland,4.99
+C1203,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-11,11,1,supermarket,4.99,Baden-Württemberg,4.99
+C1223,BUDGET,EIS001,Eisspray akut,2025-11-11,11,1,supermarket,8.49,NRW,8.49
+C1008,ATHLETE,EIS001,Eisspray akut,2025-11-12,11,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1030,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-12,11,1,online,7.99,NRW,7.99
+C1043,ATHLETE,EIS001,Eisspray akut,2025-11-12,11,3,pharmacy,8.49,Bayern,25.47
+C1195,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-12,11,2,supermarket,4.99,Hessen,9.98
+C1114,SELFCARE,BEI001,5in1 Beinlotion,2025-11-13,11,1,drugstore,9.99,NRW,9.99
+C1242,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-13,11,1,drugstore,4.99,NRW,4.99
+C1035,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-14,11,1,pharmacy,7.99,NRW,7.99
+C1046,ATHLETE,EIS001,Eisspray akut,2025-11-14,11,2,pharmacy,8.49,NRW,16.98
+C1052,ATHLETE,EIS001,Eisspray akut,2025-11-14,11,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1126,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-11-14,11,1,drugstore,5.49,Saarland,5.49
+C1162,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-14,11,1,pharmacy,7.99,Hessen,7.99
+C1230,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-14,11,1,drugstore,4.99,Baden-Württemberg,4.99
+C1030,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-15,11,3,online,7.99,Bayern,23.97
+C1217,BUDGET,HOR001,Hornhaut Entferner Maske,2025-11-15,11,1,supermarket,5.49,Hessen,5.49
+C1024,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-16,11,1,online,7.99,Baden-Württemberg,7.99
+C1186,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-16,11,3,supermarket,4.99,Hessen,14.97
+C1251,BUDGET,HOR001,Hornhaut Entferner Maske,2025-11-16,11,2,drugstore,5.49,Baden-Württemberg,10.98
+C1043,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-17,11,1,online,7.99,Bayern,7.99
+C1128,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-11-17,11,1,drugstore,5.49,Saarland,5.49
+C1158,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-17,11,1,pharmacy,4.99,Saarland,4.99
+C1231,BUDGET,EIS001,Eisspray akut,2025-11-17,11,2,supermarket,8.49,Hessen,16.98
+C1024,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-18,11,1,online,7.99,NRW,7.99
+C1138,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-18,11,1,pharmacy,4.99,Saarland,4.99
+C1161,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-18,11,1,pharmacy,4.99,Bayern,4.99
+C1174,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-18,11,1,supermarket,4.99,Saarland,4.99
+C1188,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-18,11,2,supermarket,4.99,Saarland,9.98
+C1193,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-18,11,1,supermarket,7.99,Saarland,7.99
+C1230,BUDGET,HOR001,Hornhaut Entferner Maske,2025-11-18,11,1,supermarket,5.49,Baden-Württemberg,5.49
+C1012,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-19,11,1,pharmacy,7.99,NRW,7.99
+C1094,SELFCARE,BEI001,5in1 Beinlotion,2025-11-19,11,1,pharmacy,9.99,Saarland,9.99
+C1213,BUDGET,EIS001,Eisspray akut,2025-11-19,11,1,drugstore,8.49,Hessen,8.49
+C1017,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-20,11,2,online,7.99,NRW,15.98
+C1052,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-20,11,2,online,7.99,Bayern,15.98
+C1094,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-11-20,11,1,pharmacy,5.49,Hessen,5.49
+C1187,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-20,11,2,pharmacy,4.99,Saarland,9.98
+C1209,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-20,11,1,drugstore,4.99,NRW,4.99
+C1213,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-20,11,2,drugstore,4.99,NRW,9.98
+C1232,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-20,11,2,drugstore,4.99,Hessen,9.98
+C1032,ATHLETE,EIS001,Eisspray akut,2025-11-21,11,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1039,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-21,11,1,pharmacy,7.99,Bayern,7.99
+C1041,ATHLETE,EIS001,Eisspray akut,2025-11-21,11,1,pharmacy,8.49,Bayern,8.49
+C1150,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-21,11,1,pharmacy,7.99,Bayern,7.99
+C1173,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-21,11,2,supermarket,4.99,Bayern,9.98
+C1176,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-21,11,3,supermarket,4.99,Hessen,14.97
+C1223,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-21,11,1,supermarket,4.99,Hessen,4.99
+C1227,BUDGET,EIS001,Eisspray akut,2025-11-21,11,2,supermarket,8.49,Hessen,16.98
+C1228,BUDGET,EIS001,Eisspray akut,2025-11-21,11,1,supermarket,8.49,NRW,8.49
+C1231,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-21,11,1,supermarket,4.99,NRW,4.99
+C1235,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-21,11,2,drugstore,4.99,Baden-Württemberg,9.98
+C1264,BUDGET,HOR001,Hornhaut Entferner Maske,2025-11-21,11,1,supermarket,5.49,Baden-Württemberg,5.49
+C1155,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-22,11,1,pharmacy,4.99,Saarland,4.99
+C1162,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-22,11,1,pharmacy,4.99,Saarland,4.99
+C1222,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-22,11,1,drugstore,4.99,NRW,4.99
+C1224,BUDGET,HOR001,Hornhaut Entferner Maske,2025-11-22,11,1,drugstore,5.49,NRW,5.49
+C1241,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-22,11,1,drugstore,4.99,Hessen,4.99
+C1018,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-23,11,2,online,7.99,Baden-Württemberg,15.98
+C1046,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-24,11,1,pharmacy,7.99,Baden-Württemberg,7.99
+C1055,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-24,11,2,online,7.99,Baden-Württemberg,15.98
+C1172,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-24,11,2,pharmacy,7.99,Bayern,15.98
+C1200,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-24,11,1,drugstore,4.99,NRW,4.99
+C1227,BUDGET,EIS001,Eisspray akut,2025-11-24,11,1,drugstore,8.49,Baden-Württemberg,8.49
+C1248,BUDGET,EIS001,Eisspray akut,2025-11-24,11,2,drugstore,8.49,Baden-Württemberg,16.98
+C1002,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-25,11,1,online,7.99,NRW,7.99
+C1004,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-25,11,1,online,7.99,Bayern,7.99
+C1015,ATHLETE,EIS001,Eisspray akut,2025-11-25,11,1,pharmacy,8.49,Bayern,8.49
+C1035,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-25,11,1,online,7.99,NRW,7.99
+C1183,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-25,11,1,supermarket,4.99,Bayern,4.99
+C1235,BUDGET,EIS001,Eisspray akut,2025-11-26,11,2,supermarket,8.49,NRW,16.98
+C1257,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-26,11,2,supermarket,4.99,Baden-Württemberg,9.98
+C1138,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-27,11,1,supermarket,7.99,Saarland,7.99
+C1156,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-11-27,11,1,pharmacy,4.99,Saarland,4.99
+C1226,BUDGET,EIS001,Eisspray akut,2025-11-27,11,2,supermarket,8.49,NRW,16.98
+C1002,ATHLETE,EIS001,Eisspray akut,2025-11-28,11,1,pharmacy,8.49,NRW,8.49
+C1006,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-11-28,11,1,online,7.99,Baden-Württemberg,7.99
+C1206,BUDGET,EIS001,Eisspray akut,2025-11-28,11,1,drugstore,8.49,NRW,8.49
+C1171,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-01,12,1,supermarket,7.99,Saarland,7.99
+C1047,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-02,12,2,pharmacy,7.99,NRW,15.98
+C1152,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-02,12,1,supermarket,7.99,Bayern,7.99
+C1157,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-02,12,2,pharmacy,7.99,Hessen,15.98
+C1163,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-02,12,1,pharmacy,7.99,Bayern,7.99
+C1189,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-02,12,1,supermarket,4.99,Bayern,4.99
+C1228,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-02,12,1,supermarket,4.99,NRW,4.99
+C1014,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-03,12,1,online,7.99,NRW,7.99
+C1155,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-03,12,2,pharmacy,7.99,Saarland,15.98
+C1242,BUDGET,EIS001,Eisspray akut,2025-12-03,12,2,drugstore,8.49,Baden-Württemberg,16.98
+C1008,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-04,12,3,online,7.99,NRW,23.97
+C1011,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-04,12,2,pharmacy,7.99,Bayern,15.98
+C1013,ATHLETE,EIS001,Eisspray akut,2025-12-04,12,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1076,SELFCARE,BEI001,5in1 Beinlotion,2025-12-04,12,2,pharmacy,9.99,Hessen,19.98
+C1159,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-04,12,1,pharmacy,7.99,Bayern,7.99
+C1188,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-04,12,2,supermarket,7.99,Saarland,15.98
+C1213,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-04,12,1,drugstore,4.99,Baden-Württemberg,4.99
+C1050,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-05,12,2,online,7.99,NRW,15.98
+C1087,SELFCARE,BEI001,5in1 Beinlotion,2025-12-05,12,2,pharmacy,9.99,Saarland,19.98
+C1160,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-05,12,2,pharmacy,4.99,Saarland,9.98
+C1164,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-05,12,1,pharmacy,7.99,Saarland,7.99
+C1004,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-06,12,1,pharmacy,7.99,Bayern,7.99
+C1023,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-06,12,3,pharmacy,7.99,Baden-Württemberg,23.97
+C1190,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-06,12,3,supermarket,4.99,Hessen,14.97
+C1241,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-06,12,2,supermarket,4.99,Baden-Württemberg,9.98
+C1043,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-07,12,1,pharmacy,7.99,NRW,7.99
+C1052,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-07,12,1,online,7.99,Bayern,7.99
+C1190,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-07,12,1,supermarket,4.99,Bayern,4.99
+C1010,ATHLETE,EIS001,Eisspray akut,2025-12-08,12,2,online,8.49,NRW,16.98
+C1026,ATHLETE,EIS001,Eisspray akut,2025-12-08,12,1,online,8.49,NRW,8.49
+C1031,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-08,12,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1146,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-08,12,2,supermarket,4.99,Hessen,9.98
+C1230,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-08,12,1,drugstore,4.99,Baden-Württemberg,4.99
+C1011,ATHLETE,EIS001,Eisspray akut,2025-12-09,12,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1032,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-09,12,1,pharmacy,7.99,Bayern,7.99
+C1158,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-09,12,2,pharmacy,4.99,Saarland,9.98
+C1169,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-09,12,3,pharmacy,7.99,Bayern,23.97
+C1028,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-10,12,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1132,SELFCARE,BEI001,5in1 Beinlotion,2025-12-10,12,1,drugstore,9.99,NRW,9.99
+C1149,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-10,12,1,pharmacy,4.99,Hessen,4.99
+C1181,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-10,12,1,pharmacy,4.99,Bayern,4.99
+C1067,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-12-11,12,1,drugstore,5.49,Hessen,5.49
+C1072,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-12-11,12,3,drugstore,5.49,Saarland,16.47
+C1146,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-11,12,1,pharmacy,4.99,Saarland,4.99
+C1202,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-11,12,2,supermarket,4.99,NRW,9.98
+C1240,BUDGET,BEI001,5in1 Beinlotion,2025-12-11,12,1,drugstore,9.99,Baden-Württemberg,9.99
+C1016,ATHLETE,EIS001,Eisspray akut,2025-12-12,12,1,online,8.49,Baden-Württemberg,8.49
+C1038,ATHLETE,EIS001,Eisspray akut,2025-12-12,12,1,online,8.49,Bayern,8.49
+C1092,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-12-12,12,2,drugstore,5.49,NRW,10.98
+C1193,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-13,12,2,pharmacy,4.99,Bayern,9.98
+C1231,BUDGET,EIS001,Eisspray akut,2025-12-13,12,1,supermarket,8.49,NRW,8.49
+C1162,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-14,12,2,pharmacy,7.99,Bayern,15.98
+C1013,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-15,12,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1167,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-15,12,1,pharmacy,7.99,Hessen,7.99
+C1175,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-15,12,1,pharmacy,4.99,Bayern,4.99
+C1215,BUDGET,EIS001,Eisspray akut,2025-12-15,12,2,supermarket,8.49,NRW,16.98
+C1231,BUDGET,EIS001,Eisspray akut,2025-12-15,12,1,drugstore,8.49,NRW,8.49
+C1023,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-16,12,1,pharmacy,7.99,NRW,7.99
+C1046,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-16,12,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1071,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-12-16,12,1,drugstore,5.49,NRW,5.49
+C1199,BUDGET,EIS001,Eisspray akut,2025-12-16,12,2,supermarket,8.49,NRW,16.98
+C1205,BUDGET,EIS001,Eisspray akut,2025-12-16,12,2,drugstore,8.49,Hessen,16.98
+C1209,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-16,12,1,drugstore,4.99,NRW,4.99
+C1226,BUDGET,EIS001,Eisspray akut,2025-12-16,12,1,drugstore,8.49,Hessen,8.49
+C1253,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-16,12,2,supermarket,4.99,NRW,9.98
+C1143,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-17,12,1,supermarket,4.99,Hessen,4.99
+C1144,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-17,12,1,supermarket,7.99,Bayern,7.99
+C1185,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-17,12,3,supermarket,7.99,Hessen,23.97
+C1190,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-17,12,2,pharmacy,4.99,Saarland,9.98
+C1221,BUDGET,BEI001,5in1 Beinlotion,2025-12-17,12,2,supermarket,9.99,Hessen,19.98
+C1015,ATHLETE,EIS001,Eisspray akut,2025-12-18,12,1,pharmacy,8.49,Baden-Württemberg,8.49
+C1033,ATHLETE,EIS001,Eisspray akut,2025-12-18,12,1,online,8.49,Bayern,8.49
+C1057,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-12-18,12,1,pharmacy,5.49,NRW,5.49
+C1134,SELFCARE,HOR001,Hornhaut Entferner Maske,2025-12-18,12,3,drugstore,5.49,Saarland,16.47
+C1165,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-18,12,2,pharmacy,4.99,Saarland,9.98
+C1205,BUDGET,BEI001,5in1 Beinlotion,2025-12-18,12,1,supermarket,9.99,Baden-Württemberg,9.99
+C1243,BUDGET,EIS001,Eisspray akut,2025-12-18,12,1,supermarket,8.49,Hessen,8.49
+C1054,ATHLETE,EIS001,Eisspray akut,2025-12-19,12,1,online,8.49,Baden-Württemberg,8.49
+C1170,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-19,12,1,pharmacy,7.99,Saarland,7.99
+C1144,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-20,12,1,supermarket,4.99,Saarland,4.99
+C1173,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-20,12,2,supermarket,4.99,Hessen,9.98
+C1204,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-20,12,3,supermarket,4.99,NRW,14.97
+C1030,ATHLETE,EIS001,Eisspray akut,2025-12-21,12,1,pharmacy,8.49,Bayern,8.49
+C1171,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-21,12,2,pharmacy,7.99,Bayern,15.98
+C1257,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-21,12,2,supermarket,4.99,NRW,9.98
+C1028,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-22,12,1,online,7.99,NRW,7.99
+C1159,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-22,12,2,supermarket,7.99,Saarland,15.98
+C1170,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-22,12,1,supermarket,4.99,Hessen,4.99
+C1209,BUDGET,BEI001,5in1 Beinlotion,2025-12-22,12,3,supermarket,9.99,Hessen,29.97
+C1260,BUDGET,EIS001,Eisspray akut,2025-12-22,12,1,supermarket,8.49,Hessen,8.49
+C1263,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-22,12,3,supermarket,4.99,NRW,14.97
+C1169,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-23,12,1,pharmacy,4.99,Saarland,4.99
+C1169,WINTER,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-23,12,1,supermarket,4.99,Bayern,4.99
+C1218,BUDGET,EIS001,Eisspray akut,2025-12-23,12,2,drugstore,8.49,Baden-Württemberg,16.98
+C1218,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-23,12,1,drugstore,4.99,Hessen,4.99
+C1227,BUDGET,HOR001,Hornhaut Entferner Maske,2025-12-23,12,1,supermarket,5.49,Hessen,5.49
+C1258,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-23,12,1,supermarket,4.99,NRW,4.99
+C1008,ATHLETE,EIS001,Eisspray akut,2025-12-24,12,1,pharmacy,8.49,NRW,8.49
+C1013,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-24,12,2,pharmacy,7.99,NRW,15.98
+C1027,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-24,12,1,online,7.99,Baden-Württemberg,7.99
+C1051,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-24,12,1,online,7.99,NRW,7.99
+C1053,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-24,12,2,pharmacy,7.99,Baden-Württemberg,15.98
+C1198,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-24,12,2,supermarket,4.99,Baden-Württemberg,9.98
+C1211,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-24,12,2,drugstore,4.99,Baden-Württemberg,9.98
+C1248,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-24,12,1,drugstore,4.99,Baden-Württemberg,4.99
+C1003,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-25,12,1,online,7.99,Baden-Württemberg,7.99
+C1006,ATHLETE,EIS001,Eisspray akut,2025-12-25,12,2,online,8.49,NRW,16.98
+C1126,SELFCARE,BEI001,5in1 Beinlotion,2025-12-25,12,1,drugstore,9.99,Hessen,9.99
+C1238,BUDGET,BEI001,5in1 Beinlotion,2025-12-25,12,2,drugstore,9.99,NRW,19.98
+C1255,BUDGET,EIS001,Eisspray akut,2025-12-25,12,1,drugstore,8.49,Hessen,8.49
+C1021,ATHLETE,EIS001,Eisspray akut,2025-12-26,12,2,online,8.49,NRW,16.98
+C1030,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-26,12,1,online,7.99,NRW,7.99
+C1090,SELFCARE,BEI001,5in1 Beinlotion,2025-12-26,12,2,drugstore,9.99,NRW,19.98
+C1157,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-26,12,1,supermarket,7.99,Saarland,7.99
+C1215,BUDGET,HOR001,Hornhaut Entferner Maske,2025-12-26,12,1,supermarket,5.49,Hessen,5.49
+C1222,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-26,12,1,supermarket,4.99,NRW,4.99
+C1187,WINTER,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-27,12,1,supermarket,7.99,Saarland,7.99
+C1226,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-27,12,2,drugstore,4.99,NRW,9.98
+C1250,BUDGET,EIS001,Eisspray akut,2025-12-27,12,1,supermarket,8.49,NRW,8.49
+C1005,ATHLETE,EIS001,Eisspray akut,2025-12-28,12,1,online,8.49,NRW,8.49
+C1032,ATHLETE,EIS001,Eisspray akut,2025-12-28,12,2,online,8.49,Baden-Württemberg,16.98
+C1051,ATHLETE,MOB001,Allgäuer Latschenkiefer Mobil Gel,2025-12-28,12,2,online,7.99,Bayern,15.98
+C1252,BUDGET,FUS001,Allgäuer Latschenkiefer Fußbad,2025-12-28,12,2,supermarket,4.99,Hessen,9.98

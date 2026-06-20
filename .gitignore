@@ -21,8 +21,7 @@ env/
 # Streamlit
 .streamlit/secrets.toml
 
-# Sample & problem docs (local demo only — not committed)
-samples/
+# Problem docs (local only — not committed)
 hackathon_problems_20260620/
 tasks.txt
 
@@ -35,3 +34,4 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
