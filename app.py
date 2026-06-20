@@ -6,7 +6,7 @@ st.set_page_config(
     page_title="NexusOps AI",
     page_icon="⚡",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="collapsed",
 )
 
 # ── Theme state ────────────────────────────────────────────────────────────────
@@ -34,6 +34,12 @@ apply_theme()
 # ── Landing-page-specific CSS (stats bar, section label, cards, footer) ────────
 st.markdown(f"""
 <style>
+/* ── Hide sidebar entirely on the homepage ── */
+section[data-testid="stSidebar"],
+[data-testid="collapsedControl"] {{
+    display: none !important;
+}}
+
 .block-container {{
     padding-top: 0 !important;
     padding-left: 2.5rem !important;
