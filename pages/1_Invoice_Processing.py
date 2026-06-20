@@ -1,4 +1,5 @@
 import re
+import csv
 import streamlit as st
 from pathlib import Path
 from agents.invoice_agent import process_invoice, process_invoice_text
@@ -10,6 +11,32 @@ st.caption("Client: Globus Group (St. Wendel) — Automated invoice routing from
 
 SAMPLES_DIR = Path("samples/invoices")
 SAMPLE_FILES = sorted([f for f in SAMPLES_DIR.iterdir() if f.suffix != ".csv"]) if SAMPLES_DIR.exists() else []
+
+# Load ground-truth manifest
+MANIFEST = {}
+_manifest_path = SAMPLES_DIR / "00_manifest.csv"
+if _manifest_path.exists():
+    with open(_manifest_path, newline="", encoding="utf-8") as _f:
+        for row in csv.DictReader(_f):
+            MANIFEST[row["file"]] = row
+
+def _quality_badge(filename: str) -> str:
+    q = MANIFEST.get(filename, {}).get("quality", "").lower()
+    if "bad" in q:
+        detail = q.replace("bad", "").strip().strip("()")
+        return f'<span style="background:#fef3c7; color:#92400e; border:1px solid #f59e0b; border-radius:10px; padding:2px 8px; font-size:10px; font-weight:600;">📸 Poor scan{(" · " + detail) if detail else ""}</span>'
+    return '<span style="background:#f0fdf4; color:#166534; border:1px solid #16a34a; border-radius:10px; padding:2px 8px; font-size:10px; font-weight:600;">✅ Good quality</span>'
+
+def _accuracy_badge(extracted: str, expected: str) -> str:
+    """Compare extracted amount to manifest ground truth — strip non-numeric chars."""
+    def _normalise(s):
+        return re.sub(r"[^0-9]", "", s or "")
+    if not expected:
+        return ""
+    match = _normalise(extracted) == _normalise(expected)
+    if match:
+        return f'<span style="background:#f0fdf4; color:#166534; border:1px solid #16a34a; border-radius:10px; padding:2px 8px; font-size:10px; font-weight:600;">✅ Amount correct</span>'
+    return f'<span style="background:#fff1f2; color:#991b1b; border:1px solid #dc2626; border-radius:10px; padding:2px 8px; font-size:10px; font-weight:600;">⚠️ Expected {expected}</span>'
 
 MOCK_EMAILS = {
     "01_stadtwerke_gas_de.pdf": {
@@ -213,22 +240,32 @@ with tab_inbox:
                 amount = ""
                 can_forward = False
 
+            manifest_row = MANIFEST.get(f.name, {})
+            expected_total = manifest_row.get("total", "")
+            invoice_type   = manifest_row.get("invoice_type", "")
+            quality_badge  = _quality_badge(f.name)
+            accuracy_html  = _accuracy_badge(amount, expected_total) if result and amount else ""
+
             row_bg = "#f0fdf4" if forwarded else "#ffffff"
             with st.container():
                 st.markdown(f"""
 <div style="border:1px solid #e5e7eb; border-radius:8px; padding:12px 16px;
             margin-bottom:8px; background:{row_bg};">
   <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px;">
-    <div>
-      <div style="font-weight:600; font-size:14px; color:#111827;">
+    <div style="flex:1; min-width:0;">
+      <div style="font-weight:600; font-size:14px; color:#111827; margin-bottom:2px;">
         📧 {meta.get('from_name', f.name)}
+        &nbsp;&nbsp;{quality_badge}
       </div>
-      <div style="font-size:12px; color:#6b7280; margin-top:2px;">
+      <div style="font-size:12px; color:#6b7280; margin-bottom:4px;">
         {meta.get('subject', '')}
         &nbsp;·&nbsp;
         <span style="font-family:monospace;">📎 {f.name}</span>
       </div>
-      {f'<div style="font-size:12px; color:#374151; margin-top:4px;">→ <b>{dept}</b>&nbsp;&nbsp;{amount}</div>' if result else ''}
+      <div style="font-size:12px; color:#374151;">
+        {f"<b>{invoice_type}</b> · Expected: {expected_total}" if expected_total else invoice_type}
+        {f" &nbsp;·&nbsp; → <b>{dept}</b> · Extracted: {amount} &nbsp;{accuracy_html}" if result and dept != '—' else ''}
+      </div>
     </div>
     <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
       <span style="background:{s_bg}; color:{s_color}; border:1px solid {s_color};
