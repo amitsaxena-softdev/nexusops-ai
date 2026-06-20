@@ -226,65 +226,60 @@ with tab_inbox:
             meta = MOCK_EMAILS.get(f.name, {})
             result = results.get(f.name)
             forwarded = f.name in st.session_state.inbox_forwarded
+            manifest_row = MANIFEST.get(f.name, {})
+            expected_total = manifest_row.get("total", "")
+            invoice_type = manifest_row.get("invoice_type", "")
+            quality = manifest_row.get("quality", "")
+            quality_icon = "📸" if "bad" in quality.lower() else "✅"
+            quality_desc = quality.replace("bad", "").strip().strip("()") if "bad" in quality.lower() else "Good quality"
 
             if result:
                 fields = result["fields"]
                 status_raw = fields.get("STATUS", fields.get("VALIDITY", ""))
                 dept = fields.get("ROUTED TO", "—")
                 amount = fields.get("TOTAL AMOUNT", "")
-                s_color, s_bg, s_label = _status_style(status_raw)
+                _, _, s_label = _status_style(status_raw)
                 can_forward = "NOT AN INVOICE" not in s_label and "REJECTED" not in s_label
+                # Accuracy check
+                def _norm(s): return re.sub(r"[^0-9]", "", s or "")
+                accuracy_ok = _norm(amount) == _norm(expected_total) if expected_total else None
             else:
-                s_color, s_bg, s_label = "#6b7280", "#f3f4f6", "● Unprocessed"
-                dept = "—"
-                amount = ""
-                can_forward = False
+                dept, amount, s_label, can_forward, accuracy_ok = "—", "", "Unprocessed", False, None
 
-            manifest_row = MANIFEST.get(f.name, {})
-            expected_total = manifest_row.get("total", "")
-            invoice_type   = manifest_row.get("invoice_type", "")
-            quality_badge  = _quality_badge(f.name)
-            accuracy_html  = _accuracy_badge(amount, expected_total) if result and amount else ""
-
-            row_bg = "#f0fdf4" if forwarded else "#ffffff"
-            with st.container():
-                st.markdown(f"""
-<div style="border:1px solid #e5e7eb; border-radius:8px; padding:12px 16px;
-            margin-bottom:8px; background:{row_bg};">
-  <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px;">
-    <div style="flex:1; min-width:0;">
-      <div style="font-weight:600; font-size:14px; color:#111827; margin-bottom:2px;">
-        📧 {meta.get('from_name', f.name)}
-        &nbsp;&nbsp;{quality_badge}
-      </div>
-      <div style="font-size:12px; color:#6b7280; margin-bottom:4px;">
-        {meta.get('subject', '')}
-        &nbsp;·&nbsp;
-        <span style="font-family:monospace;">📎 {f.name}</span>
-      </div>
-      <div style="font-size:12px; color:#374151;">
-        {f"<b>{invoice_type}</b> · Expected: {expected_total}" if expected_total else invoice_type}
-        {f" &nbsp;·&nbsp; → <b>{dept}</b> · Extracted: {amount} &nbsp;{accuracy_html}" if result and dept != '—' else ''}
-      </div>
-    </div>
-    <div style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
-      <span style="background:{s_bg}; color:{s_color}; border:1px solid {s_color};
-                   border-radius:12px; padding:3px 10px; font-size:11px; font-weight:600;
-                   white-space:nowrap;">
-        {s_label}
-      </span>
-    </div>
-  </div>
-</div>
-""", unsafe_allow_html=True)
+            with st.container(border=True):
+                col_info, col_badge = st.columns([5, 1])
+                with col_info:
+                    st.markdown(
+                        f"📧 **{meta.get('from_name', f.name)}** &nbsp; "
+                        f"{quality_icon} *{quality_desc}*"
+                    )
+                    st.caption(f"{meta.get('subject', '')} · 📎 `{f.name}`")
+                    if invoice_type or expected_total:
+                        st.caption(f"{invoice_type}{' · Expected: ' + expected_total if expected_total else ''}")
+                with col_badge:
+                    if not result:
+                        st.caption("● Pending")
+                    elif "READY" in s_label.upper() or forwarded:
+                        st.success("Ready")
+                    elif "INCOMPLETE" in s_label.upper():
+                        st.warning("Incomplete")
+                    else:
+                        st.error("Not invoice")
 
                 if result:
+                    acc_str = ""
+                    if accuracy_ok is True:
+                        acc_str = " · ✅ amount correct"
+                    elif accuracy_ok is False:
+                        acc_str = f" · ⚠️ expected {expected_total}"
+
                     if forwarded:
-                        st.success(f"✅ Forwarded to {dept}")
+                        st.success(f"✅ Forwarded to **{dept}** · Extracted: {amount}{acc_str}")
                     elif not can_forward:
                         st.error("❌ Not an invoice — returned to sender")
                     else:
-                        st.warning(f"⚠️ On hold — Finance following up with vendor before forwarding to {dept}")
+                        st.warning(f"⚠️ On hold — Finance following up with vendor · {dept}")
+
                     with st.expander("Details"):
                         st.code(result["raw"], language="markdown")
 
