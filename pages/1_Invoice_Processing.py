@@ -162,7 +162,7 @@ with tab_inbox:
                 f"`{forwarded_count}` forwarded"
             )
         with col_btn:
-            if st.button("▶ Process All", type="primary", use_container_width=True):
+            if st.button("▶ Process & Route All Invoices", type="primary", use_container_width=True):
                 st.session_state.inbox_forwarded = set()
                 st.session_state.inbox_results = {}
                 new_results = {}
@@ -173,24 +173,24 @@ with tab_inbox:
                     bar.progress((i + 1) / total, text=f"Reading invoice from {sender}…")
                     new_results[f.name] = _process_file(f)
                 bar.empty()
+                # Auto-forward all processable invoices immediately
+                auto_forwarded = set()
+                for name, r in new_results.items():
+                    s = r["fields"].get("STATUS", r["fields"].get("VALIDITY", "")).upper()
+                    if "NOT AN INVOICE" not in s and "REJECTED" not in s:
+                        auto_forwarded.add(name)
+                st.session_state.inbox_forwarded = auto_forwarded
                 st.session_state.inbox_results = new_results
                 st.rerun()
 
-        # ── Forward All button (only when results exist) ───────────────────
         if results:
-            ready_names = [
-                name for name, r in results.items()
-                if "READY" in r["fields"].get("STATUS", r["fields"].get("VALIDITY", "")).upper()
-                or "CONFIRMED" in r["fields"].get("STATUS", r["fields"].get("VALIDITY", "")).upper()
-            ]
-            unforwarded_ready = [n for n in ready_names if n not in st.session_state.inbox_forwarded]
-            if unforwarded_ready:
-                if st.button(f"📤 Forward All Ready ({len(unforwarded_ready)})", use_container_width=True):
-                    for n in unforwarded_ready:
-                        st.session_state.inbox_forwarded.add(n)
-                    st.rerun()
-            elif ready_names:
-                st.success(f"✅ All {len(ready_names)} ready invoices have been forwarded.")
+            ready = sum(1 for n, r in results.items()
+                        if n in st.session_state.inbox_forwarded)
+            held = len(results) - ready
+            cols = st.columns(3)
+            cols[0].metric("Forwarded", ready)
+            cols[1].metric("Held / Incomplete", held)
+            cols[2].metric("Total Emails", len(results))
 
         st.divider()
 
@@ -242,20 +242,14 @@ with tab_inbox:
 """, unsafe_allow_html=True)
 
                 if result:
-                    col_fwd, col_det = st.columns([2, 1])
-                    with col_fwd:
-                        if forwarded:
-                            st.success(f"✅ Forwarded to {dept}")
-                        elif can_forward:
-                            if st.button(f"📤 Forward to {dept}", key=f"fwd_{f.name}",
-                                         use_container_width=True):
-                                st.session_state.inbox_forwarded.add(f.name)
-                                st.rerun()
-                        else:
-                            st.error("Not an invoice — return to sender")
-                    with col_det:
-                        with st.expander("Details"):
-                            st.code(result["raw"], language="markdown")
+                    if forwarded:
+                        st.success(f"✅ Forwarded to {dept}")
+                    elif not can_forward:
+                        st.error("❌ Not an invoice — returned to sender")
+                    else:
+                        st.warning(f"⚠️ On hold — Finance following up with vendor before forwarding to {dept}")
+                    with st.expander("Details"):
+                        st.code(result["raw"], language="markdown")
 
 # ══════════════════════════════════════════════════════════════════════════════
 with tab_single:
@@ -270,7 +264,6 @@ with tab_single:
                                 type=["pdf", "png", "jpg", "jpeg", "docx"])
 
     if uploaded and st.button("📨 Process Email", type="primary", key="single_btn"):
-        st.session_state.single_forwarded = False
         email_context = (
             f"From: {email_from}\nSubject: {email_subject}\n"
             f"Body: {email_body}\nAttachment: {uploaded.name}"
@@ -323,14 +316,10 @@ with tab_single:
             st.warning(f"⚠️ {flags}")
 
         st.divider()
-        if st.session_state.single_forwarded:
-            st.success(f"✅ Invoice forwarded to **{dept}** — awaiting department confirmation.")
-        elif can_forward:
-            if st.button(f"📤 Forward to {dept}", type="primary", key="single_fwd"):
-                st.session_state.single_forwarded = True
-                st.rerun()
+        if can_forward:
+            st.success(f"✅ Invoice automatically forwarded to **{dept}** — awaiting department confirmation.")
         else:
-            st.error("🚫 Not an invoice — cannot forward.")
+            st.error("🚫 Not an invoice — returned to sender.")
 
         with st.expander("Raw output"):
             st.code(r["raw"], language="markdown")
