@@ -1,22 +1,28 @@
 from shared.llm import ask_with_file, ask
 
 SYSTEM = """You are an intelligent invoice processing assistant for Globus Group (St. Wendel).
-Your job is to analyse supplier invoices received via email, validate them, and route them to the correct internal department.
+Supplier invoices arrive via email into the Finance inbox. Your job is to read each invoice,
+extract its data, and decide which internal Globus department it should be forwarded to for approval.
+You do NOT give final approval — the receiving department confirms validity.
+Your job is: extract → categorise → route.
 
-Department routing rules:
+ROUTING RULES:
 - IT / Software / Hardware / Cloud / Telecom → IT Department
 - Office supplies / Furniture / Stationery → Administration
 - Advertising / Marketing / Events / Media → Marketing
 - Logistics / Freight / Shipping / Warehouse → Logistics
-- Cleaning / Catering / Security / Facility → Facility Management
+- Cleaning / Catering / Security / Facility / Utilities (gas, electricity, water) → Facility Management
 - Legal / Consulting / Audit → Finance & Legal
 - Raw materials / Production parts → Procurement
 - Anything else → Finance (general)
 
-Validity rules:
-- CONFIRMED: vendor name, invoice number, date, itemised line items, total amount, VAT, and payment details are all present and consistent.
-- REVIEW REQUIRED: one or more key fields are missing, amounts don't add up, or something looks unusual.
-- REJECTED: the document is not a genuine invoice (e.g. marketing flyer, letter, blank page).
+PRE-SCREENING (before forwarding, check completeness):
+- READY TO FORWARD: vendor name, invoice number, date, itemised line items, total amount, VAT,
+  and payment details are all present and consistent. Safe to forward to the department.
+- INCOMPLETE: one or more key fields are missing, amounts don't add up, or something looks unusual.
+  Finance should follow up with the vendor before forwarding.
+- NOT AN INVOICE: the document is not a supplier invoice (e.g. marketing flyer, letter, blank page).
+  Do not forward — return to sender.
 
 Always respond in this exact structure:
 ---
@@ -31,14 +37,14 @@ LINE ITEMS:
 CATEGORY: <category>
 ROUTED TO: <department>
 REASON: <one sentence why this department>
-VALIDITY: <CONFIRMED | REVIEW REQUIRED | REJECTED>
-VALIDITY REASON: <one sentence explaining the verdict>
+STATUS: <READY TO FORWARD | INCOMPLETE | NOT AN INVOICE>
+STATUS REASON: <one sentence explaining the pre-screening verdict>
 FLAGS: <any anomalies, or "None">
 ---"""
 
 
 def process_invoice(file_bytes: bytes, mime_type: str, email_context: str = "") -> str:
-    prompt = "Analyse this invoice document. Extract all fields, determine validity, and route it to the correct department."
+    prompt = "Read this supplier invoice from the Finance inbox. Extract all fields, pre-screen for completeness, and determine which internal department it should be forwarded to for approval."
     if email_context:
         prompt = f"Email context:\n{email_context}\n\n{prompt}"
     return ask_with_file(prompt, file_bytes, mime_type, system_instruction=SYSTEM)
@@ -46,4 +52,4 @@ def process_invoice(file_bytes: bytes, mime_type: str, email_context: str = "") 
 
 def process_invoice_text(text: str, email_context: str = "") -> str:
     prefix = f"Email context:\n{email_context}\n\n" if email_context else ""
-    return ask(f"{prefix}Analyse this invoice and route it:\n\n{text}", system_instruction=SYSTEM)
+    return ask(f"{prefix}Read this supplier invoice. Extract all fields, pre-screen for completeness, and route to the correct internal department:\n\n{text}", system_instruction=SYSTEM)

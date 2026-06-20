@@ -130,21 +130,27 @@ def _parse_result(text):
     return fields
 
 
-def _show_result(fields, raw_text):
-    validity = fields.get("VALIDITY", "").upper()
+def _show_result(fields, raw_text, result_key="default"):
+    status = fields.get("STATUS", fields.get("VALIDITY", "")).upper()
     dept = fields.get("ROUTED TO", "—")
 
-    if "CONFIRMED" in validity:
-        v_color, v_icon = "#1a7f1a", "✅"
-    elif "REVIEW" in validity:
-        v_color, v_icon = "#b36b00", "⚠️"
+    if "READY" in status:
+        v_color, v_icon, v_label = "#1a7f1a", "✅", "READY TO FORWARD"
+    elif "INCOMPLETE" in status:
+        v_color, v_icon, v_label = "#b36b00", "⚠️", "INCOMPLETE"
+    elif "NOT AN INVOICE" in status or "REJECTED" in status:
+        v_color, v_icon, v_label = "#c0392b", "❌", "NOT AN INVOICE"
+    elif "CONFIRMED" in status:
+        v_color, v_icon, v_label = "#1a7f1a", "✅", "READY TO FORWARD"
+    elif "REVIEW" in status:
+        v_color, v_icon, v_label = "#b36b00", "⚠️", "INCOMPLETE"
     else:
-        v_color, v_icon = "#c0392b", "❌"
+        v_color, v_icon, v_label = "#6b7280", "❓", status or "UNKNOWN"
 
     st.markdown(f"""
 <div style="display:flex; gap:10px; margin-bottom:16px; flex-wrap:wrap;">
   <span style="background:{v_color}; color:white; padding:5px 14px;
-               border-radius:20px; font-size:13px; font-weight:600;">{v_icon} {validity or "UNKNOWN"}</span>
+               border-radius:20px; font-size:13px; font-weight:600;">{v_icon} {v_label}</span>
   <span style="background:#1565c0; color:white; padding:5px 14px;
                border-radius:20px; font-size:13px; font-weight:600;">🏢 {dept}</span>
 </div>
@@ -170,15 +176,31 @@ def _show_result(fields, raw_text):
 
     st.markdown(f"**Routing reason:** {fields.get('REASON', '—')}")
 
-    v_reason = fields.get("VALIDITY REASON", "")
-    if v_reason:
-        st.markdown(f"**Validity note:** {v_reason}")
+    status_reason = fields.get("STATUS REASON", fields.get("VALIDITY REASON", ""))
+    if status_reason:
+        st.markdown(f"**Pre-screen note:** {status_reason}")
 
     flags = fields.get("FLAGS", "None")
     if flags and flags.lower() not in ("none", "n/a", ""):
         st.warning(f"⚠️ **Anomaly flags:** {flags}")
     else:
         st.success("No anomalies detected")
+
+    # Forward action
+    st.divider()
+    sent_key = f"forwarded_{result_key}"
+    if sent_key not in st.session_state:
+        st.session_state[sent_key] = False
+
+    can_forward = "NOT AN INVOICE" not in v_label and "REJECTED" not in v_label
+    if st.session_state[sent_key]:
+        st.success(f"✅ Invoice forwarded to **{dept}** — awaiting department confirmation.")
+    elif can_forward and dept != "—":
+        if st.button(f"📤 Forward to {dept}", type="primary", key=f"fwd_{result_key}"):
+            st.session_state[sent_key] = True
+            st.rerun()
+    else:
+        st.error("🚫 Cannot forward — document is not a valid invoice.")
 
     with st.expander("Raw output"):
         st.code(raw_text, language="markdown")
@@ -217,7 +239,7 @@ with tab_sample:
                     st.stop()
 
             st.markdown("### Result")
-            _show_result(_parse_result(result), result)
+            _show_result(_parse_result(result), result, result_key="sample")
 
 with tab_upload:
     st.markdown("**Simulate an incoming supplier email with an invoice attachment.**")
@@ -252,7 +274,7 @@ with tab_upload:
                 st.error("Unsupported format")
                 st.stop()
         st.markdown("### Result")
-        _show_result(_parse_result(result), result)
+        _show_result(_parse_result(result), result, result_key="upload")
 
 with tab_text:
     text_input = st.text_area(
@@ -264,4 +286,4 @@ with tab_text:
         with st.spinner("Analysing..."):
             result = process_invoice_text(text_input)
         st.markdown("### Result")
-        _show_result(_parse_result(result), result)
+        _show_result(_parse_result(result), result, result_key="text")
