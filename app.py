@@ -16,7 +16,7 @@ if "theme" not in st.session_state:
 D = st.session_state.theme == "dark"
 
 # ── Colour tokens (hero + cards need these) ────────────────────────────────────
-BG        = "#08080f"  if D else "#f8fafc"
+BG        = "#0d0f17"  if D else "#f8fafc"
 CARD_BG   = "rgba(255,255,255,0.025)" if D else "rgba(0,0,0,0.028)"
 CARD_BD   = "rgba(255,255,255,0.06)"  if D else "rgba(0,0,0,0.08)"
 TEXT      = "#f1f5f9"  if D else "#0f172a"
@@ -43,6 +43,9 @@ st.markdown(f"""
 }}
 [data-testid="column"] {{ padding: 5px !important; }}
 
+/* Hero iframe blends into the page (no opaque black rectangle). */
+[data-testid="stIFrame"], .stApp iframe {{ background: transparent !important; }}
+
 /* Make the app container a stacking context so the aurora's negative
    z-index layers above the solid background but below page content. */
 [data-testid="stAppViewContainer"] {{ position: relative; z-index: 0; }}
@@ -51,7 +54,7 @@ st.markdown(f"""
 .aurora {{ position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }}
 .aurora b {{
     position: absolute; display: block; border-radius: 50%;
-    filter: blur(90px); opacity: {0.45 if D else 0.16};
+    filter: blur(100px); opacity: {0.38 if D else 0.14};
 }}
 .aurora .b1 {{ width: 460px; height: 460px; background: #6366f1; top: -120px; left: -60px;
               animation: floaty1 24s ease-in-out infinite; }}
@@ -178,7 +181,7 @@ components.html(f"""
 <style>
 *{{margin:0;padding:0;box-sizing:border-box;}}
 body{{
-    background:{BG};
+    background:transparent;
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     display:flex;flex-direction:column;align-items:center;justify-content:center;
     height:280px;overflow:hidden;
@@ -188,6 +191,8 @@ body{{
     background-image:linear-gradient({GRID_CLR} 1px,transparent 1px),
                      linear-gradient(90deg,{GRID_CLR} 1px,transparent 1px);
     background-size:52px 52px;animation:drift 28s linear infinite;pointer-events:none;
+    -webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent 92%);
+    mask-image:linear-gradient(to bottom,#000 30%,transparent 92%);
 }}
 @keyframes drift{{from{{transform:translate(0,0)}}to{{transform:translate(52px,52px)}}}}
 .glow{{
