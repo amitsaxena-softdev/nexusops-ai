@@ -77,6 +77,15 @@ section[data-testid="stSidebar"],
 .section-label span::before {{ right: 100%; }}
 .section-label span::after  {{ left:  100%; }}
 
+.card-grid {{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-bottom: 8px;
+}}
+@media (max-width: 1100px) {{ .card-grid {{ grid-template-columns: repeat(3, 1fr); }} }}
+@media (max-width: 720px)  {{ .card-grid {{ grid-template-columns: repeat(2, 1fr); }} }}
+
 .nexus-card {{
     position: relative; background: {CARD_BG};
     border: 1px solid {CARD_BD}; border-radius: 18px;
@@ -243,13 +252,8 @@ def _card(num, icon, name, client, desc, page, color, tag):
   <div class="card-tag">{tag}</div>
 </div>"""
 
-row1 = st.columns(5, gap="small")
-for i, a in enumerate(AGENTS[:5]):
-    with row1[i]: st.markdown(_card(*a), unsafe_allow_html=True)
-
-row2 = st.columns(5, gap="small")
-for i, a in enumerate(AGENTS[5:]):
-    with row2[i]: st.markdown(_card(*a), unsafe_allow_html=True)
+cards_html = "".join(_card(*a) for a in AGENTS)
+st.markdown(f'<div class="card-grid">{cards_html}</div>', unsafe_allow_html=True)
 
 # ── Footer ─────────────────────────────────────────────────────────────────────
 st.markdown('<div class="nx-footer"><b>NexusOps AI</b> &nbsp;&middot;&nbsp; Enterprise Operations Suite</div>', unsafe_allow_html=True)
