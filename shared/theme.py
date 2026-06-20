@@ -26,12 +26,26 @@ _GROUPS = [
 
 
 def apply_theme():
-    """Inject theme CSS and render sidebar. Call after st.set_page_config()."""
+    """Inject theme CSS, floating toggle, and sidebar. Call after st.set_page_config()."""
     if "theme" not in st.session_state:
         st.session_state.theme = "dark"
     D = st.session_state.theme == "dark"
     _inject_css(D)
+    _render_toggle(D)
     _render_sidebar(D)
+
+
+def _render_toggle(D: bool):
+    """Floating dark/light toggle, pinned top-right on every page."""
+    tog = st.container(key="nx_theme_toggle")
+    with tog:
+        if st.button(
+            "☀️" if D else "🌙",
+            key="nx_theme_btn",
+            help="Switch to light mode" if D else "Switch to dark mode",
+        ):
+            st.session_state.theme = "light" if D else "dark"
+            st.rerun()
 
 
 def _inject_css(D: bool):
@@ -40,6 +54,8 @@ def _inject_css(D: bool):
     SEP     = "rgba(255,255,255,0.07)" if D else "rgba(0,0,0,0.08)"
     NAV_LNK = "#cbd5e1"  if D else "#334155"
     NAV_HOV = "rgba(99,102,241,0.1)"   if D else "rgba(99,102,241,0.08)"
+    TOG_BG  = "rgba(22,22,34,0.85)"    if D else "rgba(255,255,255,0.92)"
+    TOG_BD  = "rgba(255,255,255,0.12)" if D else "rgba(0,0,0,0.12)"
 
     st.markdown(f"""
 <style>
@@ -83,16 +99,32 @@ section[data-testid="stSidebar"] > div:first-child {{
     color: #818cf8 !important;
 }}
 
-/* ── Theme toggle buttons inside sidebar ── */
-[data-testid="stSidebar"] div[data-testid="stButton"] button {{
-    font-size: 12px !important;
-    font-weight: 600 !important;
-    padding: 7px 12px !important;
-    border-radius: 8px !important;
-    height: 34px !important;
-    min-height: unset !important;
-    width: 100% !important;
-    transition: all 0.15s ease !important;
+/* ── Floating dark/light toggle (top-right, every page) ── */
+.st-key-nx_theme_toggle {{
+    position: fixed !important;
+    top: 11px !important;
+    right: 16px !important;
+    z-index: 1000 !important;
+    width: auto !important;
+    min-width: 0 !important;
+}}
+.st-key-nx_theme_toggle div[data-testid="stButton"] button {{
+    font-size: 16px !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    border-radius: 50% !important;
+    background: {TOG_BG} !important;
+    border: 1px solid {TOG_BD} !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.28) !important;
+    backdrop-filter: blur(8px) !important;
+    transition: transform 0.15s ease, border-color 0.15s ease !important;
+}}
+.st-key-nx_theme_toggle div[data-testid="stButton"] button:hover {{
+    transform: scale(1.08) !important;
+    border-color: #6366f1 !important;
 }}
 </style>
 """, unsafe_allow_html=True)
@@ -121,28 +153,8 @@ def _render_sidebar(D: bool):
   </a>
 </div>""", unsafe_allow_html=True)
 
-        # Theme toggle
         st.markdown(
-            f'<div style="padding:0 12px 5px;font-size:9.5px;font-weight:700;'
-            f'letter-spacing:2px;text-transform:uppercase;color:{CAT};">Appearance</div>',
-            unsafe_allow_html=True,
-        )
-        c1, c2 = st.columns(2)
-        with c1:
-            if st.button("🌙  Dark", key="_sb_dark", use_container_width=True,
-                         type="primary" if D else "secondary"):
-                if not D:
-                    st.session_state.theme = "dark"
-                    st.rerun()
-        with c2:
-            if st.button("☀️  Light", key="_sb_light", use_container_width=True,
-                         type="primary" if not D else "secondary"):
-                if D:
-                    st.session_state.theme = "light"
-                    st.rerun()
-
-        st.markdown(
-            f'<hr style="border:none;border-top:1px solid {SEP};margin:16px 0 10px;">',
+            f'<hr style="border:none;border-top:1px solid {SEP};margin:4px 0 10px;">',
             unsafe_allow_html=True,
         )
 
