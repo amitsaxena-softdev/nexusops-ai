@@ -81,7 +81,7 @@ html, body, [data-testid="stAppViewContainer"], .stApp {{
     box-shadow: none !important;
 }}
 #MainMenu, footer {{ visibility: hidden !important; }}
-.stDeployButton  {{ display: none !important; }}
+[data-testid="stAppDeployButton"], .stDeployButton {{ display: none !important; }}
 
 /* ── Sidebar shell ── */
 section[data-testid="stSidebar"] > div:first-child {{

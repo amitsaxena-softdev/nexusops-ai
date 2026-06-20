@@ -43,9 +43,40 @@ st.markdown(f"""
 }}
 [data-testid="column"] {{ padding: 5px !important; }}
 
+/* Make the app container a stacking context so the aurora's negative
+   z-index layers above the solid background but below page content. */
+[data-testid="stAppViewContainer"] {{ position: relative; z-index: 0; }}
+
+/* ── Aurora background (drifting blurred colour blobs) ── */
+.aurora {{ position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }}
+.aurora b {{
+    position: absolute; display: block; border-radius: 50%;
+    filter: blur(90px); opacity: {0.45 if D else 0.16};
+}}
+.aurora .b1 {{ width: 460px; height: 460px; background: #6366f1; top: -120px; left: -60px;
+              animation: floaty1 24s ease-in-out infinite; }}
+.aurora .b2 {{ width: 420px; height: 420px; background: #a855f7; top: 28%; right: -120px;
+              animation: floaty2 28s ease-in-out infinite; }}
+.aurora .b3 {{ width: 400px; height: 400px; background: #06b6d4; bottom: -140px; left: 32%;
+              animation: floaty3 32s ease-in-out infinite; }}
+@keyframes floaty1 {{ 0%,100% {{ transform: translate(0,0) scale(1); }}
+                      50% {{ transform: translate(70px,50px) scale(1.18); }} }}
+@keyframes floaty2 {{ 0%,100% {{ transform: translate(0,0) scale(1); }}
+                      50% {{ transform: translate(-60px,40px) scale(1.12); }} }}
+@keyframes floaty3 {{ 0%,100% {{ transform: translate(0,0) scale(1); }}
+                      50% {{ transform: translate(40px,-50px) scale(1.2); }} }}
+
+/* ── Entrance motion ── */
+@keyframes fadeUp {{ from {{ opacity: 0; transform: translateY(16px); }}
+                     to   {{ opacity: 1; transform: none; }} }}
+@keyframes cardIn {{ from {{ opacity: 0; transform: translateY(20px) scale(0.97); }}
+                     to   {{ opacity: 1; transform: none; }} }}
+@keyframes sheen  {{ from {{ left: -60%; }} to {{ left: 130%; }} }}
+
 .stats-bar {{
     display: flex; justify-content: center; align-items: center;
     padding: 0 0 36px;
+    animation: fadeUp 0.6s ease 0.15s backwards;
 }}
 .stat {{ text-align: center; padding: 0 44px; }}
 .stat-num {{
@@ -58,7 +89,7 @@ st.markdown(f"""
 }}
 .stat-sep {{ width: 1px; height: 40px; background: {SEP}; }}
 
-.section-label {{ text-align: center; margin-bottom: 20px; }}
+.section-label {{ text-align: center; margin-bottom: 20px; animation: fadeUp 0.6s ease 0.28s backwards; }}
 .section-label span {{
     font-size: 10px; font-weight: 700; letter-spacing: 4px;
     text-transform: uppercase; color: {SECTION_C};
@@ -86,12 +117,22 @@ st.markdown(f"""
     padding: 20px 18px 16px; height: 174px; overflow: hidden; cursor: pointer;
     transition: transform 0.26s cubic-bezier(0.34,1.56,0.64,1),
                 border-color 0.22s ease, box-shadow 0.26s ease;
+    animation: cardIn 0.5s cubic-bezier(0.22,1,0.36,1) backwards;
 }}
 .nexus-card::after {{
     content: ""; position: absolute; inset: 0; border-radius: 18px;
     background: linear-gradient(135deg, var(--c) 0%, transparent 55%);
     opacity: 0; transition: opacity 0.26s ease;
 }}
+/* hover sheen sweep */
+.nexus-card::before {{
+    content: ""; position: absolute; top: 0; left: -60%;
+    width: 45%; height: 100%; z-index: 5; pointer-events: none;
+    background: linear-gradient(100deg, transparent,
+                rgba(255,255,255,{0.14 if D else 0.0}), transparent);
+    transform: skewX(-18deg); opacity: 0;
+}}
+.nexus-card:hover::before {{ opacity: 1; animation: sheen 0.9s ease; }}
 .nexus-card:hover {{
     transform: translateY(-6px) scale(1.01);
     border-color: var(--c);
@@ -122,7 +163,13 @@ st.markdown(f"""
     font-size: 11px; color: {FOOTER_C}; letter-spacing: 1px;
 }}
 .nx-footer b {{ color: {SECTION_C}; }}
+
+@media (prefers-reduced-motion: reduce) {{
+    .aurora b, .nexus-card, .stats-bar, .section-label {{ animation: none !important; }}
+    .nexus-card:hover::before {{ animation: none !important; }}
+}}
 </style>
+<div class="aurora"><b class="b1"></b><b class="b2"></b><b class="b3"></b></div>
 """, unsafe_allow_html=True)
 
 # ── Hero ───────────────────────────────────────────────────────────────────────
@@ -234,9 +281,9 @@ AGENTS = [
     ("10","🛡️","Secure Email Agent",       "Rheinmetall",                         "Prompt-injection-resistant job application processing",               "Secure_Email_Agent",      "#64748b","Security"),
 ]
 
-def _card(num, icon, name, client, desc, page, color, tag):
+def _card(num, icon, name, client, desc, page, color, tag, delay=0.0):
     return f"""
-<div class="nexus-card" style="--c:{color};">
+<div class="nexus-card" style="--c:{color}; animation-delay:{delay:.2f}s;">
   <a href="/{page}" target="_self" class="card-link" aria-label="{name}"></a>
   <div class="card-num">{num}</div>
   <div class="card-icon">{icon}</div>
@@ -246,7 +293,7 @@ def _card(num, icon, name, client, desc, page, color, tag):
   <div class="card-tag">{tag}</div>
 </div>"""
 
-cards_html = "".join(_card(*a) for a in AGENTS)
+cards_html = "".join(_card(*a, delay=0.35 + i * 0.05) for i, a in enumerate(AGENTS))
 st.markdown(f'<div class="card-grid">{cards_html}</div>', unsafe_allow_html=True)
 
 # ── Footer ─────────────────────────────────────────────────────────────────────
