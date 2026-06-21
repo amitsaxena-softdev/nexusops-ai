@@ -1,7 +1,6 @@
 from urllib.parse import quote
 
 import streamlit as st
-import streamlit.components.v1 as components
 from shared.theme import apply_theme
 
 st.set_page_config(
@@ -103,7 +102,7 @@ st.markdown(f"""
 .stat-sep {{ width: 1px; height: 54px;
     background: linear-gradient(to bottom, transparent, {SEP}, transparent); }}
 
-.section-label {{ text-align: center; margin-bottom: 14px; animation: fadeUp 0.6s ease 0.28s backwards; }}
+.section-label {{ text-align: center; margin: 6px 0 24px; animation: fadeUp 0.6s ease 0.28s backwards; }}
 .section-label span {{
     font-size: 10px; font-weight: 700; letter-spacing: 4px;
     text-transform: uppercase; color: {SECTION_C};
@@ -184,8 +183,50 @@ st.markdown(f"""
 }}
 .nx-footer b {{ color: {SECTION_C}; }}
 
+/* ── Hero (pure CSS, part of the page — blends with no iframe rectangle) ── */
+.nx-hero {{ position: relative; text-align: center; padding: 30px 0 24px; }}
+.nx-hero::before {{
+    content: ""; position: absolute; top: 46%; left: 50%;
+    width: 640px; max-width: 90%; height: 230px; transform: translate(-50%,-50%);
+    background: radial-gradient(ellipse at center, {GLOW_CLR} 0%, transparent 70%);
+    pointer-events: none; z-index: 0;
+}}
+.nx-title {{
+    position: relative; z-index: 1;
+    font-size: 74px; font-weight: 900; letter-spacing: -3px; line-height: 1;
+}}
+.nx-ltr {{
+    display: inline-block;
+    animation: letterIn 0.5s cubic-bezier(0.2,0.85,0.25,1) backwards;
+    animation-delay: var(--d);
+}}
+@keyframes letterIn {{
+    from {{ opacity: 0; transform: translateY(0.36em) scale(0.85); }}
+    to   {{ opacity: 1; transform: none; }}
+}}
+.nx-ai {{
+    background: linear-gradient(130deg,#6366f1,#a855f7 45%,#06b6d4);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}}
+.nx-caret {{
+    display: inline-block; width: 5px; height: 0.82em;
+    background: linear-gradient(180deg,#6366f1,#06b6d4); border-radius: 3px;
+    vertical-align: baseline; margin-left: 7px; opacity: 0;
+    animation: nxBlink 0.85s step-end var(--d) infinite;
+}}
+@keyframes nxBlink {{ 0%,100% {{ opacity: 1; }} 50% {{ opacity: 0; }} }}
+.nx-sub {{
+    position: relative; z-index: 1;
+    font-size: 16px; font-weight: 500; letter-spacing: 0.4px;
+    color: {"rgba(255,255,255,0.46)" if D else "rgba(15,23,42,0.52)"};
+    margin-top: 15px;
+    animation: fadeUp 0.7s ease var(--subd) backwards;
+}}
+
 @media (prefers-reduced-motion: reduce) {{
-    .aurora b, .nexus-card, .stats-bar, .section-label {{ animation: none !important; }}
+    .aurora b, .nexus-card, .stats-bar, .section-label,
+    .nx-ltr, .nx-sub {{ animation: none !important; }}
+    .nx-caret {{ animation: nxBlink 0.85s step-end infinite !important; opacity: 1; }}
     .nexus-card:hover::before {{ animation: none !important; }}
 }}
 </style>
@@ -193,87 +234,24 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 # ── Hero ───────────────────────────────────────────────────────────────────────
-components.html(f"""
-<!DOCTYPE html><html><head><meta charset="UTF-8">
-<style>
-*{{margin:0;padding:0;box-sizing:border-box;}}
-body{{
-    background:transparent;
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    height:230px;overflow:hidden;
-}}
-.grid{{
-    position:fixed;inset:0;
-    background-image:linear-gradient({GRID_CLR} 1px,transparent 1px),
-                     linear-gradient(90deg,{GRID_CLR} 1px,transparent 1px);
-    background-size:52px 52px;animation:drift 28s linear infinite;pointer-events:none;
-    -webkit-mask-image:linear-gradient(to bottom,#000 30%,transparent 92%);
-    mask-image:linear-gradient(to bottom,#000 30%,transparent 92%);
-}}
-@keyframes drift{{from{{transform:translate(0,0)}}to{{transform:translate(52px,52px)}}}}
-.glow{{
-    position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);
-    width:700px;height:300px;
-    background:radial-gradient(ellipse at center,{GLOW_CLR} 0%,transparent 70%);
-    pointer-events:none;
-}}
-.hero{{position:relative;z-index:10;text-align:center;}}
-.title-row{{display:flex;align-items:baseline;justify-content:center;height:90px;margin-bottom:14px;}}
-.t{{font-size:82px;font-weight:900;letter-spacing:-3px;line-height:1;}}
-.t-nexus{{color:{"#f1f5f9" if D else "#0f172a"};}}
-.t-ops{{color:#818cf8;}}
-.t-gap{{display:inline-block;width:22px;}}
-.t-ai{{background:linear-gradient(130deg,#6366f1,#a855f7 45%,#06b6d4);
-       -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}}
-.cursor{{display:inline-block;width:5px;height:70px;
-         background:linear-gradient(180deg,#6366f1,#06b6d4);border-radius:3px;
-         vertical-align:bottom;margin-bottom:8px;margin-left:4px;
-         animation:blink 0.85s step-end infinite;}}
-@keyframes blink{{0%,100%{{opacity:1}}50%{{opacity:0}}}}
-.subtitle{{font-size:16px;font-weight:500;color:{"rgba(255,255,255,0.44)" if D else "rgba(0,0,0,0.5)"};letter-spacing:0.4px;opacity:0;}}
-</style></head><body>
-<div class="grid"></div><div class="glow"></div>
-<div class="hero">
-  <div class="title-row">
-    <span class="t t-nexus" id="tn"></span>
-    <span class="t t-ops"   id="to"></span>
-    <span class="t-gap"     id="tg" style="display:none"></span>
-    <span class="t t-ai"    id="ta"></span>
-    <span class="cursor"    id="cur"></span>
-  </div>
-  <div class="subtitle" id="sub">
-    Specialized AI agents for every enterprise operation
-  </div>
-</div>
-<script>
-const STEPS=[{{id:"tn",text:"Nexus",ms:95}},{{id:"to",text:"Ops",ms:95}},
-             {{id:"tg",text:"",ms:0,gap:true}},{{id:"ta",text:"AI",ms:130}}];
-const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-async function run(){{
-  await sleep(400);
-  for(const s of STEPS){{
-    const el=document.getElementById(s.id);
-    if(s.gap){{el.style.display="inline-block";await sleep(40);continue;}}
-    for(let i=1;i<=s.text.length;i++){{
-      el.textContent=s.text.slice(0,i);
-      await sleep(s.ms+Math.random()*18-9);
-    }}
-    await sleep(20);
-  }}
-  await sleep(1600);
-  const cur=document.getElementById("cur");
-  cur.style.transition="opacity 0.5s";cur.style.animation="none";cur.style.opacity="0";
-  await sleep(300);
-  const sub=document.getElementById("sub");
-  sub.style.transition="opacity 0.9s ease,transform 0.9s ease";
-  sub.style.transform="translateY(14px)";sub.style.opacity="0";
-  await sleep(20);sub.style.opacity="1";sub.style.transform="translateY(0)";
-}}
-run();
-</script>
-</body></html>
-""", height=250, scrolling=False)
+def _hero_html():
+    nexus_c = "#f1f5f9" if D else "#0f172a"
+    spans, d = [], 0.30
+    for ch in "Nexus":
+        spans.append(f'<span class="nx-ltr" style="--d:{d:.2f}s;color:{nexus_c}">{ch}</span>'); d += 0.055
+    for ch in "Ops":
+        spans.append(f'<span class="nx-ltr" style="--d:{d:.2f}s;color:#818cf8">{ch}</span>'); d += 0.055
+    spans.append('<span style="display:inline-block;width:0.26em"></span>'); d += 0.02
+    for ch in "AI":
+        spans.append(f'<span class="nx-ltr nx-ai" style="--d:{d:.2f}s">{ch}</span>'); d += 0.055
+    caret_d = d + 0.04
+    sub_d   = caret_d + 0.30
+    spans.append(f'<span class="nx-caret" style="--d:{caret_d:.2f}s"></span>')
+    return (f'<div class="nx-hero"><div class="nx-title">{"".join(spans)}</div>'
+            f'<div class="nx-sub" style="--subd:{sub_d:.2f}s">'
+            f'Specialized AI agents for every enterprise operation</div></div>')
+
+st.markdown(_hero_html(), unsafe_allow_html=True)
 
 # ── Stats bar ──────────────────────────────────────────────────────────────────
 st.markdown(f"""
