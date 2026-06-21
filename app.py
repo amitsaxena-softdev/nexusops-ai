@@ -46,9 +46,15 @@ st.markdown(f"""
     margin: 0 auto !important;
 }}
 [data-testid="column"] {{ padding: 5px !important; }}
-/* Tighten the gap Streamlit inserts between stacked sections so the
-   homepage fits the viewport on desktop (cards reflow on mobile widths). */
-[data-testid="stVerticalBlock"] {{ gap: 0.4rem !important; }}
+
+/* The whole homepage body is one flex column that fills the viewport and
+   distributes its sections evenly; on short/mobile screens it just scrolls. */
+.block-container [data-testid="stVerticalBlock"] {{ gap: 0 !important; }}
+.nx-page {{
+    display: flex; flex-direction: column;
+    min-height: calc(100vh - 1.5rem);
+    justify-content: space-between;
+}}
 
 /* Hero iframe blends into the page (no opaque black rectangle) and never
    intercepts clicks meant for the floating toggle above it. */
@@ -85,7 +91,7 @@ st.markdown(f"""
 
 .stats-bar {{
     display: flex; justify-content: center; align-items: center;
-    padding: 2px 0 32px;
+    padding: 0;
     animation: fadeUp 0.6s ease 0.15s backwards;
 }}
 .stat {{ text-align: center; padding: 0 56px; }}
@@ -102,7 +108,7 @@ st.markdown(f"""
 .stat-sep {{ width: 1px; height: 54px;
     background: linear-gradient(to bottom, transparent, {SEP}, transparent); }}
 
-.section-label {{ text-align: center; margin: 6px 0 24px; animation: fadeUp 0.6s ease 0.28s backwards; }}
+.section-label {{ text-align: center; margin: 0; animation: fadeUp 0.6s ease 0.28s backwards; }}
 .section-label span {{
     font-size: 10px; font-weight: 700; letter-spacing: 4px;
     text-transform: uppercase; color: {SECTION_C};
@@ -119,7 +125,6 @@ st.markdown(f"""
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 14px;
-    margin-bottom: 8px;
 }}
 @media (max-width: 1100px) {{ .card-grid {{ grid-template-columns: repeat(3, 1fr); }} }}
 @media (max-width: 720px)  {{ .card-grid {{ grid-template-columns: repeat(2, 1fr); }} }}
@@ -178,13 +183,13 @@ st.markdown(f"""
 }}
 
 .nx-footer {{
-    text-align: center; padding: 22px 0 6px;
+    text-align: center; padding: 0;
     font-size: 11px; color: {FOOTER_C}; letter-spacing: 1px;
 }}
 .nx-footer b {{ color: {SECTION_C}; }}
 
 /* ── Hero (pure CSS, part of the page — blends with no iframe rectangle) ── */
-.nx-hero {{ position: relative; text-align: center; padding: 30px 0 24px; }}
+.nx-hero {{ position: relative; text-align: center; padding: 16px 0 0; }}
 .nx-hero::before {{
     content: ""; position: absolute; top: 46%; left: 50%;
     width: 640px; max-width: 90%; height: 230px; transform: translate(-50%,-50%);
@@ -196,14 +201,11 @@ st.markdown(f"""
     font-size: 74px; font-weight: 900; letter-spacing: -3px; line-height: 1;
 }}
 .nx-ltr {{
-    display: inline-block;
-    animation: letterIn 0.5s cubic-bezier(0.2,0.85,0.25,1) backwards;
-    animation-delay: var(--d);
+    display: inline-block; max-width: 0; opacity: 0; overflow: hidden;
+    vertical-align: bottom; padding-bottom: 0.16em; margin-bottom: -0.16em;
+    animation: typeIn 0.05s linear var(--d) forwards;
 }}
-@keyframes letterIn {{
-    from {{ opacity: 0; transform: translateY(0.36em) scale(0.85); }}
-    to   {{ opacity: 1; transform: none; }}
-}}
+@keyframes typeIn {{ to {{ max-width: 1.3em; opacity: 1; }} }}
 .nx-ai {{
     background: linear-gradient(130deg,#6366f1,#a855f7 45%,#06b6d4);
     -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
@@ -225,7 +227,8 @@ st.markdown(f"""
 
 @media (prefers-reduced-motion: reduce) {{
     .aurora b, .nexus-card, .stats-bar, .section-label,
-    .nx-ltr, .nx-sub {{ animation: none !important; }}
+    .nx-sub {{ animation: none !important; }}
+    .nx-ltr {{ animation: none !important; max-width: none !important; opacity: 1 !important; }}
     .nx-caret {{ animation: nxBlink 0.85s step-end infinite !important; opacity: 1; }}
     .nexus-card:hover::before {{ animation: none !important; }}
 }}
@@ -236,36 +239,22 @@ st.markdown(f"""
 # ── Hero ───────────────────────────────────────────────────────────────────────
 def _hero_html():
     nexus_c = "#f1f5f9" if D else "#0f172a"
+    segs = [("Nexus", f"color:{nexus_c}"), ("Ops", "color:#818cf8"),
+            (" ", ""), ("AI", "GRAD")]
     spans, d = [], 0.30
-    for ch in "Nexus":
-        spans.append(f'<span class="nx-ltr" style="--d:{d:.2f}s;color:{nexus_c}">{ch}</span>'); d += 0.055
-    for ch in "Ops":
-        spans.append(f'<span class="nx-ltr" style="--d:{d:.2f}s;color:#818cf8">{ch}</span>'); d += 0.055
-    spans.append('<span style="display:inline-block;width:0.26em"></span>'); d += 0.02
-    for ch in "AI":
-        spans.append(f'<span class="nx-ltr nx-ai" style="--d:{d:.2f}s">{ch}</span>'); d += 0.055
-    caret_d = d + 0.04
-    sub_d   = caret_d + 0.30
+    for text, style in segs:
+        for ch in text:
+            cls   = "nx-ltr nx-ai" if style == "GRAD" else "nx-ltr"
+            extra = "" if style in ("GRAD", "") else f";{style}"
+            disp  = "&nbsp;" if ch == " " else ch
+            spans.append(f'<span class="{cls}" style="--d:{d:.2f}s{extra}">{disp}</span>')
+            d += 0.08
+    caret_d = d + 0.02
+    sub_d   = caret_d + 0.35
     spans.append(f'<span class="nx-caret" style="--d:{caret_d:.2f}s"></span>')
     return (f'<div class="nx-hero"><div class="nx-title">{"".join(spans)}</div>'
             f'<div class="nx-sub" style="--subd:{sub_d:.2f}s">'
             f'Specialized AI agents for every enterprise operation</div></div>')
-
-st.markdown(_hero_html(), unsafe_allow_html=True)
-
-# ── Stats bar ──────────────────────────────────────────────────────────────────
-st.markdown(f"""
-<div class="stats-bar">
-  <div class="stat"><div class="stat-num">10</div><div class="stat-label">AI Agents</div></div>
-  <div class="stat-sep"></div>
-  <div class="stat"><div class="stat-num">6</div><div class="stat-label">Industries</div></div>
-  <div class="stat-sep"></div>
-  <div class="stat"><div class="stat-num">5</div><div class="stat-label">Clients</div></div>
-</div>
-""", unsafe_allow_html=True)
-
-# ── Section label ──────────────────────────────────────────────────────────────
-st.markdown('<div class="section-label"><span>Choose Your Agent</span></div>', unsafe_allow_html=True)
 
 # ── Agent cards ────────────────────────────────────────────────────────────────
 # Line icons (Lucide-style) rendered as accent-coloured CSS masks — no emojis.
@@ -314,7 +303,20 @@ def _card(icon, name, page, color, cat, delay=0.0):
 </div>"""
 
 cards_html = "".join(_card(*a, delay=0.35 + i * 0.05) for i, a in enumerate(AGENTS))
-st.markdown(f'<div class="card-grid">{cards_html}</div>', unsafe_allow_html=True)
 
-# ── Footer ─────────────────────────────────────────────────────────────────────
-st.markdown('<div class="nx-footer"><b>NexusOps AI</b> &nbsp;&middot;&nbsp; Enterprise Operations Suite</div>', unsafe_allow_html=True)
+# ── Full page (one flex column that fills the viewport) ─────────────────────────
+st.markdown(f"""
+<div class="nx-page">
+  {_hero_html()}
+  <div class="stats-bar">
+    <div class="stat"><div class="stat-num">10</div><div class="stat-label">AI Agents</div></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">Industries</div></div>
+    <div class="stat-sep"></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Clients</div></div>
+  </div>
+  <div class="section-label"><span>Choose Your Agent</span></div>
+  <div class="card-grid">{cards_html}</div>
+  <div class="nx-footer"><b>NexusOps AI</b> &nbsp;&middot;&nbsp; Enterprise Operations Suite</div>
+</div>
+""", unsafe_allow_html=True)
