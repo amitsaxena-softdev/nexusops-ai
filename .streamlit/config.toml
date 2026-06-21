@@ -7,3 +7,6 @@ font = "sans serif"
 # Disable Streamlit's auto-generated multipage nav at config time (before first
 # paint) so the drawer never flashes on load. Each page renders its own sidebar.
 showSidebarNavigation = false
+# Hide the top-right toolbar (⋮ menu, Deploy) at config time so it never
+# flashes in while the app loads.
+toolbarMode = "minimal"

@@ -98,6 +98,8 @@ html, body, .stApp {{
 [data-testid="collapsedControl"] {{ pointer-events: auto !important; }}
 #MainMenu, footer {{ visibility: hidden !important; }}
 [data-testid="stAppDeployButton"], .stDeployButton {{ display: none !important; }}
+/* "Running…" status widget (top-right) — pages show their own spinners. */
+[data-testid="stStatusWidget"] {{ display: none !important; }}
 
 /* ── Sidebar shell ── */
 section[data-testid="stSidebar"] > div:first-child {{
