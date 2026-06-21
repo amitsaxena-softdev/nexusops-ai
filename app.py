@@ -45,12 +45,12 @@ st.markdown(f"""
 }}
 [data-testid="column"] {{ padding: 5px !important; }}
 
-/* Hero iframe blends into the page (no opaque black rectangle). */
-[data-testid="stIFrame"], .stApp iframe {{ background: transparent !important; }}
-
-/* Make the app container a stacking context so the aurora's negative
-   z-index layers above the solid background but below page content. */
-[data-testid="stAppViewContainer"] {{ position: relative; z-index: 0; }}
+/* Hero iframe blends into the page (no opaque black rectangle) and never
+   intercepts clicks meant for the floating toggle above it. */
+[data-testid="stIFrame"], .stApp iframe {{
+    background: transparent !important;
+    pointer-events: none !important;
+}}
 
 /* ── Aurora background (drifting blurred colour blobs) ── */
 .aurora {{ position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }}

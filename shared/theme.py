@@ -73,9 +73,14 @@ def _inject_css(D: bool, sidebar: bool = True):
 <style>
 {HIDE_SIDEBAR}
 /* ── Background ── */
-html, body, [data-testid="stAppViewContainer"], .stApp {{
+html, body, .stApp {{
     background: {BG} !important;
 }}
+/* Root app is the stacking context the aurora anchors to (negative z-index
+   layers above this background but below page content). Keeping it on the
+   root — which contains BOTH header and content — means the floating theme
+   toggle is never capped below the header. */
+.stApp {{ isolation: isolate; }}
 [data-testid="stHeader"] {{
     background: transparent !important;
     box-shadow: none !important;
