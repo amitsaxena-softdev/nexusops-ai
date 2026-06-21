@@ -80,19 +80,22 @@ st.markdown(f"""
 
 .stats-bar {{
     display: flex; justify-content: center; align-items: center;
-    padding: 0 0 36px;
+    padding: 4px 0 50px;
     animation: fadeUp 0.6s ease 0.15s backwards;
 }}
-.stat {{ text-align: center; padding: 0 44px; }}
+.stat {{ text-align: center; padding: 0 56px; }}
 .stat-num {{
-    font-size: 36px; font-weight: 900;
-    color: {TEXT}; line-height: 1; letter-spacing: -1px;
+    font-size: 56px; font-weight: 900; line-height: 1; letter-spacing: -2px;
+    background: linear-gradient(135deg, #6366f1, #a855f7 50%, #06b6d4);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
 }}
 .stat-label {{
-    font-size: 10px; color: {MUTED};
-    letter-spacing: 2px; text-transform: uppercase; margin-top: 5px;
+    font-size: 11px; color: {MUTED}; font-weight: 600;
+    letter-spacing: 2.5px; text-transform: uppercase; margin-top: 10px;
 }}
-.stat-sep {{ width: 1px; height: 40px; background: {SEP}; }}
+.stat-sep {{ width: 1px; height: 54px;
+    background: linear-gradient(to bottom, transparent, {SEP}, transparent); }}
 
 .section-label {{ text-align: center; margin-bottom: 20px; animation: fadeUp 0.6s ease 0.28s backwards; }}
 .section-label span {{
@@ -221,7 +224,7 @@ body{{
          vertical-align:bottom;margin-bottom:8px;margin-left:4px;
          animation:blink 0.85s step-end infinite;}}
 @keyframes blink{{0%,100%{{opacity:1}}50%{{opacity:0}}}}
-.subtitle{{font-size:14.5px;color:{"rgba(255,255,255,0.32)" if D else "rgba(0,0,0,0.38)"};letter-spacing:0.3px;opacity:0;}}
+.subtitle{{font-size:16px;font-weight:500;color:{"rgba(255,255,255,0.44)" if D else "rgba(0,0,0,0.5)"};letter-spacing:0.4px;opacity:0;}}
 </style></head><body>
 <div class="grid"></div><div class="glow"></div>
 <div class="hero">
@@ -233,7 +236,7 @@ body{{
     <span class="cursor"    id="cur"></span>
   </div>
   <div class="subtitle" id="sub">
-    10 AI agents &nbsp;&bull;&nbsp; One platform &nbsp;&bull;&nbsp; Built for modern enterprises
+    Specialized AI agents for every enterprise operation
   </div>
 </div>
 <script>
