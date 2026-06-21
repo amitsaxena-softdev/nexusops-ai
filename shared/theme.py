@@ -79,7 +79,15 @@ html, body, [data-testid="stAppViewContainer"], .stApp {{
 [data-testid="stHeader"] {{
     background: transparent !important;
     box-shadow: none !important;
+    /* Let clicks fall through the empty header to the floating theme toggle
+       beneath it; the header's own buttons are re-enabled just below. */
+    pointer-events: none !important;
 }}
+[data-testid="stHeader"] button,
+[data-testid="stHeader"] a,
+[data-testid="stHeader"] [role="button"],
+[data-testid="stSidebarCollapseButton"],
+[data-testid="collapsedControl"] {{ pointer-events: auto !important; }}
 #MainMenu, footer {{ visibility: hidden !important; }}
 [data-testid="stAppDeployButton"], .stDeployButton {{ display: none !important; }}
 
