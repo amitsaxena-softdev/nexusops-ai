@@ -40,12 +40,16 @@ st.markdown(f"""
 <style>
 .block-container {{
     padding-top: 0 !important;
+    padding-bottom: 1.25rem !important;
     padding-left: 2.5rem !important;
     padding-right: 2.5rem !important;
     max-width: 1260px !important;
     margin: 0 auto !important;
 }}
 [data-testid="column"] {{ padding: 5px !important; }}
+/* Tighten the gap Streamlit inserts between stacked sections so the
+   homepage fits the viewport on desktop (cards reflow on mobile widths). */
+[data-testid="stVerticalBlock"] {{ gap: 0.4rem !important; }}
 
 /* Hero iframe blends into the page (no opaque black rectangle) and never
    intercepts clicks meant for the floating toggle above it. */
@@ -82,7 +86,7 @@ st.markdown(f"""
 
 .stats-bar {{
     display: flex; justify-content: center; align-items: center;
-    padding: 4px 0 50px;
+    padding: 2px 0 32px;
     animation: fadeUp 0.6s ease 0.15s backwards;
 }}
 .stat {{ text-align: center; padding: 0 56px; }}
@@ -99,7 +103,7 @@ st.markdown(f"""
 .stat-sep {{ width: 1px; height: 54px;
     background: linear-gradient(to bottom, transparent, {SEP}, transparent); }}
 
-.section-label {{ text-align: center; margin-bottom: 20px; animation: fadeUp 0.6s ease 0.28s backwards; }}
+.section-label {{ text-align: center; margin-bottom: 14px; animation: fadeUp 0.6s ease 0.28s backwards; }}
 .section-label span {{
     font-size: 10px; font-weight: 700; letter-spacing: 4px;
     text-transform: uppercase; color: {SECTION_C};
@@ -175,7 +179,7 @@ st.markdown(f"""
 }}
 
 .nx-footer {{
-    text-align: center; padding: 40px 0 20px;
+    text-align: center; padding: 22px 0 6px;
     font-size: 11px; color: {FOOTER_C}; letter-spacing: 1px;
 }}
 .nx-footer b {{ color: {SECTION_C}; }}
@@ -197,7 +201,7 @@ body{{
     background:transparent;
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     display:flex;flex-direction:column;align-items:center;justify-content:center;
-    height:280px;overflow:hidden;
+    height:230px;overflow:hidden;
 }}
 .grid{{
     position:fixed;inset:0;
@@ -269,7 +273,7 @@ async function run(){{
 run();
 </script>
 </body></html>
-""", height=300, scrolling=False)
+""", height=250, scrolling=False)
 
 # ── Stats bar ──────────────────────────────────────────────────────────────────
 st.markdown(f"""
