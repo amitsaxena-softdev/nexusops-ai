@@ -58,8 +58,8 @@ def _render_toggle(D: bool):
 
 
 def _inject_css(D: bool, sidebar: bool = True):
-    BG      = "#0d0f17"  if D else "#f8fafc"
-    BG_SIDE = "#11131d"  if D else "#f1f5f9"
+    BG      = "#0d0f17"  if D else "#e9edf6"
+    BG_SIDE = "#11131d"  if D else "#f3f6fc"
     SEP     = "rgba(255,255,255,0.07)" if D else "rgba(0,0,0,0.08)"
     NAV_LNK = "#cbd5e1"  if D else "#334155"
     NAV_HOV = "rgba(99,102,241,0.1)"   if D else "rgba(99,102,241,0.08)"

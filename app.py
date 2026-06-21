@@ -18,17 +18,19 @@ if "theme" not in st.session_state:
 D = st.session_state.theme == "dark"
 
 # ── Colour tokens (hero + cards need these) ────────────────────────────────────
-BG        = "#0d0f17"  if D else "#f8fafc"
-CARD_BG   = "rgba(255,255,255,0.025)" if D else "rgba(0,0,0,0.028)"
-CARD_BD   = "rgba(255,255,255,0.06)"  if D else "rgba(0,0,0,0.08)"
+BG          = "#0d0f17"  if D else "#e9edf6"
+CARD_BG     = "rgba(255,255,255,0.025)" if D else "#ffffff"
+CARD_BD     = "rgba(255,255,255,0.06)"  if D else "rgba(15,23,42,0.07)"
+CARD_SHADOW = ("0 4px 16px rgba(0,0,0,0.25)" if D
+               else "0 1px 2px rgba(15,23,42,0.05), 0 10px 26px rgba(15,23,42,0.07)")
 TEXT      = "#f1f5f9"  if D else "#0f172a"
-MUTED     = "rgba(255,255,255,0.28)"  if D else "rgba(0,0,0,0.38)"
-DESC      = "rgba(255,255,255,0.3)"   if D else "rgba(0,0,0,0.42)"
-SEP       = "rgba(255,255,255,0.07)"  if D else "rgba(0,0,0,0.08)"
-SECTION_C = "rgba(255,255,255,0.18)"  if D else "rgba(0,0,0,0.22)"
-FOOTER_C  = "rgba(255,255,255,0.12)"  if D else "rgba(0,0,0,0.2)"
-GRID_CLR  = "rgba(99,102,241,0.045)"  if D else "rgba(99,102,241,0.055)"
-GLOW_CLR  = "rgba(99,102,241,0.13)"   if D else "rgba(99,102,241,0.07)"
+MUTED     = "rgba(255,255,255,0.28)"  if D else "rgba(15,23,42,0.42)"
+DESC      = "rgba(255,255,255,0.3)"   if D else "rgba(15,23,42,0.45)"
+SEP       = "rgba(255,255,255,0.07)"  if D else "rgba(15,23,42,0.1)"
+SECTION_C = "rgba(255,255,255,0.18)"  if D else "rgba(15,23,42,0.3)"
+FOOTER_C  = "rgba(255,255,255,0.12)"  if D else "rgba(15,23,42,0.25)"
+GRID_CLR  = "rgba(99,102,241,0.045)"  if D else "rgba(99,102,241,0.06)"
+GLOW_CLR  = "rgba(99,102,241,0.13)"   if D else "rgba(99,102,241,0.1)"
 
 # ── Global theme (no sidebar on the homepage) ──────────────────────────────────
 apply_theme(sidebar=False)
@@ -56,7 +58,7 @@ st.markdown(f"""
 .aurora {{ position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }}
 .aurora b {{
     position: absolute; display: block; border-radius: 50%;
-    filter: blur(100px); opacity: {0.38 if D else 0.14};
+    filter: blur(100px); opacity: {0.38 if D else 0.30};
 }}
 .aurora .b1 {{ width: 460px; height: 460px; background: #6366f1; top: -120px; left: -60px;
               animation: floaty1 24s ease-in-out infinite; }}
@@ -122,6 +124,7 @@ st.markdown(f"""
 .nexus-card {{
     position: relative; background: {CARD_BG};
     border: 1px solid {CARD_BD}; border-radius: 18px;
+    box-shadow: {CARD_SHADOW};
     padding: 22px 16px; height: 152px; overflow: hidden; cursor: pointer;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     text-align: center; gap: 12px;
