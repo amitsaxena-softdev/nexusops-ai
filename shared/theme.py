@@ -41,17 +41,25 @@ def apply_theme(sidebar: bool = True):
         _render_sidebar(D)
 
 
+def _flip_theme():
+    st.session_state.theme = "light" if st.session_state.get("theme", "dark") == "dark" else "dark"
+
+
 def _render_toggle(D: bool):
-    """Floating dark/light toggle, pinned top-right on every page."""
-    tog = st.container(key="nx_theme_toggle")
-    with tog:
-        if st.button(
-            "☀️" if D else "🌙",
-            key="nx_theme_btn",
-            help="Switch to light mode" if D else "Switch to dark mode",
-        ):
-            st.session_state.theme = "light" if D else "dark"
-            st.rerun()
+    """Dark/light toggle, top-right of the content. Rendered in normal flow
+    (not a fixed overlay) so nothing can intercept the click, with an
+    on_click callback so the flip happens before the rerun."""
+    _, right = st.columns([0.82, 0.18])
+    with right:
+        tog = st.container(key="nx_theme_toggle")
+        with tog:
+            st.button(
+                "☀️  Light" if D else "🌙  Dark",
+                key="nx_theme_btn",
+                help="Switch to light mode" if D else "Switch to dark mode",
+                on_click=_flip_theme,
+                use_container_width=True,
+            )
 
 
 def _inject_css(D: bool, sidebar: bool = True):
@@ -125,31 +133,20 @@ section[data-testid="stSidebar"] > div:first-child {{
     color: #818cf8 !important;
 }}
 
-/* ── Floating dark/light toggle (top-right, every page) ── */
-.st-key-nx_theme_toggle {{
-    position: fixed !important;
-    top: 11px !important;
-    right: 16px !important;
-    z-index: 1000 !important;
-    width: auto !important;
-    min-width: 0 !important;
-}}
+/* ── Dark/light toggle (in-flow, top-right of content) ── */
 .st-key-nx_theme_toggle div[data-testid="stButton"] button {{
-    font-size: 16px !important;
-    line-height: 1 !important;
-    padding: 0 !important;
-    width: 40px !important;
-    height: 40px !important;
-    min-height: 40px !important;
-    border-radius: 50% !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    padding: 7px 14px !important;
+    min-height: 38px !important;
+    border-radius: 10px !important;
     background: {TOG_BG} !important;
     border: 1px solid {TOG_BD} !important;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.28) !important;
-    backdrop-filter: blur(8px) !important;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.22) !important;
     transition: transform 0.15s ease, border-color 0.15s ease !important;
 }}
 .st-key-nx_theme_toggle div[data-testid="stButton"] button:hover {{
-    transform: scale(1.08) !important;
+    transform: translateY(-1px) !important;
     border-color: #6366f1 !important;
 }}
 </style>
